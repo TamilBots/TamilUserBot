@@ -13,16 +13,16 @@
 Before clicking on deploy to heroku just click on fork and star just below
 
 <p align="center">
-  <a href="https://github.com/ivetri/tamilbot/fork">
-    <img src="https://img.shields.io/github/forks/ivetri/tamilbot?label=Fork&style=social">
+  <a href="https://github.com/ivetri/tamil/fork">
+    <img src="https://img.shields.io/github/forks/imsaravanakrish/tamil?label=Fork&style=social">
     
   </a>
-  <a href="https://github.com/ivetri/tamilbot">
-    <img src="https://img.shields.io/github/stars/ivetri/tamilbot?style=social">
+  <a href="https://github.com/imsaravanakrish/tamil">
+    <img src="https://img.shields.io/github/stars/imsaravanakrish/tamil?style=social">
   </a>
 </p>
 
-[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/ivetri/tamilbot)
+[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/imsaravanakrish/tamil)
 
 ## Give your 💙 and support 
 
@@ -44,7 +44,7 @@ Click the below button to watch the video tutorial on deploying
 
 ## Deploy TamilBot to Heroku:
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fivetri%2Ftamilbot%2Ftree%2Fbugs&template=https%3A%2F%2Fgithub.com%2Fivetri%2Ftamilbot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fivetri%2Ftamilbot%2Ftree%2Fbugs&template=https%3A%2F%2Fgithub.com%2Fimsaravanakrish%2Ftamil)
 
 ### குழுக்கள் மற்றும் ஆதரவு:
 
