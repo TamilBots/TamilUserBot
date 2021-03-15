@@ -42,32 +42,32 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
               link_preview=False,
           )
           await event.answer([result])
-    elif event.query.user_id == bot.uid and query == "stats":
-        result = builder.article(
-            title="Stats",
-            text=f"**Showing Stats For {DEFAULTUSER}'s TamilBot** \nNote --> Only Owner Can Check This \n(C) @tamilsupport",
-            buttons=[
-                [custom.Button.inline("Show Stats ?", data="terminator")],
-                [Button.url("Repo 🇮🇳", "https://github.com/ivetri/tamilbot")],
-                [Button.url("Join Channel ❤️", "t.me/Tamilsupport")],
-            ],
-        )
-        await event.answer([result])
-    elif event.query.user_id == bot.uid and query.startswith("**Hello"):
-        result = builder.photo(
-            file=WARN_PIC,
-            text=query,
-            buttons=[
-                    [
-                        custom.Button.inline("Request ", data="askme"),
-                        custom.Button.inline("Chat 💭", data="whattalk"),
-                    ],
-                    [custom.Button.inline("To spam 🚫", data="dontspamnigga")],
-                    [custom.Button.inline("What is this ❓", data="pmclick")],
-                ],
-            )
+      elif event.query.user_id == bot.uid and query == "stats":
+          result = builder.article(
+              title="Stats",
+              text=f"**Showing Stats For {DEFAULTUSER}'s TamilBot** \nNote --> Only Owner Can Check This \n(C) @tamilsupport",
+              buttons=[
+                  [custom.Button.inline("Show Stats ?", data="terminator")],
+                  [Button.url("Repo 🇮🇳", "https://github.com/ivetri/tamilbot")],
+                  [Button.url("Join Channel ❤️", "t.me/Tamilsupport")],
+              ],
+          )
+          await event.answer([result])
+      elif event.query.user_id == bot.uid and query.startswith("**Hello"):
+          result = builder.photo(
+              file=WARN_PIC,
+              text=query,
+              buttons=[
+                      [
+                          custom.Button.inline("Request ", data="askme"),
+                          custom.Button.inline("Chat 💭", data="whattalk"),
+                      ],
+                      [custom.Button.inline("To spam 🚫", data="dontspamnigga")],
+                      [custom.Button.inline("What is this ❓", data="pmclick")],
+                  ],
+              )
     
-        await event.answer([result] if result else None)
+          await event.answer([result] if result else None)
 
   @tgbot.on(
       events.callbackquery.CallbackQuery(  # pylint:disable=E0602
