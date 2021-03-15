@@ -190,11 +190,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         sedok = "Master, You Don't Need To Use This."
         await event.answer(sedok, cache_time=0, alert=True)
         return
-    await event.get_chat()
-    him_id = event.query.user_id
-    await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
-    textz = f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You."
-    await event.send_message(LOG_CHAT, textz)
+     await event.get_chat()
+     him_id = event.query.user_id
+     await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
+     textz = f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You."
+     await event.send_message(LOG_CHAT, textz)
 
   @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
   async def rip(event):
