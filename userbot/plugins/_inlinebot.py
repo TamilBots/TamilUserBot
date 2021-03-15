@@ -184,12 +184,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
               )
 
 
-   @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
-   async def rip(event):
-       if event.query.user_id == bot.uid:
-         sedok = "Master, You Don't Need To Use This."
-         await event.answer(sedok, cache_time=0, alert=True)
-         return
+  @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
+  async def rip(event):
+      if event.query.user_id == bot.uid:
+        sedok = "Master, You Don't Need To Use This."
+        await event.answer(sedok, cache_time=0, alert=True)
+        return
     await event.get_chat()
     him_id = event.query.user_id
     await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
