@@ -7,7 +7,7 @@ from asyncio import sleep
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from userbot import BOTLOG, BOTLOG_CHATID, parse_pre
-from .sql_helper import broadcast_sql as sql
+from userbot.plugins.sql_helper import broadcast_sql as sql
 
 
 @borg.on(admin_cmd(pattern="sendto(?: |$)(.*)", command="sendto"))
