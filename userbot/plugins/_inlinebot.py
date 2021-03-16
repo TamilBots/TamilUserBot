@@ -142,7 +142,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             text = inlinestats
             await event.answer(text, alert=True)
-       else:
+        else:
             txt = "You Can't View My Masters Stats"
             await event.answer(txt, alert=True)
         
