@@ -42,7 +42,7 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = """Bot of {DEFAULTUSER},
+            help_string = f"""Bot of {DEFAULTUSER},
         
              ⚙️•тαмιℓвσт мєηυ•⚙️, 
 
