@@ -1,4 +1,7 @@
 ### Tamil UserBot 🤖
+  
+
+    <a href="https://github.com/Imsaravanakrish/tamil"> <img src="https://img.shields.io/github/repo-size/Imsaravanakrish/tamil?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
 
 # DISCLAIMER :
 ```
