@@ -46,7 +46,7 @@ async def WooMai(rose):
     await rose.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
         await asyncio.sleep(2)
-        await netase.edit("`Downloading...Please wait`")
+        await rose.edit("`Downloading...Please wait`")
         try:
             msg = await conv.send_message(link)
             response = await conv.get_response()
@@ -56,8 +56,8 @@ async def WooMai(rose):
         except YouBlockedUserError:
             await netase.reply("```Please unblock @MissRoseSong_Bot and try again```")
             return
-        await netase.edit("`Sending Your Music...`")
+        await rose.edit("`Sending Your Music...`")
         await asyncio.sleep(3)
-        await bot.send_file(netase.chat_id, respond)
-    await netase.client.delete_messages(conv.chat_id, [msg.id, response.id, respond.id])
-    await netase.delete()
+        await bot.send_file(rose.chat_id, respond)
+    await rose.client.delete_messages(conv.chat_id, [msg.id, response.id, respond.id])
+    await rose.delete()
