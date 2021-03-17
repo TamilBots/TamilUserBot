@@ -174,7 +174,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
         ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
 
-        🔘ℓσα∂є∂ ρℓυgιηѕ:"{}.format(query, len(CMD_LIST))"
+        🔘ℓσα∂є∂ ρℓυgιηѕ:"{len(CMD_LIST)}"
         """
         await event.edit(message=sed, buttons=buttons)
 
