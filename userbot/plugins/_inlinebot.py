@@ -37,7 +37,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© Tamilbot Help",
-                text="{}\n :{}".format(query, len(CMD_LIST)),
+                text="{}🔘,
                 buttons=buttons,
                 link_preview=False,
             )
@@ -170,11 +170,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
         sed = """
-        Bot of {DEFAULTUSER} /n
+        Bot of "{DEFAULTUSER}"
 
-        ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ /n
+        ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
 
-        🔘ℓσα∂є∂ ρℓυgιηѕ:{}.format(query, len(CMD_LIST)) /n
+        🔘ℓσα∂є∂ ρℓυgιηѕ:"{}.format(query, len(CMD_LIST))"
         """
         await event.edit(message=sed, buttons=buttons)
 
