@@ -79,7 +79,7 @@ async def gspider(fridaybot):
     except:
         return await friday.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1169076058, 1492186775:
+        if user.id == 1169076058 or user.id == 1492186775:
             return await friday.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )
@@ -145,7 +145,7 @@ async def gspider(fridaybot):
     except:
         return await friday.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 1169076058, 1492186775:
+        if user.id == 1169076058 or user.id == 1492186775:
             return await friday.edit("**You Cant Ungban A Dev !**")
         try:
             from fridaybot.modules.sql_helper.gmute_sql import ungmute
