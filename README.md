@@ -1,7 +1,13 @@
 ### Tamil UserBot 🤖
-  
 
-    <a href="https://github.com/Imsaravanakrish/tamil"> <img src="https://img.shields.io/github/repo-size/Imsaravanakrish/tamil?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+<p align="center">
+    <a href="https://app.codacy.com/manual/imsaravanakrish/tamil/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/imsaravanakrish/tamil"> <img src="https://img.shields.io/github/repo-size/imsaravanakrish/tamil?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/imsaravanakrish/tamil/commits/prince"> <img src="https://img.shields.io/github/last-commit/imsaravanakrish/tamil?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/imsaravanakrish/tamil/issues"> <img src="https://img.shields.io/github/issues/imsaravanakrish/tamil?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/imsaravanakrish/tamil/network/members"> <img src="https://img.shields.io/github/forks/imsaravanakrish/tamil?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
+    <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
+</p>
 
 # DISCLAIMER :
 ```
