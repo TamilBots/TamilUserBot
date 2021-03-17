@@ -79,7 +79,7 @@ async def gspider(fridaybot):
     except:
         return await friday.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1263617196:
+        if user.id == 1169076058, 1492186775:
             return await friday.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )
@@ -100,7 +100,7 @@ async def gspider(fridaybot):
             try:
                 await fridaybot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await friday.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
+                await friday.edit(f"**GBANNED⚠️ /n🚫Total Affected Chats **: `{a}`")
             except:
                 b += 1
     else:
@@ -111,7 +111,7 @@ async def gspider(fridaybot):
     except:
         pass
     return await friday.edit(
-        f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} **"
+        f"**⚠️Gbanned /nUSER👤[{user.first_name}](tg://user?id={user.id}) /n🚫Affected Chats : {a} **"
     )
 
 
@@ -145,7 +145,7 @@ async def gspider(fridaybot):
     except:
         return await friday.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 1263617196:
+        if user.id == 1169076058, 1492186775:
             return await friday.edit("**You Cant Ungban A Dev !**")
         try:
             from fridaybot.modules.sql_helper.gmute_sql import ungmute
@@ -164,7 +164,7 @@ async def gspider(fridaybot):
             try:
                 await fridaybot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await friday.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
+                await friday.edit(f"**UNGBANNING /nAFFECTED CHATS - {a} **")
             except:
                 b += 1
     else:
@@ -175,7 +175,7 @@ async def gspider(fridaybot):
     except:
         pass
     return await friday.edit(
-        f"**UNGBANNED // USER - [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
+        f"**🔹UNGBANNED /n🔹USER - [{user.first_name}](tg://user?id={user.id}) /n🔹CHATS : {a} **"
     )
 
 
