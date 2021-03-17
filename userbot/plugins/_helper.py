@@ -1,5 +1,7 @@
-from userbot import CMD_LIST
+from userbot import CMD_LIST, ALIVE_NAME
 from userbot.utils import admin_cmd
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 
 #@command(pattern="^.help ?(.*)")
 @borg.on(admin_cmd(pattern=r"help ?(.*)"))
@@ -40,7 +42,7 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = """TamilBot Helper... \nProvided by [TamilBot](https://t.me/TamilSupport)\n`தமிழ் UserBot பயனர்களுக்காக உருவாக்கப்பட்டது.`"""
+            help_string = f"""Bot of {DEFAULTUSER} !\n⚙️•TamilBot Menu•⚙️ \n 🔘Loaded Plugins: {len(CMD_LIST)}"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
