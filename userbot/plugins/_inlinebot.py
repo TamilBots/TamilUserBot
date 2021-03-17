@@ -53,7 +53,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 ],
             )
             await event.answer([result])
-        elif event.query.user_id == bot.uid and query.startswith("**Hello"):
+         elif event.query.user_id == bot.uid and query.startswith("**Hello"):
             result = builder.photo(
                 file=WARN_PIC,
                 text=query,
