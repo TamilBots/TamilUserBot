@@ -37,7 +37,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© Tamilbot Help",
-                text="{}\n🔘 Loaded Plugins: {}".format(query, len(CMD_LIST)),
+                text="{}\n🔘 ℓσα∂є∂ ρℓυgιηѕ: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
@@ -169,8 +169,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
-        sed = f"""Bot of {DEFAULTUSER} \n
-     ⚙️•TamilBot Menu•⚙️ \n 🔘Loaded Plugins: {len(CMD_LIST)}"""
+        sed = """
+        Bot of {DEFAULTUSER} 
+
+        ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
+
+        🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)}"""
         await event.edit(message=sed, buttons=buttons)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
