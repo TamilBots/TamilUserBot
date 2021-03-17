@@ -170,12 +170,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
         sed = """
-        Bot of "{DEFAULTUSER}"
+        Bot of` {DEFAULTUSER} `
 
         ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
 
-        🔘ℓσα∂є∂ ρℓυgιηѕ:"{len(CMD_LIST)}"
-        """
+        🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """
         await event.edit(message=sed, buttons=buttons)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
