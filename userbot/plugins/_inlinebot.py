@@ -169,8 +169,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
-        sed = f"""Tamil UserBot Modules Are Listed Here !\n
-    For More Help or Support Visit @TamilSupport \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
+        sed = f"""Bot of {DEFAULTUSER} !\n
+     ⚙️•TamilBot Menu•⚙️ \n 🔘Loaded Plugins: {len(CMD_LIST)}"""
         await event.edit(message=sed, buttons=buttons)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
