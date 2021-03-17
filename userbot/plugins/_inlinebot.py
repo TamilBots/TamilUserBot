@@ -169,7 +169,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
-        sed = f"""Bot of {DEFAULTUSER} !\n
+        sed = f"""Bot of {DEFAULTUSER} \n
      ⚙️•TamilBot Menu•⚙️ \n 🔘Loaded Plugins: {len(CMD_LIST)}"""
         await event.edit(message=sed, buttons=buttons)
 
