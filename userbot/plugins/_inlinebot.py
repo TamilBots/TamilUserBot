@@ -37,7 +37,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© Tamilbot Help",
-                text="{}/n♾,
+                text="{}\n🔘: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
