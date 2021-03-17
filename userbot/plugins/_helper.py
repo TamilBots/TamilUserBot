@@ -46,7 +46,7 @@ async def cmd_list(event):
         
              ⚙️•тαмιℓвσт мєηυ•⚙️, 
 
-             🔘ℓσα∂є∂ ρℓυgιηѕ """
+             🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
