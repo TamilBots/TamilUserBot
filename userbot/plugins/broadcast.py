@@ -21,7 +21,7 @@ async def catbroadcast_send(event):
         return
     catinput_str = event.pattern_match.group(1)
     if not catinput_str:
-        return await event.edit(
+        return await edit_delete(
             event, "To which category should i send this message", parse_mode=parse_pre
         )
     reply = await event.get_reply_message()
@@ -129,19 +129,19 @@ async def catbroadcast_add(event):
         return
     catinput_str = event.pattern_match.group(1)
     if not catinput_str:
-        return await event.edit(
+        return await edit_delete(
             event, "In which category should i add this chat", parse_mode=parse_pre
         )
     keyword = catinput_str.lower()
     check = sql.is_in_broadcastlist(keyword, event.chat_id)
     if check:
-        return await event.edit(
+        return await edit_delete(
             event,
             f"This chat is already in this category {keyword}",
             parse_mode=parse_pre,
         )
     sql.add_to_broadcastlist(keyword, event.chat_id)
-    await event.edit(
+    await edit_delete(
         event, f"This chat is Now added to category {keyword}", parse_mode=parse_pre
     )
     chat = await event.get_chat()
@@ -158,7 +158,6 @@ async def catbroadcast_add(event):
                 f"The user {chat.first_name} is added to category {keyword}",
                 parse_mode=parse_pre,
             )
-
 
 @borg.on(admin_cmd(pattern="rmfrom(?: |$)(.*)", command="rmfrom"))
 async def catbroadcast_remove(event):
