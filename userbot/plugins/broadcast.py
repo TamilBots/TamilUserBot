@@ -12,8 +12,7 @@ from userbot.plugins.sql_helper.broadcast_sql import (
 )
 from userbot.utils import admin_cmd, edit_or_reply
 
-logs_id = Var.PRIVATE_GROUP_ID
-
+parse_mode = "html"
 
 @borg.on(admin_cmd("bforward ?(.*)", outgoing=True))
 async def forw(event):
