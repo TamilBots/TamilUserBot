@@ -39,12 +39,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 "© Tamilbot Help",
                 text= f"""вσт σƒ {DEFAULTUSER}
 
-                ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
+                 ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
 
-                🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """
+                 🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """
                 buttons=buttons,
                 link_preview=False,
-            )
+             )
             await event.answer([result])
         elif event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
