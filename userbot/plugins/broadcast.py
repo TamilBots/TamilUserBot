@@ -8,7 +8,7 @@ from telethon.tl.types import InputMediaUploadedPhoto
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from userbot.plugins.sql_helper import broadcast_sql as sql
-from userbot.utils import admin_cmd, edit_or_reply
+from userbot.utils import admin_cmd
 from userbot import BOTLOG, BOTLOG_CHATID
 
 parse_pre="html"
