@@ -4,7 +4,7 @@ import re
 
 import requests
 
-from ..Config import Config
+from userbot.uniborgConfig import Config
 
 
 # https://t.me/c/1220993104/623253
