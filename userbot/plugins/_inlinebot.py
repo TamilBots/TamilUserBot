@@ -32,16 +32,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("Bot"):
+        if event.query.user_id == bot.uid and query.startswith("вσт"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© Tamilbot Help",
-                text= f""" {DEFAULTUSER},
+                text= f"""вσт σƒ {DEFAULTUSER}
 
-                ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️, 
+                ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
 
-                🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """,
+                🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """
                 buttons=buttons,
                 link_preview=False,
             )
@@ -173,9 +173,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
-        sed = f"""Bot of {DEFAULTUSER},
+        sed = f"""вσт σƒ {DEFAULTUSER}
 
-        ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️, 
+        ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
 
         🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """
         await event.edit(message=sed, buttons=buttons)
