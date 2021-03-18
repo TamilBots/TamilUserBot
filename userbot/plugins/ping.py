@@ -4,7 +4,7 @@ from telethon import events
 from datetime import datetime
 
 from userbot import ALIVE_NAME
-from userbot.utils import admin_cmd, edit_or_reply
+from userbot.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilBot🇮🇳"
 
