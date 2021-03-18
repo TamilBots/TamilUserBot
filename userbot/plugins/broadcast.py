@@ -11,7 +11,7 @@ from userbot.plugins.sql_helper import broadcast_sql as sql
 from userbot.utils import admin_cmd, edit_or_reply
 from userbot import BOTLOG, BOTLOG_CHATID
 
-parse_pre = "html"
+parse_pre="html"
 
 
 
