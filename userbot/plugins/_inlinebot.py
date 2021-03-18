@@ -37,7 +37,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© TamilBot Help",
-                text="{}\n🔘ℓσα∂є∂ ρℓυgιηѕ: {}".format(query, len(CMD_LIST)),
+                text="{}\n🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
@@ -48,8 +48,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=f"**Showing Stats For {DEFAULTUSER}'s TamilBot** \nNote --> Only Owner Can Check This \n(C) @tamilsupport",
                 buttons=[
                     [custom.Button.inline("Show Stats ?", data="terminator")],
-                    [Button.url("Repo 🇮🇳", "https://github.com/ivetri/tamilbot")],
-                    [Button.url("Join Channel ❤️", "t.me/Tamilsupport")],
+                    [Button.url("Repo 🇮🇳", "https://github.com/ivetri/TamilBot")],
+                    [Button.url("Join Channel ❤️", "t.me/TamilSupport")],
                 ],
             )
             await event.answer([result])
@@ -169,11 +169,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
-        sed = f"""вσт σƒ {DEFAULTUSER}
+        sed = f"""𝔹𝕆𝕋 𝕆𝔽 {DEFAULTUSER}
 
-        ⚙️•TαɱιʅBσƚ Mҽɳυ•⚙️ 
+        ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ 
 
-        🔘ℓσα∂є∂ ρℓυgιηѕ: {len(CMD_LIST)} """
+        🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {len(CMD_LIST)} """
         await event.edit(message=sed, buttons=buttons)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
@@ -296,7 +296,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 5
+    number_of_rows = 6
     number_of_cols = 3
     helpable_plugins = []
     for p in loaded_plugins:
