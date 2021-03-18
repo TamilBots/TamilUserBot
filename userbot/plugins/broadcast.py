@@ -9,6 +9,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from userbot.plugins.sql_helper import broadcast_sql as sql
 from userbot.utils import admin_cmd
+from userbot.manager.utils import edit_delete
 from userbot import BOTLOG, BOTLOG_CHATID
 
 parse_pre="html"
