@@ -5,6 +5,7 @@ from datetime import datetime
 
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
+from userbot.manager.utils import edit_or_reply
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilBot🇮🇳"
 
