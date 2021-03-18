@@ -126,89 +126,25 @@ async def _(event):
             except YouBlockedUserError:
                 await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
 
-
-@borg.on(admin_cmd(pattern=r"plist ?(.*)", outgoing=True))
-async def get_users(show):
-    await show.delete()
-    if not show.text[0].isalpha() and show.text[0] not in ("/", "#", "@", "!"):
-        if not show.is_group:
-            await show.edit("Are you sure this is a group?")
-            return
-        info = await show.client.get_entity(show.chat_id)
-        title = info.title if info.title else "this chat"
-        mentions = "id,reason"
+@borg.on(admin_cmd("myfeds ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    async with event.client.conversation(bots) as conv:
         try:
-            if not show.pattern_match.group(1):
-                async for user in show.client.iter_participants(show.chat_id):
-                    if not user.deleted:
-                        mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
-                    else:
-                        mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message("/myfeds")
+            myfed = await conv.get_response()
+            if "file" in myfed.text:
+                await fedstat.click(0)
+                reply = await conv.get_response()
+                await event.client.forward_messages(event.chat_id, reply)
             else:
-                searchq = show.pattern_match.group(1)
-                async for user in show.client.iter_participants(
-                    show.chat_id, search=f"{searchq}"
-                ):
-                    if not user.deleted:
-                        mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
-                    else:
-                        mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
-        except ChatAdminRequiredError as err:
-            mentions += " " + str(err) + "\n"
-        try:
-            await bot.send_message(BOTLOG_CHATID, mentions)
-        except MessageTooLongError:
-            file = open("userslist.csv", "w+")
-            file.write(mentions)
-            file.close()
-            await show.client.send_file(
-                BOTLOG_CHATID,
-                "userslist.csv",
-                caption="Group Members in {}".format(title),
-                reply_to=show.id,
-            )
-
-
-@borg.on(admin_cmd(pattern=r"blist ?(.*)", outgoing=True))
-async def get_users(show):
-    await show.delete()
-    if not show.text[0].isalpha() and show.text[0] not in ("/", "#", "@", "!"):
-        if not show.is_group:
-            await show.edit("Are you sure this is a group?")
-            return
-        info = await show.client.get_entity(show.chat_id)
-        title = info.title if info.title else "this chat"
-        mentions = "id,reason"
-        try:
-            if not show.pattern_match.group(1):
-                async for user in show.client.iter_participants(show.chat_id):
-                    if not user.deleted:
-                        mentions += f"\n{user.id},⚠️Suspicious/Btc Scammer/Fraudulent activities #Massban🛑"
-                    else:
-                        mentions += f"\n{user.id},⚠️Suspicious/Btc Scammer/Fraudulent activities #Massban🛑"
-            else:
-                searchq = show.pattern_match.group(1)
-                async for user in show.client.iter_participants(
-                    show.chat_id, search=f"{searchq}"
-                ):
-                    if not user.deleted:
-                        mentions += f"\n{user.id},⚠️Suspicious/Btc Scammer/Fraudulent activities #Massban🛑"
-                    else:
-                        mentions += f"\n{user.id},⚠️Suspicious/Btc Scammer/Fraudulent activities #Massban🛑"
-        except ChatAdminRequiredError as err:
-            mentions += " " + str(err) + "\n"
-        try:
-            await bot.send_message(BOTLOG_CHATID, mentions)
-        except MessageTooLongError:
-            file = open("userslist.csv", "w+")
-            file.write(mentions)
-            file.close()
-            await show.client.send_file(
-                BOTLOG_CHATID,
-                "userslist.csv",
-                caption="Group Members in {}".format(title),
-                reply_to=show.id,
-            )
+                await event.client.forward_messages(event.chat_id, myfed)
+                await event.delete()
+        except YouBlockedUserError:
+            await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
 
 
 @borg.on(admin_cmd(pattern="bgban ?(.*)"))
