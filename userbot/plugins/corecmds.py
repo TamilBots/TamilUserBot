@@ -5,7 +5,7 @@ from pathlib import Path
 
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd, load_module, remove_plugin
-from userbot.manager.utils import edit_delete, edit_or_reply
+from userbot.manager.utils import edit_or_reply
 
 DELETE_TIMEOUT = 5
 thumb_image_path = "./resources/TamilBot.jpg"
