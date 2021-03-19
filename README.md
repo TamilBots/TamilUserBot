@@ -75,7 +75,7 @@ Click the below button to watch the video tutorial on deploying
 # FORK AT YOUR OWN RISK
 
 <details>
-<summary>The Normal Way</summary>
+<summary>⚙️The Normal Way⚙️</summary>
 <br>
 
 ### The Normal Way
@@ -105,7 +105,6 @@ class Development(Var):
   API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
 ```
 
-</details>
 
 ### UniBorg Configuration
 
@@ -124,3 +123,5 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
     - `APP_ID`:   You can get this value from https://my.telegram.org
     - `API_HASH`:   You can get this value from https://my.telegram.org
 - The userbot will not work without setting the mandatory vars.
+
+</details>
