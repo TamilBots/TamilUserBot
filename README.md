@@ -69,8 +69,7 @@ Click the below button to watch the video tutorial on deploying
 நீங்கள் சேனல் மற்றும் தேவையான அனைத்து படிகளையும் பின்பற்றியுள்ளீர்கள் என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள்.
 [Support group](https://t.me/Tamilsupport)
 
-### Speacial Thanks To paperplane For Their Assistant Modules Bases,
-### Thanks To Uniborg
+### Speacial Thanks To paperplane and Uniborg For Their Assistant Modules Bases,
 
 # FORK AT YOUR OWN RISK
 
