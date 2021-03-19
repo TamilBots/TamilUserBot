@@ -74,6 +74,10 @@ Click the below button to watch the video tutorial on deploying
 
 # FORK AT YOUR OWN RISK
 
+<details>
+<summary>The Normal Way</summary>
+<br>
+
 ### The Normal Way
 
 Simply clone the repository and run the main file:
@@ -100,6 +104,8 @@ class Development(Var):
   APP_ID = 6
   API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
 ```
+
+</details>
 
 ### UniBorg Configuration
 
