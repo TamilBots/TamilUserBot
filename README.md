@@ -42,8 +42,9 @@ Before clicking on deploy to heroku just click on fork and star just below
 
 Click the below button to watch the video tutorial on deploying
 
-<a href="https://youtu.be/watch?v=fqhCz-eRkgA"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
-<a href="https://youtu.be/watch?v=fqhCz-eRkgA"><img src="https://img.shields.io/youtube/views/watch?v=fqhCz-eRkgA?style=social">
+<a href="https://youtu.be/fqhCz-eRkgA"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
+<a href="https://youtu.be/fqhCz-eRkgA"><img src="https://img.shields.io/youtube/views/fqhCz-eRkgA?style=social">
+    
     
 ###  GET STRING SESSION FROM REPL RUN
 
