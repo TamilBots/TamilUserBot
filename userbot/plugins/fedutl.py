@@ -25,7 +25,7 @@ bot = "@MissRose_bot"
 
 naam = str(ALIVE_NAME)
 
-BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+BOTLOG_CHATID = Config.PRIVATE_GROUP_ID
 
 G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", None)
 if G_BAN_LOGGER_GROUP:
