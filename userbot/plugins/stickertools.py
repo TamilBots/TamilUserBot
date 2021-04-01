@@ -29,6 +29,9 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
+from telethon.errors import (ChatSendInlineForbiddenError,
+                             ChatSendStickersForbiddenError)
+
 from userbot import CMD_HELP, bot
 from userbot.utils import admin_cmd, sudo_cmd
 from userbot.manager.utils import edit_or_reply
@@ -462,7 +465,7 @@ async def waifu(animu):
     waifus = [32, 33, 37, 40, 41, 42, 58, 20]
     finalcall = "#" + (str(random.choice(waifus)))
     try:
-        sticcers = await ultroid_bot.inline_query(
+        sticcers = await tamil_bot.inline_query(
             "stickerizerbot", f"{finalcall}{(deEmojify(text))}"
         )
         await sticcers[0].click(
