@@ -1,12 +1,19 @@
 # modified by @saravanakrish
 
+import os 
 import io
 import math
 import random
+import logging
+import requests
+import base64
+import json
+import telethon
+import emoji
 import urllib.request
 from os import remove
+from io import BytesIO
 
-import emoji
 from PIL import Image
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import (
@@ -18,6 +25,10 @@ from telethon.tl.types import (
 
 from userbot import CMD_HELP, bot
 from userbot.utils import admin_cmd
+
+
+logger = logging.getLogger(__name__)
+
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
