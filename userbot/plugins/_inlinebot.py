@@ -160,6 +160,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await tgbot.send_message(
             LOG_CHAT,
             f"Hello{DEFAULTUSER}, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked."
+
         )
    
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
@@ -201,7 +202,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await tgbot.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
-            buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")],
+            buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
         )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
@@ -216,7 +217,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await tgbot.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
-            buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")],
+            buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
         )
         
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
