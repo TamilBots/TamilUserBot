@@ -467,7 +467,7 @@ async def waifu(animu):
     waifus = [32, 33, 37, 40, 41, 42, 58, 20]
     finalcall = "#" + (str(random.choice(waifus)))
     try:
-        sticcers = await tamil_bot.inline_query(
+        sticcers = await bot.inline_query(
             "stickerizerbot", f"{finalcall}{(deEmojify(text))}"
         )
         await sticcers[0].click(
