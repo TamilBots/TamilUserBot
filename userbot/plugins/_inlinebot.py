@@ -158,7 +158,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit("You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By TamilBot. 🇮🇳")
         await borg(functions.contacts.BlockRequest(event.query.user_id))
         await tgbot.send_message(
-            BLOG_CHAT,
+            LOG_CHAT,
             f"Hello{DEFAULTUSER}, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked."
         )
    
