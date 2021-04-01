@@ -1,6 +1,10 @@
 # modified by @saravanakrish
 
-import os 
+import os
+import re
+import time
+import zipfile
+from random import choice
 import io
 import math
 import random
@@ -14,6 +18,7 @@ import textwrap
 import urllib.request
 from os import remove
 from io import BytesIO
+import PIL.ImageOps
 
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.functions.messages import GetStickerSetRequest
@@ -30,6 +35,8 @@ from userbot.manager.utils import edit_or_reply
 
 logger = logging.getLogger(__name__)
 
+from telethon.tl.types import Channel, PollAnswer
+from validators.url import url
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
