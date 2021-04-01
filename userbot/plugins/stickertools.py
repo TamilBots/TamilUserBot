@@ -26,7 +26,7 @@ from telethon.tl.types import (
 
 from userbot import CMD_HELP, bot
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-
+from . import deEmojify, waifutxt
 
 logger = logging.getLogger(__name__)
 
@@ -359,7 +359,6 @@ async def get_pack_info(event):
     await event.edit(OUTPUT)
 
 @borg.on(admin_cmd(outgoing=True, pattern="sttxt(?: |$)(.*)"))
-@borg.on(sudo_cmd(allow_sudo=True, pattern="sttxt(?: |$)(.*)"))
 async def waifu(animu):
     text = animu.pattern_match.group(1)
     reply_to_id = animu.message
@@ -382,7 +381,6 @@ async def waifu(animu):
 
 
 @borg.on(admin_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)
