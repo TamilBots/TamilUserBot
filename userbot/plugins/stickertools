@@ -11,29 +11,6 @@ from userbot.util import admin_cmd
 
 logger = logging.getLogger(__name__)
 
-
-if 1 == 1:
-    strings = {
-        "name": "Quotes",
-        "api_token_cfg_doc": "API Key/Token for Quotes.",
-        "api_url_cfg_doc": "API URL for Quotes.",
-        "colors_cfg_doc": "Username colors",
-        "default_username_color_cfg_doc": "Default color for the username.",
-        "no_reply": "<b>You didn't reply to a message.</b>",
-        "no_template": "<b>You didn't specify the template.</b>",
-        "delimiter": "</code>, <code>",
-        "server_error": "<b>Server error. Please report to developer.</b>",
-        "invalid_token": "<b>You've set an invalid token.</b>",
-        "unauthorized": "<b>You're unauthorized to do this.</b>",
-        "not_enough_permissions": "<b>Wrong template. You can use only the default one.</b>",
-        "templates": "<b>Available Templates:</b> <code>{}</code>",
-        "cannot_send_stickers": "<b>You cannot send stickers in this chat.</b>",
-        "admin": "admin",
-        "creator": "creator",
-        "hidden": "hidden",
-        "channel": "Channel"
-    }
-
     config = dict({"api_token": os.environ.get("API_TOKEN"), 
                                           "api_url": "http://api.antiddos.systems",
                                           "username_colors": ["#fb6169", "#faa357", "#b48bf2", "#85de85",
@@ -206,6 +183,27 @@ def get_markdown(reply):
         markdown.append(md_item)
     return markdown
 
+if 1 == 1:
+    strings = {
+        "name": "Quotes",
+        "api_token_cfg_doc": "API Key/Token for Quotes.",
+        "api_url_cfg_doc": "API URL for Quotes.",
+        "colors_cfg_doc": "Username colors",
+        "default_username_color_cfg_doc": "Default color for the username.",
+        "no_reply": "<b>You didn't reply to a message.</b>",
+        "no_template": "<b>You didn't specify the template.</b>",
+        "delimiter": "</code>, <code>",
+        "server_error": "<b>Server error. Please report to developer.</b>",
+        "invalid_token": "<b>You've set an invalid token.</b>",
+        "unauthorized": "<b>You're unauthorized to do this.</b>",
+        "not_enough_permissions": "<b>Wrong template. You can use only the default one.</b>",
+        "templates": "<b>Available Templates:</b> <code>{}</code>",
+        "cannot_send_stickers": "<b>You cannot send stickers in this chat.</b>",
+        "admin": "admin",
+        "creator": "creator",
+        "hidden": "hidden",
+        "channel": "Channel"
+    }
 
 @borg.on(admin_cmd(pattern="kang ?(.*)"))
 async def kang(args):
