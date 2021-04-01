@@ -41,6 +41,8 @@ logger = logging.getLogger(__name__)
 from telethon.tl.types import Channel, PollAnswer
 from validators.url import url
 
+eor = edit_or_reply
+
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
     "Plagiarising hehe...",
