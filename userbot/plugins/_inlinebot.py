@@ -200,7 +200,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
         await tgbot.send_message(
             LOG_CHAT, 
-            f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You."
+            f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
+            buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")],
         )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
@@ -214,7 +215,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit("Ok, Wait. You can Ask After Master Approves You. Kindly, Wait.") 
         await tgbot.send_message(
             LOG_CHAT, 
-            f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Ask You Something."
+            f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
+            buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")],
         )
         
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
