@@ -25,7 +25,8 @@ from telethon.tl.types import (
 )
 
 from userbot import CMD_HELP, bot
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import admin_cmd, sudo_cmd
+from userbot.manager.utils import edit_or_reply
 from . import deEmojify, waifutxt
 
 logger = logging.getLogger(__name__)
