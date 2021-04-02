@@ -423,6 +423,6 @@ CMD_HELP.update(
     \n•  **Function : **__Shows you the total information of the required chat.__"
     \n\n•  **Syntax : **`.get_id` or `.id`\
     \n•  **Function : **__if given input then shows id of that given chat/channel/user else if you reply to user then shows id of the replied user \
-    along with current chat id and if not replied to user or given input then just show id of the chat where you used the command__"
+     along with current chat id and if not replied to user or given input then just show id of the chat where you used the command__"
     }
 )
