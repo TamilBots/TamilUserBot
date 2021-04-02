@@ -4,7 +4,7 @@ from datetime import datetime
 
 from telethon import events
 from telethon.tl import functions, types
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot import BOTLOG, BOTLOG_CHATID
 
@@ -138,3 +138,14 @@ async def _(event):
                 BOTLOG_CHATID,
                 f"#AFKTRUE \nSet AFK mode to True, and Reason is {reason}",
             )
+
+CMD_HELP.update(
+    {
+        "afk": "**Plugin : **`afk`\
+        \n\n**Syntax : **`.afk [Optional Reason]`\
+\n**Usage : **Sets you as afk.\nReplies to anyone who tags/PM's \
+you telling them that you are AFK(reason).\n\nSwitches off AFK when you type back anything, anywhere.\
+\nafk means away from keyboard/keypad.\
+"
+    }
+)
