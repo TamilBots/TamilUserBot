@@ -15,11 +15,12 @@ async def _(event):
     await event.delete()
 
 
- CMD_HELP.update(
-     {
-         "tagall": """**Plugin : **`tagall`  
+CMD_HELP.update(
+    {
+        "tagall": """**Plugin : **`tagall`  
 
    •  **Syntax : **`.tagall`
    •  **Function : **__tags recent 100 persons in the group may not work for all__ 
-     }
+ """
+    }
  )
