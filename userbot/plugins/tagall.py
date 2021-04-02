@@ -13,11 +13,13 @@ async def _(event):
         mentions += f"[\u2063](tg://user?id={x.id})"
     await event.reply(mentions)
     await event.delete()
-CMD_HELP.update(
-    {
-        "tagall": """**Plugin : **`tagall`  
 
-  •  **Syntax : **`.tagall`
-  •  **Function : **__tags recent 100 persons in the group may not work for all__ 
-    }
-)
+
+ CMD_HELP.update(
+     {
+         "tagall": """**Plugin : **`tagall`  
+
+   •  **Syntax : **`.tagall`
+   •  **Function : **__tags recent 100 persons in the group may not work for all__ 
+     }
+ )
