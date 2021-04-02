@@ -740,10 +740,10 @@ CMD_HELP.update({
 \nUsage: Mutes the person in the chat, works on admins too.\
 \n\n.unmute <username/reply>\
 \nUsage: Removes the person from the muted list.\
-\n\n.gmute <username/reply> <reason (optional)>\
-\nUsage: Mutes the person in all groups you have in common with them.\
-\n\n.ungmute <username/reply>\
-\nUsage: Reply someone's message with .ungmute to remove them from the gmuted list.\
+\n\n.kick <username/reply> <reason (optional)>\
+\nUsage: kick the person form group.\
+\n\n.pin <username/reply>\
+\nUsage: pin a message in current group.\
 \n\n.delusers\
 \nUsage: Searches for deleted accounts in a group. Use .delusers clean to remove deleted accounts from the group.\
 \n\n.admins\
