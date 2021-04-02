@@ -10,7 +10,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from userbot.plugins.sql_helper import broadcast_sql as sql
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_delete, edit_or_reply
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 
 parse_pre="html"
 
@@ -341,3 +341,33 @@ async def catbroadcast_delete(event):
             parse_mode=parse_pre,
         )
 
+CMD_HELP.update(
+    {
+        "broadcast": """**Plugin : ** `broadcast`
+
+  •  **Syntax : **`.sendto category_name`
+  •  **Function : **__will send the replied message to all the chats in give category__
+
+  •  **Syntax : **`.fwdto category_name`
+  •  **Function : **__will forward the replied message to all the chats in give category__
+
+  •  **Syntax : **`.addto category_name`
+  •  **Function : **__It will add this chat/user/channel to the category of the given name__
+
+  •  **Syntax : **`.rmfrom category_name`
+  •  **Function : **__To remove the Chat/user/channel from the given category name__
+
+  •  **Syntax : **`.list category_name`
+  •  **Function : **__Will show the list of all chats in the given category__
+
+  •  **Syntax : **`.listall`
+  •  **Function : **__Will show the list of all category names__
+
+  •  **Syntax : **`.frmfrom category_name chat_id`
+  •  **Function : **__To force remove the given chat_id from the given category name usefull when you left that chat or banned you there__
+
+  •  **Syntax : **`delc category_name`
+  •  **Function : **__Deletes the category completely in database__
+"""
+    }
+)
