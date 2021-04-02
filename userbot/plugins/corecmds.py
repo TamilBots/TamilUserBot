@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd, load_module, remove_plugin
 from userbot.manager.utils import edit_or_reply
 
@@ -109,3 +109,26 @@ async def load(event):
             event,
             f"Could not load {shortname} because of the following error.\n{str(e)}",
         )
+
+CMD_HELP.update(
+    {
+        "corecmds": """**Plugin : **`corecmds`
+
+  •  **Syntax : **`.install`
+  •  **Function : **__Reply to any external plugin to install in bot__ 
+  
+  •  **Syntax : **`.load <plugin name>`
+  •  **Function : **__To load that plugin again__
+  
+  •  **Syntax : **`.send <plugin name>`  
+  •  **Function : **__to send any plugin__
+  
+  •  **Syntax : **`.unload <plugin name>`
+  •  **Function : **__To stop functioning of that plugin__ 
+  
+  •  **Syntax : **`.uninstall <plugin name>`
+  •  **Function : **__To stop functioning of that plugin and remove that plugin from bot__ 
+  
+**Note : **__To unload a plugin permenantly from bot set __`NO_LOAD`__ var in heroku with that plugin name with space between plugin names__"""
+    }
+)
