@@ -1,6 +1,6 @@
 from userbot import CMD_LIST, ALIVE_NAME
 from userbot.utils import admin_cmd
-
+from userbot.manager.utils import edit_or_reply
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 
 #@command(pattern="^.help ?(.*)")
@@ -55,3 +55,20 @@ async def cmd_list(event):
                 hide_via=True
             )
             await event.delete()
+
+@borg.on(admin_cmd(outgoing=True, pattern="info ?(.*)"))
+async def info(event):
+    """ For .info command,"""
+    args = event.pattern_match.group(1).lower()
+    if args:
+        if args in CMD_HELP:
+            await edit_or_reply(event, str(CMD_HELP[args]))
+        else:
+            await edit_or_reply(event, "Please specify a valid plugin name.")
+    else:
+        string = "**Please specify which plugin do you want help for !!**\
+            \n**Usage:** `.info` <plugin name>\n\n"
+        for i in sorted(CMD_HELP):
+            string += "🔹`" + str(i)
+            string += "`   "
+        await edit_or_reply(event, string)
