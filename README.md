@@ -56,7 +56,7 @@ Click the below button to watch the video tutorial on deploying
 
 @TamilBots
 
-GitHub.com/tamilbots/tamilbot
+Https://www.GitHub.com/tamilbots/tamilbot
 
 ### குழுக்கள் மற்றும் ஆதரவு:
 
