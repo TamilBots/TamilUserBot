@@ -1,11 +1,11 @@
 ### Tamil UserBot 🤖
 
 <p align="center">
-    <a href="https://app.codacy.com/manual/imsaravanakrish/tamilbot/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/imsaravanakrish/tamilbot"> <img src="https://img.shields.io/github/repo-size/imsaravanakrish/tamilbot?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/imsaravanakrish/tamilbot/commits/prince"> <img src="https://img.shields.io/github/last-commit/imsaravanakrish/tamilbot?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/imsaravanakrish/tamilbot/issues"> <img src="https://img.shields.io/github/issues/imsaravanakrish/tamilbot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/imsaravanakrish/tamilbot/network/members"> <img src="https://img.shields.io/github/forks/imsaravanakrish/tamilbot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
+    <a href="https://app.codacy.com/manual/tamilbots/tamilbot/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/tamilbots/tamilbot"> <img src="https://img.shields.io/github/repo-size/tamilbots/tamilbot?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/tamilbots/tamilbot/commits/prince"> <img src="https://img.shields.io/github/last-commit/tamilbots/tamilbot?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/tamilbots/tamilbot/issues"> <img src="https://img.shields.io/github/issues/tamilbots/tamilbot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/tamilbots/tamilbot/network/members"> <img src="https://img.shields.io/github/forks/tamilbots/tamilbot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
@@ -22,16 +22,16 @@
 Before clicking on deploy to heroku just click on fork and star just below
 
 <p align="center">
-  <a href="https://github.com/imsaravanakrish/tamilbot/fork">
-    <img src="https://img.shields.io/github/forks/imsaravanakrish/tamilbot?label=Fork&style=social">
+  <a href="https://github.com/tamilbots/tamilbot/fork">
+    <img src="https://img.shields.io/github/forks/tamilbots/tamilbot?label=Fork&style=social">
     
   </a>
-  <a href="https://github.com/imsaravanakrish/tamilbot">
-    <img src="https://img.shields.io/github/stars/imsaravanakrish/tamilbot?style=social">
+  <a href="https://github.com/tamilbots/tamilbot">
+    <img src="https://img.shields.io/github/stars/tamilbots/tamilbot?style=social">
   </a>
 </p>
 
-[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/imsaravanakrish/tamilbot)
+[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/tamilbots/tamilsupport)
 
 ## Give your 💙 and support 
 
