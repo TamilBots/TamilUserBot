@@ -57,18 +57,18 @@ async def gspider(tamilbot):
     if not sender.id == me.id:
         enna = await lol.reply("Gbanning This User !")
     else:
-        enna = await lol.edit("Wait Processing.....")
+        tamil = await lol.edit("Wait Processing.....")
     me = await tamilbot.client.get_me()
-    await enna.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
+    await tamil.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await tamilbot.get_chat()
     a = b = 0
-    if fridaybot.is_private:
+    if tamilbot.is_private:
         user = tamilbot.chat
         reason = tamilbot.pattern_match.group(1)
     else:
-        fridaybot.chat.title
+        tmilbot.chat.title
     try:
         user, reason = await get_full_user(tamilbot)
     except:
@@ -77,10 +77,10 @@ async def gspider(tamilbot):
         if not reason:
             reason = "Private"
     except:
-        return await enna.edit(f"**Something W3NT Wrong 🤔**")
+        return await tamil.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1169076058 or user.id == 1492186775:
-            return await enna.edit(
+            return await tamil.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )
         try:
@@ -100,17 +100,17 @@ async def gspider(tamilbot):
             try:
                 await tamilbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await enna.edit(f"**GBANNED⚠️ \n🚫Total Affected Chats **: `{a}`")
+                await tamil.edit(f"**GBANNED⚠️ \n🚫Total Affected Chats **: `{a}`")
             except:
                 b += 1
     else:
-        await enna.edit(f"**Reply to a user !!**")
+        await tamil.edit(f"**Reply to a user !!**")
     try:
         if gmute(user.id) is False:
-            return await enna.edit(f"**Error! User probably already gbanned.**")
+            return await tamil.edit(f"**Error! User probably already gbanned.**")
     except:
         pass
-    return await enna.edit(
+    return await tamil.edit(
         f"**⚠️Gbanned\nUSER👤[{user.first_name}](tg://user?id={user.id}) \n🚫Affected Chats : {a} **"
     )
 
@@ -121,11 +121,11 @@ async def gspider(tamilbot):
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        enna = await lol.reply("`Wait Let Me Process`")
+        tamil = await lol.reply("`Wait Let Me Process`")
     else:
-        enna = await lol.edit("One Min ! ")
+        tamil = await lol.edit("One Min ! ")
     me = await tamilbot.client.get_me()
-    await enna.edit(f"Trying To Ungban User !")
+    await tamil.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await tamilbot.get_chat()
@@ -143,10 +143,10 @@ async def gspider(tamilbot):
         if not reason:
             reason = "Private"
     except:
-        return await enna.edit("Someting Went Wrong 🤔")
+        return await tamil.edit("Someting Went Wrong 🤔")
     if user:
         if user.id == 1169076058 or user.id == 1492186775:
-            return await enna.edit("**You Cant Ungban A Dev !**")
+            return await tamil.edit("**You Cant Ungban A Dev !**")
         try:
             from userbot.plugins.sql_helper.gmute_sql import ungmute
         except:
@@ -164,17 +164,17 @@ async def gspider(tamilbot):
             try:
                 await tamilbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await enna.edit(f"**UNGBANNING\nAFFECTED CHATS - {a} **")
+                await tamil.edit(f"**UNGBANNING\nAFFECTED CHATS - {a} **")
             except:
                 b += 1
     else:
-        await enna.edit("**Reply to a user !!**")
+        await tamil.edit("**Reply to a user !!**")
     try:
         if ungmute(user.id) is False:
-            return await enna.edit("**Error! User probably already ungbanned.**")
+            return await tamil.edit("**Error! User probably already ungbanned.**")
     except:
         pass
-    return await enna.edit(
+    return await tamil.edit(
         f"**🔹UNGBANNED\n🔹USER - [{user.first_name}](tg://user?id={user.id}) \n🔹CHATS : {a} **"
     )
 
