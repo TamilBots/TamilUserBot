@@ -50,131 +50,131 @@ async def get_user_from_id(user, event):
 
 
 @borg.on(admin_cmd(pattern="gban ?(.*)"))
-async def gspider(fridaybot):
-    lol = fridaybot
+async def gspider(tamilbot):
+    lol = tamilbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("Gbanning This User !")
+        enna = await lol.reply("Gbanning This User !")
     else:
-        friday = await lol.edit("Wait Processing.....")
-    me = await fridaybot.client.get_me()
-    await friday.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
+        enna = await lol.edit("Wait Processing.....")
+    me = await tamilbot.client.get_me()
+    await enna.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await fridaybot.get_chat()
+    await tamilbot.get_chat()
     a = b = 0
     if fridaybot.is_private:
-        user = fridaybot.chat
-        reason = fridaybot.pattern_match.group(1)
+        user = tamilbot.chat
+        reason = tamilbot.pattern_match.group(1)
     else:
         fridaybot.chat.title
     try:
-        user, reason = await get_full_user(fridaybot)
+        user, reason = await get_full_user(tamilbot)
     except:
         pass
     try:
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit(f"**Something W3NT Wrong 🤔**")
+        return await enna.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1169076058 or user.id == 1492186775:
-            return await friday.edit(
+            return await enna.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )
         try:
-            from fridaybot.modules.sql_helper.gmute_sql import gmute
+            from userbot.plugins.sql_helper.gmute_sql import gmute
         except:
             pass
         try:
-            await fridaybot.client(BlockRequest(user))
+            await tamilbot.client(BlockRequest(user))
         except:
             pass
-        testfridaybot = [
+        testtamilbot = [
             d.entity.id
-            for d in await fridaybot.client.get_dialogs()
+            for d in await tamilbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testfridaybot:
+        for i in testtamilbot:
             try:
-                await fridaybot.client.edit_permissions(i, user, view_messages=False)
+                await tamilbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await friday.edit(f"**GBANNED⚠️ \n🚫Total Affected Chats **: `{a}`")
+                await enna.edit(f"**GBANNED⚠️ \n🚫Total Affected Chats **: `{a}`")
             except:
                 b += 1
     else:
-        await friday.edit(f"**Reply to a user !!**")
+        await enna.edit(f"**Reply to a user !!**")
     try:
         if gmute(user.id) is False:
-            return await friday.edit(f"**Error! User probably already gbanned.**")
+            return await enna.edit(f"**Error! User probably already gbanned.**")
     except:
         pass
-    return await friday.edit(
+    return await enna.edit(
         f"**⚠️Gbanned\nUSER👤[{user.first_name}](tg://user?id={user.id}) \n🚫Affected Chats : {a} **"
     )
 
 
 @borg.on(admin_cmd(pattern="ungban ?(.*)"))
-async def gspider(fridaybot):
-    lol = fridaybot
+async def gspider(tamilbot):
+    lol = tamilbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("`Wait Let Me Process`")
+        enna = await lol.reply("`Wait Let Me Process`")
     else:
-        friday = await lol.edit("One Min ! ")
-    me = await fridaybot.client.get_me()
-    await friday.edit(f"Trying To Ungban User !")
+        enna = await lol.edit("One Min ! ")
+    me = await tamilbot.client.get_me()
+    await enna.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await fridaybot.get_chat()
+    await tamilbot.get_chat()
     a = b = 0
-    if fridaybot.is_private:
-        user = fridaybot.chat
-        reason = fridaybot.pattern_match.group(1)
+    if tamilbot.is_private:
+        user = tamilbot.chat
+        reason = tamilbot.pattern_match.group(1)
     else:
-        fridaybot.chat.title
+        tamilbot.chat.title
     try:
-        user, reason = await get_full_user(fridaybot)
+        user, reason = await get_full_user(tamilbot)
     except:
         pass
     try:
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit("Someting Went Wrong 🤔")
+        return await enna.edit("Someting Went Wrong 🤔")
     if user:
         if user.id == 1169076058 or user.id == 1492186775:
-            return await friday.edit("**You Cant Ungban A Dev !**")
+            return await enna.edit("**You Cant Ungban A Dev !**")
         try:
-            from fridaybot.modules.sql_helper.gmute_sql import ungmute
+            from userbot.plugins.sql_helper.gmute_sql import ungmute
         except:
             pass
         try:
-            await fridaybot.client(UnblockRequest(user))
+            await tamilbot.client(UnblockRequest(user))
         except:
             pass
-        testfridaybot = [
+        testtamilbot = [
             d.entity.id
-            for d in await fridaybot.client.get_dialogs()
+            for d in await tamilbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testfridaybot:
+        for i in testtamilbot:
             try:
-                await fridaybot.client.edit_permissions(i, user, send_messages=True)
+                await tamilbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await friday.edit(f"**UNGBANNING\nAFFECTED CHATS - {a} **")
+                await enna.edit(f"**UNGBANNING\nAFFECTED CHATS - {a} **")
             except:
                 b += 1
     else:
-        await friday.edit("**Reply to a user !!**")
+        await enna.edit("**Reply to a user !!**")
     try:
         if ungmute(user.id) is False:
-            return await friday.edit("**Error! User probably already ungbanned.**")
+            return await enna.edit("**Error! User probably already ungbanned.**")
     except:
         pass
-    return await friday.edit(
+    return await enna.edit(
         f"**🔹UNGBANNED\n🔹USER - [{user.first_name}](tg://user?id={user.id}) \n🔹CHATS : {a} **"
     )
 
@@ -183,7 +183,7 @@ async def gspider(fridaybot):
 async def handler(rkG):
     if rkG.user_joined or rkG.user_added:
         try:
-            from fridaybot.modules.sql_helper.gmute_sql import is_gmuted
+            from userbot.modules.sql_helper.gmute_sql import is_gmuted
 
             guser = await rkG.get_user()
             gmuted = is_gmuted(guser.id)
