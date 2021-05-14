@@ -157,7 +157,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         him_id = event.query.user_id
         await event.edit("You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By TamilBot. 🇮🇳")
         await borg(functions.contacts.BlockRequest(event.query.user_id))
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT,
             f"Hello{DEFAULTUSER}, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked."
 
@@ -199,7 +199,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.get_chat()
         him_id = event.query.user_id
         await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
             buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
@@ -214,7 +214,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.get_chat()
         him_id = event.query.user_id
         await event.edit("Ok, Wait. You can Ask After Master Approves You. Kindly, Wait.") 
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
             buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
