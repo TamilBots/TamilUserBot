@@ -200,12 +200,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.get_chat()
         him_id = event.query.user_id
         await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
-        await event.send_message(
+        await event.client.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
+            link_preview=False,
+            parse_mode="html",
             buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
         )
 
+            
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
         if event.query.user_id == bot.uid:
@@ -218,6 +221,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await borg.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
+            link_preview=False,
+            parse_mode="html",
             buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
         )
         
