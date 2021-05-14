@@ -22,16 +22,16 @@
 Before clicking on deploy to heroku just click on fork and star just below
 
 <p align="center">
-  <a href="https://github.com/tamilbots/tamilbot/fork">
-    <img src="https://img.shields.io/github/forks/tamilbots/tamilbot?label=Fork&style=social">
+  <a href="https://github.com/tamilbots/tamiluserbot/fork">
+    <img src="https://img.shields.io/github/forks/tamilbots/tamiluserbot?label=Fork&style=social">
     
   </a>
-  <a href="https://github.com/tamilbots/tamilbot">
-    <img src="https://img.shields.io/github/stars/tamilbots/tamilbot?style=social">
+  <a href="https://github.com/tamilbots/tamiluserbot">
+    <img src="https://img.shields.io/github/stars/tamilbots/tamiluserbot?style=social">
   </a>
 </p>
 
-[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/tamilbots/tamilsupport)
+[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/tamilbots/tamilbot)
 
 ## Give your 💙 and support 
 
