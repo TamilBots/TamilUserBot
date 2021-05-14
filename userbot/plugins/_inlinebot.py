@@ -21,6 +21,7 @@ LOG_CHAT = Config.PRIVATE_GROUP_ID
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
+borg = bot.uid
 
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 
@@ -199,7 +200,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.get_chat()
         him_id = event.query.user_id
         await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
-        await borg.send_message(
+        await event.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
             buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
