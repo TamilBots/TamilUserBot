@@ -85,7 +85,7 @@ async def _(event):
         r_msg = await event.get_reply_message()
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
-            await starkisgreat.edit(
+            await event.edit(
                 "Current Chat ID: `{}`\nFrom User ID: `{}`\nBot API File ID: `{}`".format(
                     str(event.chat_id), str(r_msg.sender_id), bot_api_file_id
                 )
@@ -95,7 +95,7 @@ async def _(event):
                     str(event.chat_id), str(r_msg.sender_id)
                 )
     else:
-        await starkisgreat.edit("Current Chat ID: `{}`".format(str(event.chat_id)))
+        await event.edit("Current Chat ID: `{}`".format(str(event.chat_id)))
 
 
 @borg.on(admin_cmd("get_bot ?(.*)"))
