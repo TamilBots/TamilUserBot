@@ -78,7 +78,6 @@ async def _(event):
 
 @borg.on(admin_cmd("get_id"))
 async def _(event):
-
     if event.fwd_from:
         return
     if event.reply_to_msg_id:
