@@ -55,9 +55,9 @@ async def gspider(fridaybot):
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("Gbanning This User !")
+        event = await lol.reply("Gbanning This User !")
     else:
-        friday = await lol.edit("Wait Processing.....")
+        event = await lol.edit("Wait Processing.....")
     me = await fridaybot.client.get_me()
     await event.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
@@ -121,9 +121,9 @@ async def gspider(fridaybot):
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("`Wait Let Me Process`")
+        event = await lol.reply("`Wait Let Me Process`")
     else:
-        friday = await lol.edit("One Min ! ")
+        event = await lol.edit("One Min ! ")
     me = await fridaybot.client.get_me()
     await event.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
