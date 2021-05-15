@@ -17,21 +17,21 @@ parse_pre="html"
 
 
 @borg.on(admin_cmd(pattern="sendto(?: |$)(.*)", command="sendto"))
-async def catbroadcast_send(event):
+async def userbroadcast_send(event):
     if event.fwd_from:
         return
-    catinput_str = event.pattern_match.group(1)
-    if not catinput_str:
+    userinput_str = event.pattern_match.group(1)
+    if not userinput_str:
         return await edit_delete(
             event, "To which category should i send this message", parse_mode=parse_pre
         )
     reply = await event.get_reply_message()
-    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    user = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     if not reply:
         return await edit_delete(
             event, "what should i send to to this category ?", parse_mode=parse_pre
         )
-    keyword = catinput_str.lower()
+    keyword = userinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
     group_ = Get(cat)
     if no_of_chats == 0:
@@ -41,7 +41,7 @@ async def catbroadcast_send(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    catevent = await edit_or_reply(
+    userevent = await edit_or_reply(
         event,
         "sending this message to all groups in the category",
         parse_mode=parse_pre,
@@ -61,7 +61,7 @@ async def catbroadcast_send(event):
             LOGS.info(str(e))
         await sleep(0.5)
     resultext = f"`The message was sent to {i} chats out of {no_of_chats} chats in category {keyword}.`"
-    await catevent.edit(resultext)
+    await userevent.edit(resultext)
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -71,23 +71,23 @@ async def catbroadcast_send(event):
 
 
 @borg.on(admin_cmd(pattern="fwdto(?: |$)(.*)", command="fwdto"))
-async def catbroadcast_send(event):
+async def userbroadcast_send(event):
     if event.fwd_from:
         return
-    catinput_str = event.pattern_match.group(1)
-    if not catinput_str:
+    userinput_str = event.pattern_match.group(1)
+    if not userinput_str:
         return await edit_delete(
             event, "To which category should i send this message", parse_mode=parse_pre
         )
     reply = await event.get_reply_message()
-    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    user = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     if not reply:
         return await edit_delete(
             event, "what should i send to to this category ?", parse_mode=parse_pre
         )
-    keyword = catinput_str.lower()
+    keyword = userinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
-    group_ = Get(cat)
+    group_ = Get(user)
     if no_of_chats == 0:
         return await edit_delete(
             event,
@@ -95,7 +95,7 @@ async def catbroadcast_send(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    catevent = await edit_or_reply(
+    userevent = await edit_or_reply(
         event,
         "sending this message to all groups in the category",
         parse_mode=parse_pre,
@@ -125,15 +125,15 @@ async def catbroadcast_send(event):
 
 
 @borg.on(admin_cmd(pattern="addto(?: |$)(.*)", command="addto"))
-async def catbroadcast_add(event):
+async def userbroadcast_add(event):
     if event.fwd_from:
         return
-    catinput_str = event.pattern_match.group(1)
-    if not catinput_str:
+    userinput_str = event.pattern_match.group(1)
+    if not userinput_str:
         return await edit_delete(
             event, "In which category should i add this chat", parse_mode=parse_pre
         )
-    keyword = catinput_str.lower()
+    keyword = userinput_str.lower()
     check = sql.is_in_broadcastlist(keyword, event.chat_id)
     if check:
         return await edit_delete(
@@ -161,15 +161,15 @@ async def catbroadcast_add(event):
             )
 
 @borg.on(admin_cmd(pattern="rmfrom(?: |$)(.*)", command="rmfrom"))
-async def catbroadcast_remove(event):
+async def userbroadcast_remove(event):
     if event.fwd_from:
         return
-    catinput_str = event.pattern_match.group(1)
-    if not catinput_str:
+    userinput_str = event.pattern_match.group(1)
+    if not userinput_str:
         return await edit_delete(
             event, "From which category should i remove this chat", parse_mode=parse_pre
         )
-    keyword = catinput_str.lower()
+    keyword = userinput_str.lower()
     check = sql.is_in_broadcastlist(keyword, event.chat_id)
     if not check:
         return await edit_delete(
@@ -198,11 +198,11 @@ async def catbroadcast_remove(event):
 
 
 @borg.on(admin_cmd(pattern="list(?: |$)(.*)", command="list"))
-async def catbroadcast_list(event):
+async def userbroadcast_list(event):
     if event.fwd_from:
         return
-    catinput_str = event.pattern_match.group(1)
-    if not catinput_str:
+    userinput_str = event.pattern_match.group(1)
+    if not userinput_str:
         return await edit_delete(
             event,
             "Which category Chats should i list ?\nCheck .listall",
@@ -217,7 +217,7 @@ async def catbroadcast_list(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    catevent = await edit_or_reply(
+    userevent = await edit_or_reply(
         event, f"Fetching info of the category {keyword}", parse_mode=parse_pre
     )
     resultlist = f"**The category '{keyword}' have '{no_of_chats}' chats and these are listed below :**\n\n"
@@ -240,7 +240,7 @@ async def catbroadcast_list(event):
 
 
 @borg.on(admin_cmd(pattern="listall$", command="listall"))
-async def catbroadcast_list(event):
+async def userbroadcast_list(event):
     if event.fwd_from:
         return
     if sql.num_broadcastlist_chats() == 0:
@@ -257,10 +257,10 @@ async def catbroadcast_list(event):
 
 
 @borg.on(admin_cmd(pattern="frmfrom(?: |$)(.*)", command="frmfrom"))
-async def catbroadcast_remove(event):
+async def userbroadcast_remove(event):
     if event.fwd_from:
         return
-    catinput_str = event.pattern_match.group(1)
+    userinput_str = event.pattern_match.group(1)
     if not catinput_str:
         return await edit_delete(
             event, "From which category should i remove this chat", parse_mode=parse_pre
@@ -316,10 +316,10 @@ async def catbroadcast_remove(event):
 
 
 @borg.on(admin_cmd(pattern="delc(?: |$)(.*)", command="delc"))
-async def catbroadcast_delete(event):
+async def userbroadcast_delete(event):
     if event.fwd_from:
         return
-    catinput_str = event.pattern_match.group(1)
+    userinput_str = event.pattern_match.group(1)
     check1 = sql.num_broadcastlist_chat(catinput_str)
     if check1 < 1:
         return await edit_delete(
