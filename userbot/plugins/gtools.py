@@ -107,7 +107,7 @@ async def gspider(fridaybot):
         await event.edit(f"**Reply to a user !!**")
     try:
         if gmute(user.id) is False:
-            return await friday.edit(f"**Error! User probably already gbanned.**")
+            return await event.edit(f"**Error! User probably already gbanned.**")
     except:
         pass
     return await event.edit(
