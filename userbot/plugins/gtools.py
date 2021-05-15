@@ -110,7 +110,7 @@ async def gspider(tamilbot):
             return await tamil.edit(f"**Error! User probably already gbanned.**")
     except:
         pass
-    return await tamil.edit(
+    return await event.edit(
         f"**⚠️Gbanned\nUSER👤[{user.first_name}](tg://user?id={user.id}) \n🚫Affected Chats : {a} **"
     )
 
@@ -143,7 +143,7 @@ async def gspider(tamilbot):
         if not reason:
             reason = "Private"
     except:
-        return await tamil.edit("Someting Went Wrong 🤔")
+        return await event.edit("Someting Went Wrong 🤔")
     if user:
         if user.id == 1169076058 or user.id == 1492186775:
             return await tamil.edit("**You Cant Ungban A Dev !**")
@@ -164,17 +164,17 @@ async def gspider(tamilbot):
             try:
                 await tamilbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await tamil.edit(f"**UNGBANNING\nAFFECTED CHATS - {a} **")
+                await event.edit(f"**UNGBANNING\nAFFECTED CHATS - {a} **")
             except:
                 b += 1
     else:
-        await tamil.edit("**Reply to a user !!**")
+        await event.edit("**Reply to a user !!**")
     try:
         if ungmute(user.id) is False:
             return await tamil.edit("**Error! User probably already ungbanned.**")
     except:
         pass
-    return await tamil.edit(
+    return await event.edit(
         f"**🔹UNGBANNED\n🔹USER - [{user.first_name}](tg://user?id={user.id}) \n🔹CHATS : {a} **"
     )
 
