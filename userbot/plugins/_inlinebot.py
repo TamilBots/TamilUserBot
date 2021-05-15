@@ -197,14 +197,17 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             sedok = "Master, You Don't Need To Use This."
             await event.answer(sedok, cache_time=0, alert=True)
             return
-            await event.get_chat()
-        him_id = event.query.user_id
+        await event.get_chat()
         await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
+        target = await event.client(GetFullUserRequest(event.query.user_id))
+        first_name = html.escape(target.user.first_name)
+        him_id = event.query.user_id
+            if first_name is not None:
+                first_name = first_name.replace("\u2060", "")
         await event.client.send_message(
             LOG_CHAT, 
-            f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
+            f"Hello{DEFAULTUSER}, A [{first_name}](tg://user?id={him_id}). Wants To Talk With You.",
             link_preview=False,
-            parse_mode="html",
             buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
         )
 
