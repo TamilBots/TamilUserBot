@@ -4,9 +4,9 @@ from telethon.events import ChatAction
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from UserBot import CMD_HELP
-from UserBot.modules.sql_helper.mute_sql import is_muted, mute, unmute
-from UserBot.utils import admin_cmd
+from userbot import CMD_HELP
+from userbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
+from userbot.utils import admin_cmd
 
 
 async def get_full_user(event):
