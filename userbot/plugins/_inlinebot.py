@@ -202,8 +202,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         target = await event.client(GetFullUserRequest(event.query.user_id))
         first_name = html.escape(target.user.first_name)
         him_id = event.query.user_id
-            if first_name is not None:
-                first_name = first_name.replace("\u2060", "")
+        if first_name is not None:
+            first_name = first_name.replace("\u2060", "")
         await event.client.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [{first_name}](tg://user?id={him_id}). Wants To Talk With You.",
