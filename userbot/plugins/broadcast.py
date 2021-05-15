@@ -33,7 +33,7 @@ async def userbroadcast_send(event):
         )
     keyword = userinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
-    group_ = Get(cat)
+    group_ = Get(user)
     if no_of_chats == 0:
         return await edit_delete(
             event,
