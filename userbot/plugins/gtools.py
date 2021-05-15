@@ -50,7 +50,7 @@ async def get_user_from_id(user, event):
 
 
 @borg.on(admin_cmd(pattern="gban ?(.*)"))
-async def gspider(fridaybot):
+async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
