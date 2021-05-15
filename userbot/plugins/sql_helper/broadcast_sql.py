@@ -8,8 +8,8 @@ from sqlalchemy import Column, String, UnicodeText, distinct, func
 from userbot.plugins.sql_helper import BASE, SESSION
 
 
-class CatBroadcast(BASE):
-    __tablename__ = "catbroadcast"
+class UserBroadcast(BASE):
+    __tablename__ = "userbroadcast"
     keywoard = Column(UnicodeText, primary_key=True)
     group_id = Column(String(14), primary_key=True, nullable=False)
 
@@ -18,19 +18,19 @@ class CatBroadcast(BASE):
         self.group_id = str(group_id)
 
     def __repr__(self):
-        return "<Cat Broadcast channels '%s' for %s>" % (self.group_id, self.keywoard)
+        return "<User Broadcast channels '%s' for %s>" % (self.group_id, self.keywoard)
 
     def __eq__(self, other):
         return bool(
-            isinstance(other, CatBroadcast)
+            isinstance(other, UserBroadcast)
             and self.keywoard == other.keywoard
             and self.group_id == other.group_id
         )
 
 
-CatBroadcast.__table__.create(checkfirst=True)
+UserBroadcast.__table__.create(checkfirst=True)
 
-CATBROADCAST_INSERTION_LOCK = threading.RLock()
+USERBROADCAST_INSERTION_LOCK = threading.RLock()
 
 
 class BROADCAST_SQL:
@@ -42,8 +42,8 @@ BROADCAST_SQL_ = BROADCAST_SQL()
 
 
 def add_to_broadcastlist(keywoard, group_id):
-    with CATBROADCAST_INSERTION_LOCK:
-        broadcast_group = CatBroadcast(keywoard, str(group_id))
+    with USERBROADCAST_INSERTION_LOCK:
+        broadcast_group = UserBroadcast(keywoard, str(group_id))
 
         SESSION.merge(broadcast_group)
         SESSION.commit()
@@ -51,7 +51,7 @@ def add_to_broadcastlist(keywoard, group_id):
 
 
 def rm_from_broadcastlist(keywoard, group_id):
-    with CATBROADCAST_INSERTION_LOCK:
+    with USERBROADCAST_INSERTION_LOCK:
         broadcast_group = SESSION.query(CatBroadcast).get((keywoard, str(group_id)))
         if broadcast_group:
             if str(group_id) in BROADCAST_SQL_.BROADCAST_CHANNELS.get(keywoard, set()):
@@ -68,16 +68,16 @@ def rm_from_broadcastlist(keywoard, group_id):
 
 
 def is_in_broadcastlist(keywoard, group_id):
-    with CATBROADCAST_INSERTION_LOCK:
-        broadcast_group = SESSION.query(CatBroadcast).get((keywoard, str(group_id)))
+    with USERBROADCAST_INSERTION_LOCK:
+        broadcast_group = SESSION.query(UserBroadcast).get((keywoard, str(group_id)))
         return bool(broadcast_group)
 
 
 def del_keyword_broadcastlist(keywoard):
     with CATBROADCAST_INSERTION_LOCK:
         broadcast_group = (
-            SESSION.query(CatBroadcast.keywoard)
-            .filter(CatBroadcast.keywoard == keywoard)
+            SESSION.query(UserBroadcast.keywoard)
+            .filter(UserBroadcast.keywoard == keywoard)
             .delete()
         )
         BROADCAST_SQL_.BROADCAST_CHANNELS.pop(keywoard)
@@ -90,7 +90,7 @@ def get_chat_broadcastlist(keywoard):
 
 def get_broadcastlist_chats():
     try:
-        chats = SESSION.query(CatBroadcast.keywoard).distinct().all()
+        chats = SESSION.query(UserBroadcast.keywoard).distinct().all()
         return [i[0] for i in chats]
     finally:
         SESSION.close()
@@ -98,7 +98,7 @@ def get_broadcastlist_chats():
 
 def num_broadcastlist():
     try:
-        return SESSION.query(CatBroadcast).count()
+        return SESSION.query(UserBroadcast).count()
     finally:
         SESSION.close()
 
@@ -106,8 +106,8 @@ def num_broadcastlist():
 def num_broadcastlist_chat(keywoard):
     try:
         return (
-            SESSION.query(CatBroadcast.keywoard)
-            .filter(CatBroadcast.keywoard == keywoard)
+            SESSION.query(UserBroadcast.keywoard)
+            .filter(UserBroadcast.keywoard == keywoard)
             .count()
         )
     finally:
@@ -116,18 +116,18 @@ def num_broadcastlist_chat(keywoard):
 
 def num_broadcastlist_chats():
     try:
-        return SESSION.query(func.count(distinct(CatBroadcast.keywoard))).scalar()
+        return SESSION.query(func.count(distinct(UserBroadcast.keywoard))).scalar()
     finally:
         SESSION.close()
 
 
 def __load_chat_broadcastlists():
     try:
-        chats = SESSION.query(CatBroadcast.keywoard).distinct().all()
+        chats = SESSION.query(UserBroadcast.keywoard).distinct().all()
         for (keywoard,) in chats:
             BROADCAST_SQL_.BROADCAST_CHANNELS[keywoard] = []
 
-        all_groups = SESSION.query(CatBroadcast).all()
+        all_groups = SESSION.query(UserBroadcast).all()
         for x in all_groups:
             BROADCAST_SQL_.BROADCAST_CHANNELS[x.keywoard] += [x.group_id]
 
