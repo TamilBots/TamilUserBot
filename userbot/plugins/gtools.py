@@ -51,54 +51,54 @@ async def get_user_from_id(user, event):
 
 @borg.on(admin_cmd(pattern="gban ?(.*)"))
 async def gspider(fridaybot):
-    lol = fridaybot
+    lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
         event = await lol.reply("Gbanning This User !")
     else:
         event = await lol.edit("Wait Processing.....")
-    me = await fridaybot.client.get_me()
+    me = await userbot.client.get_me()
     await event.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await fridaybot.get_chat()
+    await userbot.get_chat()
     a = b = 0
-    if fridaybot.is_private:
-        user = fridaybot.chat
-        reason = fridaybot.pattern_match.group(1)
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
     else:
-        fridaybot.chat.title
+        userbot.chat.title
     try:
-        user, reason = await get_full_user(fridaybot)
+        user, reason = await get_full_user(tamilbot)
     except:
         pass
     try:
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit(f"**Something W3NT Wrong 🤔**")
+        return await event.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1169076058 or user.id == 1492186775:
             return await event.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )
         try:
-            from fridaybot.modules.sql_helper.gmute_sql import gmute
+            from userbot.modules.sql_helper.gmute_sql import gmute
         except:
             pass
         try:
-            await fridaybot.client(BlockRequest(user))
+            await userbot.client(BlockRequest(user))
         except:
             pass
-        testfridaybot = [
+        testuserbot = [
             d.entity.id
-            for d in await fridaybot.client.get_dialogs()
+            for d in await userbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testfridaybot:
+        for i in testuserbot:
             try:
-                await fridaybot.client.edit_permissions(i, user, view_messages=False)
+                await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
                 await event.edit(f"**GBANNED⚠️ \n🚫Total Affected Chats **: `{a}`")
             except:
@@ -117,26 +117,26 @@ async def gspider(fridaybot):
 
 @borg.on(admin_cmd(pattern="ungban ?(.*)"))
 async def gspider(fridaybot):
-    lol = fridaybot
+    lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
         event = await lol.reply("`Wait Let Me Process`")
     else:
         event = await lol.edit("One Min ! ")
-    me = await fridaybot.client.get_me()
+    me = await userbot.client.get_me()
     await event.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await fridaybot.get_chat()
+    await userbot.get_chat()
     a = b = 0
-    if fridaybot.is_private:
-        user = fridaybot.chat
-        reason = fridaybot.pattern_match.group(1)
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
     else:
-        fridaybot.chat.title
+        userbot.chat.title
     try:
-        user, reason = await get_full_user(fridaybot)
+        user, reason = await get_full_user(userbot)
     except:
         pass
     try:
@@ -148,21 +148,21 @@ async def gspider(fridaybot):
         if user.id == 1169076058 or user.id == 1492186775:
             return await event.edit("**You Cant Ungban A Dev !**")
         try:
-            from fridaybot.modules.sql_helper.gmute_sql import ungmute
+            from userbot.modules.sql_helper.gmute_sql import ungmute
         except:
             pass
         try:
-            await fridaybot.client(UnblockRequest(user))
+            await userbot.client(UnblockRequest(user))
         except:
             pass
-        testfridaybot = [
+        testuserbot = [
             d.entity.id
-            for d in await fridaybot.client.get_dialogs()
+            for d in await userbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testfridaybot:
+        for i in testuserbot:
             try:
-                await fridaybot.client.edit_permissions(i, user, send_messages=True)
+                await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
                 await event.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
             except:
@@ -183,7 +183,7 @@ async def gspider(fridaybot):
 async def handler(rkG):
     if rkG.user_joined or rkG.user_added:
         try:
-            from fridaybot.modules.sql_helper.gmute_sql import is_gmuted
+            from userbot.modules.sql_helper.gmute_sql import is_gmuted
 
             guser = await rkG.get_user()
             gmuted = is_gmuted(guser.id)
