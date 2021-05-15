@@ -308,8 +308,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 6
-    number_of_cols = 3
+    number_of_rows = 3
+    number_of_cols = 6  
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
