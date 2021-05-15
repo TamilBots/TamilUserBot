@@ -116,7 +116,7 @@ async def gspider(userbot):
 
 
 @borg.on(admin_cmd(pattern="ungban ?(.*)"))
-async def gspider(fridaybot):
+async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
