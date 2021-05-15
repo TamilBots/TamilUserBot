@@ -91,7 +91,6 @@ async def _(event):
                 )
             )
         else:
-            await starkisgreat.edit(
                 "Current Chat ID: `{}`\nFrom User ID: `{}`".format(
                     str(event.chat_id), str(r_msg.sender_id)
                 )
