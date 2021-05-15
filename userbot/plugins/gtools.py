@@ -55,7 +55,7 @@ async def gspider(tamilbot):
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        enna = await lol.reply("Gbanning This User !")
+        tamil = await lol.reply("Gbanning This User !")
     else:
         tamil = await lol.edit("Wait Processing.....")
     me = await tamilbot.client.get_me()
