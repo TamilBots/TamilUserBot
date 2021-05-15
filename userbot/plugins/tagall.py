@@ -37,14 +37,3 @@ async def _(event):
         mentions += f" \n [{x.first_name}](tg://user?id={x.id})"
     await event.reply(mentions)
     await event.delete()
-
-
-CMD_HELP.update(
-    {
-        "tagall": """**Plugin : **`tagall`  
-
-   •  **Syntax : **`.tagall`
-   •  **Function : **__tags recent 100 persons in the group may not work for all__ 
- """
-    }
-)
