@@ -95,8 +95,11 @@ async def _(event):
                     str(event.chat_id), str(r_msg.sender_id)
                 )
     else:
-        await event.edit("Current Chat ID: `{}`".format(str(event.chat_id)))
-
+        await event.edit(
+                   "🔅Current Chat ID: `{}`\n🔅From User ID: `{}`\n🔅Bot API File ID: `{}`".format(
+                    str(event.chat_id), str(r_msg.sender_id), bot_api_file_id
+            )
+        )
 
 @borg.on(admin_cmd("get_bot ?(.*)"))
 async def _(event):
