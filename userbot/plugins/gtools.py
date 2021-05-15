@@ -68,7 +68,7 @@ async def gspider(tamilbot):
         user = tamilbot.chat
         reason = tamilbot.pattern_match.group(1)
     else:
-        tmilbot.chat.title
+        tamilbot.chat.title
     try:
         user, reason = await get_full_user(tamilbot)
     except:
