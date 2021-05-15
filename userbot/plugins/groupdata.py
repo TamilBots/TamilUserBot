@@ -76,8 +76,9 @@ async def _(event):
         await eor(event, mentions)
 
 
-@borg.on(admin_cmd(pattern="get_id"))
+@borg.on(friday_on_cmd("get_id"))
 async def _(event):
+    starkisgreat = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     if event.reply_to_msg_id:
@@ -88,19 +89,19 @@ async def _(event):
             await starkisgreat.edit(
                 "Current Chat ID: `{}`\nFrom User ID: `{}`\nBot API File ID: `{}`".format(
                     str(event.chat_id), str(r_msg.sender_id), bot_api_file_id
-                ),
+                )
             )
         else:
             await starkisgreat.edit(
                 "Current Chat ID: `{}`\nFrom User ID: `{}`".format(
                     str(event.chat_id), str(r_msg.sender_id)
-                ),
+                )
             )
     else:
         await starkisgreat.edit("Current Chat ID: `{}`".format(str(event.chat_id)))
 
 
-@borg.on(admin_cmd(pattern="bots ?(.*)"))
+@borg.on(friday_on_cmd("get_bot ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -115,7 +116,7 @@ async def _(event):
         try:
             chat = await borg.get_entity(input_str)
         except Exception as e:
-            await eor(event, str(e))
+            await event.edit(str(e))
             return None
     try:
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsBots):
@@ -129,7 +130,8 @@ async def _(event):
                 )
     except Exception as e:
         mentions += " " + str(e) + "\n"
-    await eor(event, mentions)
+    await event.edit(mentions)
+
 
 @borg.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
 async def info(event):
