@@ -70,7 +70,7 @@ async def gspider(userbot):
     else:
         userbot.chat.title
     try:
-        user, reason = await get_full_user(tamilbot)
+        user, reason = await get_full_user(userbot)
     except:
         pass
     try:
