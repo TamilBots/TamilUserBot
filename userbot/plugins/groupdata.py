@@ -76,7 +76,7 @@ async def _(event):
         await eor(event, mentions)
 
 
-@borg.on(friday_on_cmd("get_id"))
+@borg.on(admin_cmd("get_id"))
 async def _(event):
     starkisgreat = await edit_or_reply(event, "Processing")
     if event.fwd_from:
@@ -101,7 +101,7 @@ async def _(event):
         await starkisgreat.edit("Current Chat ID: `{}`".format(str(event.chat_id)))
 
 
-@borg.on(friday_on_cmd("get_bot ?(.*)"))
+@borg.on(admin_cmd("get_bot ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
