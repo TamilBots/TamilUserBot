@@ -8,6 +8,7 @@ CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
 
  #@command(pattern="^.help ?(.*)")
 @borg.on(admin_cmd(pattern=r"help ?(.*)"))
+
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -15,7 +16,7 @@ async def cmd_list(event):
         if tgbotusername is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
-                string += CUSTM_HLP_EMOJ + " " + i + " " + CUSTM_HLP_EMOJ + "\n"
+                string += "✨ " + i + "\n"
                 for iter_list in CMD_LIST[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
@@ -45,23 +46,18 @@ async def cmd_list(event):
                 await event.edit(input_str + " is not a valid plugin!")
         else:
             help_string = f"""Bot σƒ {DEFAULTUSER}
-           
+
               ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ """
-            try:
-                results = await bot.inline_query(  # pylint:disable=E0602
-                    tgbotusername,
-                    help_string
-                )
-                await results[0].click(
-                    event.chat_id,
-                    reply_to=event.reply_to_msg_id,
-                    hide_via=True
-                )
-                await event.delete()
-            except BaseException:
-                await event.edit(
-                    f"This bot has inline disabled. Please enable it to use `.help`.\nGet help from [here](t.me/TamilSupport)"
-                )
+            results = await bot.inline_query(  # pylint:disable=E0602
+                tgbotusername,
+                help_string
+            )
+            await results[0].click(
+                event.chat_id,
+                reply_to=event.reply_to_msg_id,
+                hide_via=True
+            )
+            await event.delete()
 
 @borg.on(admin_cmd(outgoing=True, pattern="info ?(.*)"))
 async def info(event):
