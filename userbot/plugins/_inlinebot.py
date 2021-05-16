@@ -117,8 +117,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(sedok, cache_time=0, alert=True)
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
-        if plugin_name in CMD_LIST:
-            help_string = f"**💫 PLUGIN NAME 💫 :** `{plugin_name}` \n{CMD_LIST[plugin_name]}"
+        if plugin_name in CMD_HELP:
+            help_string = f"**💫 PLUGIN NAME 💫 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
         reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n\n**(C) @TamilSupport** ".format(plugin_name)
         if len(reply_pop_up_alert) >= 4096:
@@ -157,12 +157,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(sedok, cache_time=0, alert=True)
             return
         await event.get_chat()
-        him_id = event.query.user_id
-        await event.edit("You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By TamilBot. 🇮🇳")
+        await event.edit("You Have Chosed A Probhited Option😈. Therefore, You Have Been Blocked☠️ By TamilBot. 🇮🇳")
         await borg(functions.contacts.BlockRequest(event.query.user_id))
-        await borg.send_message(
+        target = await event.client(GetFullUserRequest(event.query.user_id))
+        first_name = html.escape(target.user.first_name)
+        him_id = event.query.user_id
+        if first_name is not None:
+            first_name = first_name.replace("\u2060", "")
+        await event.client.send_message(
             LOG_CHAT,
-            f"Hello{DEFAULTUSER}, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked."
+            f"Hello{DEFAULTUSER}, A Noob [{first_name}](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked."
 
         )
    
@@ -221,13 +225,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(sedok, cache_time=0, alert=True)
             return
         await event.get_chat()
-        him_id = event.query.user_id
         await event.edit("Ok, Wait. You can Ask After Master Approves You. Kindly, Wait.") 
-        await borg.send_message(
+        target = await event.client(GetFullUserRequest(event.query.user_id))
+        first_name = html.escape(target.user.first_name)
+        him_id = event.query.user_id
+        if first_name is not None:
+            first_name = first_name.replace("\u2060", "")
+        await event.client.send_message(
             LOG_CHAT, 
             f"Hello{DEFAULTUSER}, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
             link_preview=False,
-            parse_mode="html",
             buttons=[Button.url("🙋🏻‍♂️Contact Him🙋🏻‍♂️", f"tg://user?id={him_id}")]
         )
         
