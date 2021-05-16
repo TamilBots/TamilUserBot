@@ -185,6 +185,25 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
         🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {len(CMD_LIST)} """
         await event.edit(message=sed, buttons=buttons)
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
+    async def megic(event):
+        if event.query.user_id == bot.uid:
+            buttons = paginate_help(0, CMD_LIST, "helpme")
+            await event.edit("Menu Re-opened", buttons=buttons)
+        else:
+            reply_pop_up_alert = "This bot ain't for u!!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    async def on_plug_in_callback_query_handler(event):
+        if event.query.user_id == bot.uid:
+            await event.edit(
+                "⚙️Menu Closed⚙️", buttons=[Button.inline("🔧Re-open Menu🔧", data="reopen")]
+            )
+        else:
+            reply_pop_up_alert = "Please get your own userbot from @TamilSupport "
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
     async def rip(event):
@@ -336,10 +355,18 @@ def paginate_help(page_number, loaded_plugins, prefix):
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
     modulo_page = page_number % max_num_pages
-    if len(pairs) > number_of_rows:
-        pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
-            [
-            (custom.Button.inline("⪬ Previous", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("Next ⪭", data="{}_next({})".format(prefix, modulo_page)))
+    if len(pairs) > number_of_rows:  
+        pairs = pairs[
+            modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
+        ] + [
+            (
+                custom.Button.inline(
+                    "⪬ Previous", data="{}_prev({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline("║ Close ║", data="close"),
+                custom.Button.inline(
+                    "Next ⪭", data="{}_next({})".format(prefix, modulo_page)
+                ),
+            )
         ]
     return pairs
