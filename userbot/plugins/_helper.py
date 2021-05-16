@@ -2,10 +2,15 @@ import os
 from userbot import CMD_LIST, ALIVE_NAME, CMD_HELP, CMD_HNDLR
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_or_reply
+from userbot.UniborgConfig import config
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 
 CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
 
+CMD_HNDLR = config.CMD_HNDLR
+
+if CMD_HNDLR is None:
+    CMD_HNDLR = "."
  #@command(pattern="^.help ?(.*)")
 @borg.on(admin_cmd(pattern=r"help ?(.*)"))
 async def cmd_list(event):
