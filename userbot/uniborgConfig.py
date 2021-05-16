@@ -111,7 +111,7 @@ if ENV:
         PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", False))
         ALIVE_IMAGE = os.environ.get("ALIVE_IMAGE", "https://telegra.ph/file/2efb41858c95ebd7231e8.jpg")
         # PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
-        
+        CMD_HNDLR = os.environ.get("CMD_HNDLR",r"\."
 else:
     class Config(object):
         DB_URI = None
