@@ -12,7 +12,7 @@ import requests
 from telethon import Button, custom, events, functions
 from userbot import ALIVE_NAME, CMD_LIST, CMD_HELP
 from telethon.tl.functions.users import GetFullUserRequest
-from userbot.UniborgConfig import HLP_ROWS, HLP_COLOUMNS, CUSTM_HLP_EMOJ
+
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
     WARN_PIC = "https://telegra.ph/file/2790938cacb9aa80d478c.jpg"
@@ -28,6 +28,10 @@ borg = bot.uid
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
+
+HLP_ROWS = os.environ.get("HLP_ROWS", "8")
+HLP_COLOUMNS = os.environ.get("HLP_COLOUMNS", "3")
+CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)
