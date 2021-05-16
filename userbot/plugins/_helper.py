@@ -1,8 +1,8 @@
 import os
-from userbot import CMD_LIST, ALIVE_NAME, CMD_HELP, CMD_HNDLR
+from userbot import CMD_LIST, ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_or_reply
-from userbot.UniborgConfig import config
+from userbot.UniborgConfig import config, CMD_HNDLR
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 
 CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
