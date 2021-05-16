@@ -2,15 +2,10 @@ import os
 from userbot import CMD_LIST, ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_or_reply
-from userbot.UniborgConfig import config, CMD_HNDLR
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 
 CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
 
-CMD_HNDLR = config.CMD_HNDLR
-
-if CMD_HNDLR is None:
-    CMD_HNDLR = "."
  #@command(pattern="^.help ?(.*)")
 @borg.on(admin_cmd(pattern=r"help ?(.*)"))
 async def cmd_list(event):
@@ -65,7 +60,7 @@ async def cmd_list(event):
                 await event.delete()
             except BaseException:
                 await event.edit(
-                    f"This bot has inline disabled. Please enable it to use `{CMD_HNDLR}help`.\nGet help from [here](t.me/TamilSupport)"
+                    f"This bot has inline disabled. Please enable it to use `.help`.\nGet help from [here](t.me/TamilSupport)"
                 )
 
 @borg.on(admin_cmd(outgoing=True, pattern="info ?(.*)"))
