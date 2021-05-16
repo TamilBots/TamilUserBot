@@ -113,7 +113,7 @@ if ENV:
         # PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
         HLP_ROWS = os.environ.get("HLP_ROWS", "3")
         HLP_COLOUMNS = os.environ.get("HLP_COLOUMNS", "8")
-        CUTM_HLP_EMOJ = os.environ.get("CUTM_HLP_EMOJ", "https://telegra.ph/file/2efb41858c95ebd7231e8.jpg")
+        CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "https://telegra.ph/file/2efb41858c95ebd7231e8.jpg")
 
 else:
     class Config(object):
