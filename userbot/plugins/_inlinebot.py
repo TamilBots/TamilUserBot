@@ -185,9 +185,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         buttons = paginate_help(0, CMD_LIST, "helpme")
         sed = f"""𝔹𝕆𝕋 𝕆𝔽 {DEFAULTUSER}
 
-        ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ 
+                 ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ 
 
-        🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {len(CMD_LIST)} """
+                 🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {len(CMD_LIST)} """
         await event.edit(message=sed, buttons=buttons)
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
     async def megic(event):
