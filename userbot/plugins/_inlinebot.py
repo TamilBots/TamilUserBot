@@ -4,6 +4,7 @@ import json
 import random
 import re
 import io
+import html
 import os
 import urllib
 from re import findall
