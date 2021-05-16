@@ -30,7 +30,7 @@ USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked a
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 
 HLP_ROWS = os.environ.get("HLP_ROWS", "8")
-HLP_COLOUMNS = os.environ.get("HLP_COLOUMNS", "3")
+HLP_COLOUMNS = os.environ.get("HLP_COLOUMNS", "2")
 CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
