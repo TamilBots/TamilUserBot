@@ -10,7 +10,7 @@ import urllib
 from re import findall
 import requests
 from telethon import Button, custom, events, functions
-from userbot import ALIVE_NAME, CMD_LIST
+from userbot import ALIVE_NAME, CMD_LIST, CMD_HELP
 from telethon.tl.functions.users import GetFullUserRequest
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
