@@ -1,7 +1,10 @@
+import os
 from userbot import CMD_LIST, ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_or_reply
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
+
+CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
 
 #@command(pattern="^.help ?(.*)")
 @borg.on(admin_cmd(pattern=r"help ?(.*)"))
@@ -13,7 +16,7 @@ async def cmd_list(event):
         if tgbotusername is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
-                string += "✨ " + i + "\n"
+                string += CUSTOM_HELP_EMOJI + " " + i + " " + CUSTOM_HELP_EMOJI + "\n"
                 for iter_list in CMD_LIST[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
