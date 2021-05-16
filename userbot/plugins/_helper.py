@@ -45,18 +45,23 @@ async def cmd_list(event):
                 await event.edit(input_str + " is not a valid plugin!")
         else:
             help_string = f"""Bot σƒ {DEFAULTUSER}
-
+           
               ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ """
-            results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
-                help_string
-            )
-            await results[0].click(
-                event.chat_id,
-                reply_to=event.reply_to_msg_id,
-                hide_via=True
-            )
-            await event.delete()
+            try:
+                results = await bot.inline_query(  # pylint:disable=E0602
+                    tgbotusername,
+                    help_string
+                )
+                await results[0].click(
+                    event.chat_id,
+                    reply_to=event.reply_to_msg_id,
+                    hide_via=True
+                )
+                await event.delete()
+            except BaseException:
+                await event.edit(
+                    f"This bot has inline disabled. Please enable it to use `{CMD_HNDLR}help`.\nGet help from [here](t.me/TamilSupport)"
+                )
 
 @borg.on(admin_cmd(outgoing=True, pattern="info ?(.*)"))
 async def info(event):
