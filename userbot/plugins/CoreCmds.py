@@ -112,7 +112,7 @@ async def load(event):
 
 CMD_HELP.update(
     {
-        "corecmds": """**Plugin : **`corecmds`
+        "CoreCmds": """**Plugin : **`CoreCmds`
 
   •  **Syntax : **`.install`
   •  **Function : **__Reply to any external plugin to install in bot__ 
