@@ -4,7 +4,7 @@ import asyncio
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot.utils import admin_cmd
-
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd(outgoing=True, pattern="dzd(?: |$)(.*)"))
 async def DeezLoader(Deezlod):
@@ -61,3 +61,13 @@ async def WooMai(rose):
         await bot.send_file(rose.chat_id, respond)
     await rose.client.delete_messages(conv.chat_id, [msg.id, response.id, respond.id])
     await rose.delete()
+
+CMD_HELP.update(
+    {
+        "Songs": "**Plugin : **`Songs`"
+        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.dzd`"
+        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get songs from @DeezLoadBot "
+        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.song`"
+        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get your favourite 😍 song from @SongPlayRoBot, "
+    }
+)
