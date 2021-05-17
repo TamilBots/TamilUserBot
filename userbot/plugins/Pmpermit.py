@@ -269,21 +269,27 @@ async def hehehe(event):
 
 CMD_HELP.update(
     {
-        "pmpermit": "**Plugin : **`pmpermit`\
-        \n\n  •  **Syntax : **`.approve or .a`\
-        \n  •  **Function : **__Approves the mentioned/replied person to PM.__\
-        \n\n  •  **Syntax : **`.disapprove or .da`\
-        \n  •  **Function : **__dispproves the mentioned/replied person to PM.__\
-        \n\n  •  **Syntax : **`.block`\
-        \n  •  **Function : **__Blocks the person.__\
-        \n\n  •  **Syntax : **`.unblock`\
-        \n  •  **Function : **__Unblocks the person.__\
-        \n\n  •  **Syntax : **`.listapproved`\
-        \n  •  **Function : **__To list the all approved users.__\
-        \n\n  •  **Syntax : **`.disapprove all or da all`\
-        \n  •  **Function : **__To disapprove all the approved users.__\
-        \n\n  •  Available variables for formatting `CUSTOM_PMPERMIT_TEXT` :\
-        \n`{mention}`, `{first}`, `{last} `, `{fullname}`, `{userid}`, `{username}`, `{my_first}`, `{my_fullname}`, `{my_last}`, `{my_mention}`, `{my_username}`,`{warns}` , `{totalwarns}`.\
-"
+        "Pmpermit": """**Plugin : ** `Pmpermit`
+        
+╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.approve or .a`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Approves the mentioned/replied person to PM.__
+         
+╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.disapprove or .da`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __dispproves the mentioned/replied person to PM.__
+         
+╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.block`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Blocks the person.__
+         
+╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.unblock`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Unblocks the person.__
+         
+╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.listapproved`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To list the all approved users.__
+         
+╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.disapprove all or da all`\
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To disapprove all the approved users.__
+\n\n  •  Available variables for formatting `CUSTOM_PMPERMIT_TEXT` :\
+\n`{mention}`, `{first}`, `{last} `, `{fullname}`, `{userid}`, `{username}`, `{my_first}`, `{my_fullname}`, `{my_last}`, `{my_mention}`, `{my_username}`,`{warns}` , `{totalwarns}`.
+  """
     }
 )
