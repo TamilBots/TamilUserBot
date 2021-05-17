@@ -19,7 +19,7 @@ from telethon.errors.rpcerrorlist import MessageTooLongError, YouBlockedUserErro
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 
 bot = "@MissRose_bot"
 
