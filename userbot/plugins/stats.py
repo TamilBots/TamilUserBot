@@ -7,7 +7,7 @@ from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
 from ..utils import admin_cmd
-
+from userbot import CMD_HELP
 @borg.on(admin_cmd(pattern="stat$"))
 async def stats(event):
     if event.fwd_from:
@@ -111,3 +111,12 @@ def user_full_name(user):
     names = [user.first_name, user.last_name]
     names = [i for i in list(names) if i]
     return " ".join(names)
+
+CMD_HELP.update(
+    {
+        "Stats": "**Plugin : **`Stats`"
+        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.stats`"
+        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Checks stats of your account "
+        "send .stat to get repo"
+    }
+)
