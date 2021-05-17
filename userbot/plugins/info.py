@@ -16,6 +16,7 @@ from telethon.utils import get_input_location
 from userbot.manager.utils import edit_or_reply
 
 from ..utils import admin_cmd, sudo_cmd
+from userbot import CMD_HELP
 
 TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
@@ -281,5 +282,20 @@ async def ge(user, event):
         return None
     return user_obj
 
+CMD_HELP.update(
+    {
+        "Broadcast": """**Plugin : ** `Broadcast`
+
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sendto category_name`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
+
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.fwdto category_name`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will forward the replied message to all the chats in give category__
+
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`delc category_name`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Deletes the category completely in database__
+"""
+    }
+)
 
 
