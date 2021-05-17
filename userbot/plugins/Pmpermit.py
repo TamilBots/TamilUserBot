@@ -269,24 +269,24 @@ async def hehehe(event):
 
 CMD_HELP.update(
     {
-        "Pmpermit": """**Plugin : ** `Pmpermit`
+        "Pmpermit":
         
-╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.approve or .a`
+        """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.approve or .a`
 ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Approves the mentioned/replied person to PM.__
          
-╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.disapprove or .da`
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.disapprove or .da`
 ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __dispproves the mentioned/replied person to PM.__
          
-╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.block`
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.block`
 ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Blocks the person.__
          
-╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.unblock`
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.unblock`
 ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Unblocks the person.__
          
-╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.listapproved`
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.listapproved`
 ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To list the all approved users.__
          
-╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.disapprove all or da all`\
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.disapprove all or da all`\
 ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To disapprove all the approved users.__
 \n\n  •  Available variables for formatting `CUSTOM_PMPERMIT_TEXT` :\
 \n`{mention}`, `{first}`, `{last} `, `{fullname}`, `{userid}`, `{username}`, `{my_first}`, `{my_fullname}`, `{my_last}`, `{my_mention}`, `{my_username}`,`{warns}` , `{totalwarns}`.
