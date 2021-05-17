@@ -5,6 +5,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot.utils import admin_cmd
+from userbot.manager.utils import edit_delete, edit_or_reply
 
 telegraph = Telegraph()
 mee = telegraph.create_account(short_name="tamilbot")
@@ -238,7 +239,7 @@ async def _(event):
     else:
         async with borg.conversation(bot) as conv:
             try:
-                x = await eor(event, "`Making the text stylish..`")
+                x = await edit_or_reply(event, "`Making the text stylish..`")
                 await conv.send_message("/start")
                 await conv.get_response()
                 await conv.send_message(sysarg)
