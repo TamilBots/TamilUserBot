@@ -580,7 +580,7 @@ async def silently_send_message(conv, text):
 
 CMD_HELP.update(
     {
-        "stickers": "**Plugins : **`stickers`\
+        "StickerTools": "**Plugins : **`StickersTools`\
     \n\n**Syntax : **`.kang`\
 \n**Usage : **Reply .kang to a sticker or an image to kang it to your userbot pack.\
 \n\n**Syntax : **`.kang [emoji('s)]`\
