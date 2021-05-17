@@ -10,7 +10,7 @@ import asyncio
 import os
 import sys
 from userbot.utils import admin_cmd
-from userbot import import CMD_HELP
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd("restart"))
 async def _(event):
