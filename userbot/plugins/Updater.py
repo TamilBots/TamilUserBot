@@ -198,7 +198,7 @@ async def upstream(ups):
         return
 CMD_HELP.update(
     {
-        "Updater": "**Plugin : **`Updater`"
+        "Updater":
         "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.update`"
         "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Checks if the main userbot repository has any updates "
         "and shows a changelog if so."
