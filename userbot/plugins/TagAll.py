@@ -37,3 +37,5 @@ async def _(event):
         mentions += f" \n [{x.first_name}](tg://user?id={x.id})"
     await event.reply(mentions)
     await event.delete()
+
+CMD_HELP.update({"TagAll": "➟ ..tagall\nUse - Tag active 100 members in group."})
