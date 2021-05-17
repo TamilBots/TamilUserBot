@@ -654,26 +654,26 @@ async def get_user_from_id(user, event):
 
 CMD_HELP.update({
     "Admin":
-    "╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.promote` <username/reply> <custom rank (optional)>\
+    "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.promote` <username/reply> <custom rank (optional)>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Provides admin rights to the person in the chat.\
-\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.demote` <username/reply>\
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.demote` <username/reply>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Revokes the person's admin permissions in the chat.\
-\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.ban` <username/reply> <reason (optional)>\
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.ban` <username/reply> <reason (optional)>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Bans the person off your chat.\
-\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.unban` <username/reply>\
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.unban` <username/reply>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Removes the ban from the person in the chat.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.mute` <username/reply> <reason (optional)>\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.mute` <username/reply> <reason (optional)>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Mutes the person in the chat, works on admins too.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.unmute` <username/reply>\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.unmute` <username/reply>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Removes the person from the muted list.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.kick` <username/reply> <reason (optional)>\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.kick` <username/reply> <reason (optional)>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : kick the person form group.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.pin` <username/reply>\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.pin` <username/reply>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : pin a message in current chat.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.admins`\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.admins`\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Retrieves a list of admins in the chat.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.users` or .users <name of member>\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.users` or .users <name of member>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Retrieves all (or queried) users in the chat.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.setgppic` <reply to image>\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.setgppic` <reply to image>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Changes the group's display picture."
 })
