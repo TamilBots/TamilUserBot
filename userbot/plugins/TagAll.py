@@ -5,7 +5,7 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from userbot.utils import admin_cmd
-
+from userbot import CMD_HELP
 
 
 @borg.on(admin_cmd(pattern=r"administrator", outgoing=True))
@@ -38,4 +38,11 @@ async def _(event):
     await event.reply(mentions)
     await event.delete()
 
-CMD_HELP.update({"TagAll": "➟ ..tagall\nUse - Tag active 100 members in group."})
+CMD_HELP.update(
+    {
+        "afk": "**Plugin : **`afk`\
+        \n\n**Syntax : **`.tagall`\
+\n**Usage : **Tag Top 100 member in a chat .\
+"
+    }
+)
