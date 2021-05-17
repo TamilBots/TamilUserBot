@@ -281,14 +281,14 @@ async def watcher(event):
 
 CMD_HELP.update(
     {
-        "Gtools": "**Global Tools**\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.gmute <replying to user message>`\
+        "Gtools":
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.gmute <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ Gmute User And Delete His Msg.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.ungmute <replying to user message>`\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.ungmute <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ UnGmute User And Stops Deleting His Msgs.\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.gban <replying to user message>`\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.gban <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Gban User And Blow Him From Your Groups\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.ungban <replying to user message>`\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.ungban <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ Ugban User."
     }
 )
