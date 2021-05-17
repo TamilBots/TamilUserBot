@@ -40,8 +40,8 @@ async def amireallyalive(alive):
 CMD_HELP.update(
     {
         "Alive": "**Plugin : **`Alive`\
-        \n\n**Syntax : **`.alive`\
-\n**Usage : **Check your bot is alive or not.\
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.alive`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Check your bot is alive or not.\
 "
     }
 )
