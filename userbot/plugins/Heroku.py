@@ -170,7 +170,7 @@ def prettyjson(obj, indent=2, maxlinelength=80):
 
 CMD_HELP.update(
     {
-        "Broadcast": """**Plugin : ** `Broadcast`
+        "Heroku": """**Plugin : ** `Heroku`
 
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.usage`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Check your heroku dyno hours status.__
