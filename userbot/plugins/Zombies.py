@@ -126,9 +126,9 @@ async def rm_deletedacc(show):
 
 CMD_HELP.update(
     {
-        "Zombies": """**Plugin : ** `Zombies`
+        "Zombies":
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.zombies`
+        """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.zombies`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Searches for deleted accounts in a group. Use .zombies clean to remove deleted accounts from the group.__
   """
     }
