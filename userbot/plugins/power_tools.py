@@ -10,7 +10,7 @@ import asyncio
 import os
 import sys
 from userbot.utils import admin_cmd
-
+from userbot import import CMD_HELP
 
 @borg.on(admin_cmd("restart"))
 async def _(event):
@@ -35,3 +35,13 @@ async def _(event):
         return
     await event.edit("Turning off ...Manually turn me on later")
     await borg.disconnect()
+
+CMD_HELP.update(
+    {
+        "powertools": "**Plugin : **`powertools`\
+        \n\n  •  **Syntax : **`.restart`\
+        \n  •  **Function : **__Restarts the bot !!__\
+        \n\n  •  **Syntax : **`.shutdown`\
+        \n**  •  Function : **__To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use__ @hk_heroku_bot"
+    }
+)
