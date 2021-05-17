@@ -128,3 +128,9 @@ async def rm_deletedacc(show):
             Config.G_BAN_LOGGER_GROUP, "#CLEANUP\n"
             f"Cleaned **{del_u}** deleted account(s) !!\
             \nCHAT: {show.chat.title}(`{show.chat_id}`)")
+
+CMD_HELP.update({
+    "Admin":
+    ".delusers\
+\nUsage: Searches for deleted accounts in a group. Use .delusers clean to remove deleted accounts from the group.\
+})
