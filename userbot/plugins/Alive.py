@@ -36,12 +36,24 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.edit("`என்னைப் பயன்படுத்தியதற்கு நன்றி🤖")
 
+@borg.on(admin_cmd(outgoing=True, pattern="repo"))
+async def repo(event):
+    if event.fwd_from:
+        return
+    tgbotname = Var.TG_BOT_USER_NAME_BF_HER
+    if event.reply_to_msg_id:
+        await event.get_reply_message()
+    response = await bot.inline_query(tgbotname, "repo")
+    await response[0].click(event.chat_id)
+    await event.delete()
 
 CMD_HELP.update(
     {
         "Alive":
-        "╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.alive`\
-\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Check your bot is alive or not.\
-"
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.alive`\"
+        "\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Check your bot is alive or not.\"
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.repo`\"
+        "\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  get repository of TamilBot.\"
+
     }
 )
