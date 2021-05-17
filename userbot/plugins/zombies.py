@@ -2,11 +2,6 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-"""Cmd= `.zombie`
-Usage: Searches for deleted accounts in a groups and channels.
-Use .zombies clean to remove deleted accounts from the groups and channels.
-\nPorted by ©[NIKITA](t.me/kirito6969) and ©[EYEPATCH](t.me/NeoMatrix90)"""
-
 from telethon import events
 from userbot.utils import admin_cmd
 #
@@ -123,14 +118,14 @@ async def rm_deletedacc(show):
     await show.delete()
 
 
-    if Config.G_BAN_LOGGER_GROUP is not None:
+    if Config.PRIVATE_GROUP_ID is not None:
         await show.client.send_message(
-            Config.G_BAN_LOGGER_GROUP, "#CLEANUP\n"
+            Config.PRIVATE_GROUP_ID, "#CLEANUP\n"
             f"Cleaned **{del_u}** deleted account(s) !!\
             \nCHAT: {show.chat.title}(`{show.chat_id}`)")
 
 CMD_HELP.update({
     "Admin":
-    ".delusers\
-\nUsage: Searches for deleted accounts in a group. Use .delusers clean to remove deleted accounts from the group.\
+    ".zombies\
+\nUsage: Searches for deleted accounts in a group. Use .zombies clean to remove deleted accounts from the group.\
 })
