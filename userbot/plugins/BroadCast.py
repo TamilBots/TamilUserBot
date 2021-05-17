@@ -343,7 +343,7 @@ async def userbroadcast_delete(event):
 
 CMD_HELP.update(
     {
-        "broadcast": """**Plugin : ** `broadcast`
+        "BroadCast": """**Plugin : ** `BroadCast`
 
   •  **Syntax : **`.sendto category_name`
   •  **Function : **__will send the replied message to all the chats in give category__
