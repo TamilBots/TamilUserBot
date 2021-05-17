@@ -26,17 +26,8 @@ async def _(event):
 CMD_HELP.update(
     {
         "Ping": "**Plugin : **`Ping`\
-        \n\n**Syntax : **`.ping`\
-\n**Usage : **Check your bot status.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.ping`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Check your bot status.\
 "
-    }
-)
-CMD_HELP.update(
-    {
-        "Broadcast": """**Plugin : ** `Broadcast`
-
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sendto category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
-"""
     }
 )
