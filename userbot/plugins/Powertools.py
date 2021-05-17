@@ -38,10 +38,10 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Powertools": "**Plugin : **`Powertools`\
-        \n\n  •  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.restart`\
-        \n  •  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Restarts the bot !!__\
-        \n\n  •  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.shutdown`\
-        \n**  •  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use__ @hk_heroku_bot"
+        "Powertools":
+        """╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.restart`\
+        \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Restarts the bot !!__\
+        \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.shutdown`\
+        \n**╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use__ @hk_heroku_bot"""
     }
 )
