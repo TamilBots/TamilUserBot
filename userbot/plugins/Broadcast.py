@@ -343,31 +343,31 @@ async def userbroadcast_delete(event):
 
 CMD_HELP.update(
     {
-        "BroadCast": """**Plugin : ** `BroadCast`
+        "Broadcast": """**Plugin : ** `Broadcast`
 
-  •  **Syntax : **`.sendto category_name`
-  •  **Function : **__will send the replied message to all the chats in give category__
+  •  ** ╼•∘ 🅲🅼🅽🅳 ∘•╾ **`.sendto category_name`
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__will send the replied message to all the chats in give category__
 
-  •  **Syntax : **`.fwdto category_name`
-  •  **Function : **__will forward the replied message to all the chats in give category__
+  •  ** ╼•∘ 🅲🅼🅽🅳 ∘•╾ **`.fwdto category_name`
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__will forward the replied message to all the chats in give category__
 
-  •  **Syntax : **`.addto category_name`
-  •  **Function : **__It will add this chat/user/channel to the category of the given name__
+  •  ** ╼•∘ 🅲🅼🅽🅳 ∘•╾ **`.addto category_name`
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__It will add this chat/user/channel to the category of the given name__
 
-  •  **Syntax : **`.rmfrom category_name`
-  •  **Function : **__To remove the Chat/user/channel from the given category name__
+  •  ** ╼•∘ 🅲🅼🅽🅳 ∘•╾ **`.rmfrom category_name`
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__To remove the Chat/user/channel from the given category name__
 
   •  **Syntax : **`.list category_name`
-  •  **Function : **__Will show the list of all chats in the given category__
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__Will show the list of all chats in the given category__
 
-  •  **Syntax : **`.listall`
-  •  **Function : **__Will show the list of all category names__
+  •  ** ╼•∘ 🅲🅼🅽🅳 ∘•╾ **`.listall`
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__Will show the list of all category names__
 
-  •  **Syntax : **`.frmfrom category_name chat_id`
-  •  **Function : **__To force remove the given chat_id from the given category name usefull when you left that chat or banned you there__
+  •  ** ╼•∘ 🅲🅼🅽🅳 ∘•╾ **`.frmfrom category_name chat_id`
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__To force remove the given chat_id from the given category name usefull when you left that chat or banned you there__
 
-  •  **Syntax : **`delc category_name`
-  •  **Function : **__Deletes the category completely in database__
+  •  ** ╼•∘ 🅲🅼🅽🅳 ∘•╾ **`delc category_name`
+  •  ** ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ **__Deletes the category completely in database__
 """
     }
 )
