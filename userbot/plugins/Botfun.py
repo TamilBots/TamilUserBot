@@ -251,7 +251,7 @@ CMD_HELP.update(
         "Botfun": """**Plugin : ** `Botfun`
 
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.purl <reply to file>`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __ Get a direct download link of that file/doc/pic/vid\__
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get a direct download link of that file/doc/pic/vid\__
   
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.reader <reply to url>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get an instant view of that site.__
@@ -269,7 +269,7 @@ CMD_HELP.update(
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Send a whisper message to that person.__
   
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.checkspam`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __ Check if you are limited.__
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Check if you are limited.__
   
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.gitdl <reply to github link>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Download the main branch of that git repo.__
