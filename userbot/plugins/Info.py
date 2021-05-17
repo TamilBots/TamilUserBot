@@ -21,99 +21,6 @@ from userbot import CMD_HELP
 TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
 
-@bot.on(admin_cmd(pattern="userinfo(?: |$)(.*)"))
-async def _(event):
-    if event.fwd_from:
-        return
-    replied_user, error_i_a = await get_full_user(event)
-    if replied_user is None:
-        return await edit_or_reply(event, f"`{str(error_i_a)}`")
-    user_id = replied_user.user.id
-    # some people have weird HTML in their names
-    first_name = html.escape(replied_user.user.first_name)
-    # https://stackoverflow.com/a/5072031/4723940
-    # some Deleted Accounts do not have first_name
-    if first_name is not None:
-        # some weird people (like me) have more than 4096 characters in their
-        # names
-        first_name = first_name.replace("\u2060", "")
-    # inspired by https://telegram.dog/afsaI181
-    common_chats = replied_user.common_chats_count
-    try:
-        dc_id, location = get_input_location(replied_user.profile_photo)
-    except:
-        dc_id = "Couldn't fetch DC ID!"
-  
-    try:
-        casurl = "https://api.cas.chat/check?user_id={}".format(user_id)
-        data = get(casurl).json()
-    except Exception as e:
-        LOGS.info(e)
-        data = None
-    if data:
-        if data["ok"]:
-            cas = "**Antispam(CAS) Banned :** `True`"
-        else:
-            cas = "**Antispam(CAS) Banned :** `False`"
-    else:
-        cas = "**Antispam(CAS) Banned :** `Couldn't Fetch`"
-    caption = """**Info of [{}](tg://user?id={}):
-   -🔖ID : **`{}`
-   **-**👥**Groups in Common : **`{}`
-   **-**🌏**Data Centre Number : **`{}`
-   **-**🔏**Restricted by telegram : **`{}`
-   **-**🦅{}
-   **-**👮‍♂️{}
-""".format(
-        first_name,
-        user_id,
-        user_id,
-        common_chats,
-        dc_id,
-        replied_user.user.restricted,
-        cas,
-    )
-    await edit_or_reply(event, caption)
-
-
-async def get_full_user(event):
-    input_str = event.pattern_match.group(1)
-    if input_str:
-        try:
-            try:
-                input_str = int(input_str)
-            except:
-                pass
-            user_object = await event.client.get_entity(input_str)
-            user_id = user_object.id
-            replied_user = await event.client(GetFullUserRequest(user_id))
-            return replied_user, None
-        except Exception as e:
-            return None, e
-    if event.reply_to_msg_id:
-        previous_message = await event.get_reply_message()
-        if previous_message.forward:
-            replied_user = await event.client(
-                GetFullUserRequest(
-                    previous_message.forward.sender_id
-                    or previous_message.forward.channel_id
-                )
-            )
-            return replied_user, None
-        replied_user = await event.client(
-            GetFullUserRequest(previous_message.sender_id)
-        )
-        return replied_user, None
-    if event.is_private:
-        try:
-            user_id = event.chat_id
-            replied_user = await event.client(GetFullUserRequest(user_id))
-            return replied_user, None
-        except Exception as e:
-            return None, e
-    return None, "No input is found"
-
-
 @bot.on(admin_cmd(pattern="whois(?: |$)(.*)"))
 async def who(event):
     cat = await edit_or_reply(event, "`Fetching userinfo wait....`")
@@ -284,16 +191,13 @@ async def ge(user, event):
 
 CMD_HELP.update(
     {
-        "Broadcast": """**Plugin : ** `Broadcast`
+        "Info": """**Plugin : ** `Info`
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sendto category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.info`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get User Info__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.fwdto category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will forward the replied message to all the chats in give category__
-
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`delc category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Deletes the category completely in database__
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.link`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get User Link__
 """
     }
 )
