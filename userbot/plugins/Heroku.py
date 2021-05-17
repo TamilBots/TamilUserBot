@@ -170,18 +170,18 @@ def prettyjson(obj, indent=2, maxlinelength=80):
 
 CMD_HELP.update(
     {
-        "Heroku": """**Plugin : ** `Heroku`
+        "Heroku":
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.usage`
+        """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.usage`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Check your heroku dyno hours status.__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.set var <NEW VAR> <VALUE>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.set var <NEW VAR> <VALUE>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __add new variable or update existing value variable____\n**WARNING !!!, after setting a variable the bot will restart.**
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.get var or .get var <VAR>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.get var or .get var <VAR>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.del var <VAR>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.del var <VAR>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ delete existing variable__\n**!!! WARNING !!!, after deleting variable the bot will restarted**
 """
     }
