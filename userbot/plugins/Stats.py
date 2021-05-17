@@ -114,9 +114,9 @@ def user_full_name(user):
 
 CMD_HELP.update(
     {
-        "Stats": "**Plugin : **`Stats`"
-        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.stats`"
-        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Checks stats of your account "
+        "Stats":
+        "\n\n  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.stats`"
+        "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Checks stats of your account "
         "send .stat to get repo"
     }
 )
