@@ -248,36 +248,36 @@ async def _(event):
                 
 CMD_HELP.update(
     {
-        "Botfun": """**Plugin : ** `Botfun`
+        "Botfun":
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.purl <reply to file>`
+        """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.purl <reply to file>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get a direct download link of that file/doc/pic/vid\__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.reader <reply to url>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.reader <reply to url>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get an instant view of that site.__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.aud <reply to youtube link>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.aud <reply to youtube link>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get audio from that youtube video__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.instadl <reply to instagram url>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.instadl <reply to instagram url>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Download that instagram post__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.xogame`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.xogame`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __XO-Game__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.whisper <message> <target username/id>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.whisper <message> <target username/id>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Send a whisper message to that person.__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.checkspam`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.checkspam`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Check if you are limited.__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.gitdl <reply to github link>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.gitdl <reply to github link>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Download the main branch of that git repo.__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.imusic <song name>`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.imusic <song name>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get the song.__
   
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.font`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.font`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Generate some stylish fonts.__
   """
     }
