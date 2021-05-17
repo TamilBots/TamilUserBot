@@ -15,7 +15,7 @@ from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from userbot.utils import admin_cmd
-
+from userbot import CMD_HELP
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
 )
@@ -23,7 +23,7 @@ requirements_path = path.join(
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "TamilBot"
-UPSTREAM_REPO_URL = "https://github.com/ivetri/TamilBot"
+UPSTREAM_REPO_URL = "https://github.com/TamilBots/TamilBot"
 
 
 
@@ -196,3 +196,14 @@ async def upstream(ups):
         args = [sys.executable, "-m", "UserBot"]
         execle(sys.executable, *args, environ)
         return
+CMD_HELP.update(
+    {
+        "updater": "**Plugin : **`updater`"
+        "\n\n•  **Syntax : **`.update`"
+        "\n•  **Function :** Checks if the main userbot repository has any updates "
+        "and shows a changelog if so."
+        "\n\n•  **Syntax : **`.update now`"
+        "\n•  **Function :** Update your userbot, "
+        "if there are any updates in your userbot repository.if you restart these goes back to last time when you deployed"
+    }
+)
