@@ -74,7 +74,32 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     ],
                 )
     
-            await event.answer([result] if result else None)
+            await event.answer([result])
+        elif event.query.user_id == bot.uid and query == "repo":
+            result = builder.article(
+                title="Repository",
+                text="**TamilBot**\n\n`Telegram userbot`",
+                buttons=[
+                    [custom.Button.url("Repo📡", "https://github.com/TamilBots/TamilBot")],
+                    [
+                        custom.Button.url(
+                            "👨‍💻Tutorial🎥", "https://github.com/TamilBots/TamilBot"
+                        ),
+                        custom.Button.url(
+                            "🤾🏻Deploy🤾🏻",
+                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Ftamilbots%2FTamilBot&template=https%3A%2F%2Fgithub.com%2Ftamilbots%2FTamilBot",
+                        ),
+                    ],
+                    [
+                        custom.Button.url(
+                            "Support Group↗️", "https://t.me/TamilSupport"
+                        )
+                    ],
+                ],
+                link_preview=False,
+            )
+        await event.answer([result] if result else None)
+
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
