@@ -37,7 +37,7 @@ async def Oof(e):
         t = t[:-1] + "of"
         await e.edit(t)
 
-@borg.on(admin_cmd("ccry"))
+@borg.on(admin_cmd("cry"))
 #@register(outgoing=True, pattern="^.cry$")
 async def cry(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -96,44 +96,46 @@ async def _(event):
 		await event.edit("".join(deq))
 		deq.rotate(1)
 
+		
+CMD_HELP.update(
+    {
+        "Extra": """**Plugin : ** `Extra`
 
+ ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`leave`
+ ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Leave a Chat__
 
-CMD_HELP.update({
-    "leave": "Leave a Chat"
-})
-CMD_HELP.update({
-    ";__;": "You try it!"
-})
-CMD_HELP.update({
-    "cry": "Cry"
-})
-CMD_HELP.update({
-    "fp": "Send face palm emoji."
-})
-CMD_HELP.update({
-    "moon": "Bot will send a cool moon animation."
-})
-CMD_HELP.update({
-    "clock": "Bot will send a cool clock animation."
-})
-CMD_HELP.update({
-    "readme": "Reedme."
-})
-CMD_HELP.update({
-    "source": "Gives the source of your userbot"
-})
-CMD_HELP.update({
-    "myusernames": "List of Usernames owned by you."
-})
-CMD_HELP.update({
-    "oof": "Same as ;__; but ooof"
-})
-CMD_HELP.update({
-    "earth": "Sends Earth animation"
-})
-CMD_HELP.update({
-    "heart": "Try and you'll get your emotions back"
-})
-CMD_HELP.update({
-    "king": "Real king"
-})
+╼•∘ 🅲🅼🅽🅳 ∘•╾  :`hm`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾   __You try it!__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `cry`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Send face palm emoji.__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `moon`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ __Bot will send a cool moon animation.__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `clock`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ __Bot will send a cool clock animation.__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `readme`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ __Reedme.__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `source`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ __Gives the source of your userbot__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `myusernames`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __List of Usernames owned by you.__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `oof`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Same as ;__; but ooof__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `earth`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Sends Earth animation__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `heart`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Try and you'll get your emotions back__
+
+╼•∘ 🅲🅼🅽🅳 ∘•╾  : `king`
+╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Be The Real King__
+"""
+    }
+)
