@@ -142,7 +142,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "Afk":
-        "╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.afk [Optional Reason]`\
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.afk [Optional Reason]`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Sets you as afk.\nReplies to anyone who tags/PM's \
 you telling them that you are AFK(reason).\n\nSwitches off AFK when you type back anything, anywhere.\
 \nafk means away from keyboard/keypad.\
