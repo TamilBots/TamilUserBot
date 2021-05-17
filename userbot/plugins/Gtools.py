@@ -281,7 +281,7 @@ async def watcher(event):
 
 CMD_HELP.update(
     {
-        "gtools": "**Global Tools**\
+        "Gtools": "**Global Tools**\
 \n\n**Syntax : **`.gmute <replying to user message>`\
 \n**Usage :** Gmute User And Delete His Msg.\
 \n\n**Syntax : **`.ungmute <replying to user message>`\
