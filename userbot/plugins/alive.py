@@ -35,3 +35,13 @@ async def tamilbot(alive):
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.edit("`என்னைப் பயன்படுத்தியதற்கு நன்றி🤖")
+
+
+CMD_HELP.update(
+    {
+        "Alive": "**Plugin : **`Alive`\
+        \n\n**Syntax : **`.alive`\
+\n**Usage : **Check your bot is alive or not.\
+"
+    }
+)
