@@ -580,20 +580,20 @@ async def silently_send_message(conv, text):
 
 CMD_HELP.update(
     {
-        "StickerTools": "**Plugins : **`StickersTools`\
-    \n\n**Syntax : **`.kang`\
-\n**Usage : **Reply .kang to a sticker or an image to kang it to your userbot pack.\
-\n\n**Syntax : **`.kang [emoji('s)]`\
-\n**Usage : **Works just like .kang but uses the emoji('s) you picked.\
-\n\n**Syntax : **`.kang [number]`\
-\n**Usage : **Kang's the sticker/image to the specified pack but uses 🤔 as emoji.\
-\n\n**Syntax : **`.kang [emoji('s)] [number]`\
-\n**Usage : **Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
-\n\n**Syntax : **`.sttxt` <your txt>\
-\n**Usage : **Anime that makes your writing fun.\
-\n\n**Syntax : **`.mmf` <your txt>\
-\n**Usage : ** paste text on random stickers.\
-\n\n**Syntax : **`.stkrinfo`\
-\n**Usage : **Gets info about the sticker pack."
+        "Sticker": "**Plugins : **`Stickers`\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.kang`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Reply .kang to a sticker or an image to kang it to your userbot pack.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.kang [emoji('s)]`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Works just like .kang but uses the emoji('s) you picked.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.kang [number]`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Kang's the sticker/image to the specified pack but uses 🤔 as emoji.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.kang [emoji('s)] [number]`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sttxt` <your txt>\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Anime that makes your writing fun.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.mmf` <your txt>\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾   paste text on random stickers.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.stkrinfo`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Gets info about the sticker pack."
     }
 )
