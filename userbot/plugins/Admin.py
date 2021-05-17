@@ -654,28 +654,26 @@ async def get_user_from_id(user, event):
 
 CMD_HELP.update({
     "Admin":
-    ".promote <username/reply> <custom rank (optional)>\
-\nUsage: Provides admin rights to the person in the chat.\
-\n\n.demote <username/reply>\
-\nUsage: Revokes the person's admin permissions in the chat.\
-\n\n.ban <username/reply> <reason (optional)>\
-\nUsage: Bans the person off your chat.\
-\n\n.unban <username/reply>\
-\nUsage: Removes the ban from the person in the chat.\
-\n\n.mute <username/reply> <reason (optional)>\
-\nUsage: Mutes the person in the chat, works on admins too.\
-\n\n.unmute <username/reply>\
-\nUsage: Removes the person from the muted list.\
-\n\n.kick <username/reply> <reason (optional)>\
-\nUsage: kick the person form group.\
-\n\n.pin <username/reply>\
-\nUsage: pin a message in current group.\
-\n\n.delusers\
-\nUsage: Searches for deleted accounts in a group. Use .delusers clean to remove deleted accounts from the group.\
-\n\n.admins\
-\nUsage: Retrieves a list of admins in the chat.\
-\n\n.users or .users <name of member>\
-\nUsage: Retrieves all (or queried) users in the chat.\
-\n\n.setgppic <reply to image>\
-\nUsage: Changes the group's display picture."
+    "╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.promote` <username/reply> <custom rank (optional)>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Provides admin rights to the person in the chat.\
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.demote` <username/reply>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Revokes the person's admin permissions in the chat.\
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.ban` <username/reply> <reason (optional)>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Bans the person off your chat.\
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.unban` <username/reply>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Removes the ban from the person in the chat.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.mute` <username/reply> <reason (optional)>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Mutes the person in the chat, works on admins too.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.unmute` <username/reply>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Removes the person from the muted list.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.kick` <username/reply> <reason (optional)>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : kick the person form group.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.pin` <username/reply>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : pin a message in current chat.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.admins`\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Retrieves a list of admins in the chat.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.users` or .users <name of member>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Retrieves all (or queried) users in the chat.\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.setgppic` <reply to image>\
+\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Changes the group's display picture."
 })
