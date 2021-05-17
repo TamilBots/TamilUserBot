@@ -124,8 +124,12 @@ async def rm_deletedacc(show):
             f"Cleaned **{del_u}** deleted account(s) !!\
             \nCHAT: {show.chat.title}(`{show.chat_id}`)")
 
-CMD_HELP.update({
-    "Admin":
-    ".zombies\
-\nUsage: Searches for deleted accounts in a group. Use .zombies clean to remove deleted accounts from the group.\
-})
+CMD_HELP.update(
+    {
+        "Zombies": """**Plugin : ** `Zombies`
+
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.zombies`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Searches for deleted accounts in a group. Use .zombies clean to remove deleted accounts from the group.__
+  """
+    }
+)
