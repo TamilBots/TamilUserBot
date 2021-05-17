@@ -189,28 +189,28 @@ CMD_HELP.update(
     {
         "Broadcast":
 
-        """╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sendto category_name`
+        """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.sendto category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.fwdto category_name`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.fwdto category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will forward the replied message to all the chats in give category__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.addto category_name`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.addto category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __It will add this chat/user/channel to the category of the given name__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.rmfrom category_name`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.rmfrom category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To remove the Chat/user/channel from the given category name__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.list category_name`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.list category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Will show the list of all chats in the given category__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.listall`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.listall`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Will show the list of all category names__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.frmfrom category_name chat_id`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.frmfrom category_name chat_id`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To force remove the given chat_id from the given category name usefull when you left that chat or banned you there__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`delc category_name`
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `delc category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Deletes the category completely in database__
 """
     }
