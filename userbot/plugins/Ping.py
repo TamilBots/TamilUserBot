@@ -3,7 +3,7 @@
 from telethon import events
 from datetime import datetime
 
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_or_reply
 
