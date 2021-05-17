@@ -4,6 +4,7 @@ from telegraph import Telegraph
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
+from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_delete, edit_or_reply
 
@@ -152,19 +153,6 @@ async def wspr(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="crack ?(.*)"))
-async def mod(event):
-    if event.fwd_from:
-        return
-    modr = event.pattern_match.group(1)
-    botusername = "@PremiumAppBot"
-    if event.reply_to_msg_id:
-        await event.get_reply_message()
-    tap = await bot.inline_query(botusername, modr)
-    await tap[0].click(event.chat_id)
-    await event.delete()
-
-
 @borg.on(admin_cmd(pattern="checkspam ?(.*)"))
 async def _(event):
     bot = "@SpamBot"
@@ -256,3 +244,38 @@ async def _(event):
             except YouBlockedUserError:
                 await x.edit("**Error:** `unblock` @fontsgenbot `and retry!")
 
+
+                
+CMD_HELP.update(
+    {
+        "Botfun": """**Plugin : ** `Botfun`
+
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.purl <reply to file>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __ Get a direct download link of that file/doc/pic/vid\__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.reader <reply to url>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get an instant view of that site.__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.aud <reply to youtube link>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get audio from that youtube video__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.instadl <reply to instagram url>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Download that instagram post__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.xogame`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __XO-Game__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.whisper <message> <target username/id>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Send a whisper message to that person.__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.checkspam`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __ Check if you are limited.__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.gitdl <reply to github link>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Download the main branch of that git repo.__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.imusic <song name>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get the song.__
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.font`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Generate some stylish fonts.__
