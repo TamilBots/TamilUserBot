@@ -8,7 +8,7 @@ from userbot.utils import admin_cmd, load_module, remove_plugin
 from userbot.manager.utils import edit_or_reply
 
 DELETE_TIMEOUT = 5
-thumb_image_path = "./resources/TamilBot.jpg"
+thumb_image_path = "./resources/Tamiluserbot.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilBot"
 
 
