@@ -40,8 +40,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Tagall": "**Plugin : **`Tagall`\
-\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.tagall`\
+        "Tagall":
+        "\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.tagall`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Tag Top 100 member in a chat .\
 "
     }
