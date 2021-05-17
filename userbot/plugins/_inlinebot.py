@@ -55,7 +55,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=f"**Showing Stats For {DEFAULTUSER}'s TamilBot** \nNote --> Only Owner Can Check This \n(C) @tamilsupport",
                 buttons=[
                     [custom.Button.inline("Show Stats ?", data="terminator")],
-                    [Button.url("Repo 🇮🇳", "https://github.com/ivetri/TamilBot")],
+                    [Button.url("Repo 🇮🇳", "https://github.com/TamilBots/TamilBot")],
                     [Button.url("Join Channel ❤️", "t.me/TamilSupport")],
                 ],
             )
@@ -122,7 +122,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
         if plugin_name in CMD_HELP:
-            help_string = f"**💫 PLUGIN NAME 💫 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
+            help_string = f"** 🌟 PLUGIN NAME 🌟 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
         reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n\n**(C) @TamilSupport** ".format(plugin_name)
         if len(reply_pop_up_alert) >= 4096:
@@ -185,9 +185,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         buttons = paginate_help(0, CMD_LIST, "helpme")
         sed = f"""𝔹𝕆𝕋 𝕆𝔽 {DEFAULTUSER}
 
-                 ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ 
+               ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ 
 
-                 🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {len(CMD_LIST)} """
+               🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {len(CMD_LIST)} """
         await event.edit(message=sed, buttons=buttons)
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
     async def megic(event):
