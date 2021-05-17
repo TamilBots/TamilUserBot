@@ -198,12 +198,12 @@ async def upstream(ups):
         return
 CMD_HELP.update(
     {
-        "updater": "**Plugin : **`updater`"
-        "\n\n•  **Syntax : **`.update`"
-        "\n•  **Function :** Checks if the main userbot repository has any updates "
+        "Updater": "**Plugin : **`Updater`"
+        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.update`"
+        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Checks if the main userbot repository has any updates "
         "and shows a changelog if so."
-        "\n\n•  **Syntax : **`.update now`"
-        "\n•  **Function :** Update your userbot, "
+        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.update now`"
+        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Update your userbot, "
         "if there are any updates in your userbot repository.if you restart these goes back to last time when you deployed"
     }
 )
