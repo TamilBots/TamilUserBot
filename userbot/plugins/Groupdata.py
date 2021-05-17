@@ -402,19 +402,19 @@ async def fetch_info(chat, event):
 
 CMD_HELP.update(
     {
-        "GroupData": "**Plugin : **`GroupData`\
-    \n\n•  **Syntax : **`.adminperm (username/reply)`\
-    \n•  **Function : **__Shows you the admin permissions in the group.__\
-    \n\n•  **Syntax : **`.get_admin or .admins <username of group >`\
-    \n•  **Function : **__Retrieves a list of admins in the chat.__\
-    \n\n•  **Syntax : **`.bots or .bots <username of group >`\
-    \n•  **Function : **__Retrieves a list of bots in the chat.__\
-    \n\n•  **Syntax : **`.users or .users <name of member>`\
-    \n•  **Function : **__Retrieves all (or queried) users in the chat.__\
-    \n\n•  **Syntax : **`.chatinfo or .chatinfo <username of group>`\
-    \n•  **Function : **__Shows you the total information of the required chat.__\
-    \n\n•  **Syntax : **`.get_id` or `.id`\
-    \n•  **Function : **__if given input then shows id of that given chat/channel/user else if you reply to user then shows id of the replied user \
+        "Groupdata": "**Plugin : **`Groupdata`\
+    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.adminperm (username/reply)`\
+    \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ __Shows you the admin permissions in the group.__\
+    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.get_admin or .admins <username of group >`\
+    \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾__Retrieves a list of admins in the chat.__\
+    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.bots or .bots <username of group >`\
+    \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾__Retrieves a list of bots in the chat.__\
+    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.users or .users <name of member>`\
+    \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾__Retrieves all (or queried) users in the chat.__\
+    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.chatinfo or .chatinfo <username of group>`\
+    \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾__Shows you the total information of the required chat.__\
+    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.get_id` or `.id`\
+    \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾__if given input then shows id of that given chat/channel/user else if you reply to user then shows id of the replied user \
      along with current chat id and if not replied to user or given input then just show id of the chat where you used the command__"
     }
 )
