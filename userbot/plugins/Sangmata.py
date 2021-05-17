@@ -142,8 +142,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Sangmata": "**Plugin : **`Sangmata`\
-    \n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.sg <username/userid/reply>`\
+        "Sangmata":
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.sg <username/userid/reply>`\
     \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Shows you the previous name history of user.__\
     \n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.gid <username/reply>`\
     \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Shows you the user id of user.__\
