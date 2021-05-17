@@ -47,7 +47,7 @@ USER_BOT_WARN_ZERO = "`**இது உங்கள் கடைசி எச்�
 
 if Var.PRIVATE_GROUP_ID is not None:
 
-    @borg.on(admin_cmd(pattern="a ?(.*)"))
+    @borg.on(admin_cmd(pattern="(a|approve) (?: |$)(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -108,7 +108,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @borg.on(admin_cmd(pattern="da ?(.*)"))
+    @borg.on(admin_cmd(pattern="(da|disapprove) (?: |$)(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -258,3 +258,24 @@ async def hehehe(event):
             await borg.send_message(
                 chat, "**இந்த பயனர் எனது படைப்பாளி! எனவே, அங்கீகரிக்கப்பட்டது😉!!!**"
             )
+
+CMD_HELP.update(
+    {
+        "pmpermit": "**Plugin : **`pmpermit`\
+        \n\n  •  **Syntax : **`.approve or .a`\
+        \n  •  **Function : **__Approves the mentioned/replied person to PM.__\
+        \n\n  •  **Syntax : **`.disapprove or .da`\
+        \n  •  **Function : **__dispproves the mentioned/replied person to PM.__\
+        \n\n  •  **Syntax : **`.block`\
+        \n  •  **Function : **__Blocks the person.__\
+        \n\n  •  **Syntax : **`.unblock`\
+        \n  •  **Function : **__Unblocks the person.__\
+        \n\n  •  **Syntax : **`.listapproved`\
+        \n  •  **Function : **__To list the all approved users.__\
+        \n\n  •  **Syntax : **`.disapprove all or da all`\
+        \n  •  **Function : **__To disapprove all the approved users.__\
+        \n\n  •  Available variables for formatting `CUSTOM_PMPERMIT_TEXT` :\
+        \n`{mention}`, `{first}`, `{last} `, `{fullname}`, `{userid}`, `{username}`, `{my_first}`, `{my_fullname}`, `{my_last}`, `{my_mention}`, `{my_username}`,`{warns}` , `{totalwarns}`.\
+"
+    }
+)
