@@ -172,29 +172,17 @@ CMD_HELP.update(
     {
         "Broadcast": """**Plugin : ** `Broadcast`
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sendto category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.usage`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Check your heroku dyno hours status.__
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.fwdto category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will forward the replied message to all the chats in give category__
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.set var <NEW VAR> <VALUE>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __add new variable or update existing value variable____\n**WARNING !!!, after setting a variable the bot will restart.**
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.addto category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __It will add this chat/user/channel to the category of the given name__
-
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.rmfrom category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To remove the Chat/user/channel from the given category name__
-
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.list category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Will show the list of all chats in the given category__
-
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.listall`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Will show the list of all category names__
-
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.frmfrom category_name chat_id`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __To force remove the given chat_id from the given category name usefull when you left that chat or banned you there__
-
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`delc category_name`
-  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Deletes the category completely in database__
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.get var or .get var <VAR>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**
+  
+  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.del var <VAR>`
+  ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ delete existing variable__\n**!!! WARNING !!!, after deleting variable the bot will restarted**
 """
     }
 )
