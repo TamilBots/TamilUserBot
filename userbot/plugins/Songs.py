@@ -64,8 +64,8 @@ async def WooMai(rose):
 
 CMD_HELP.update(
     {
-        "Songs": "**Plugin : **`Songs`"
-        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.dzd`"
+        "Songs":
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.dzd`"
         "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get songs from @DeezLoadBot "
         "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.song`"
         "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get your favourite 😍 song from @SongPlayRoBot, "
