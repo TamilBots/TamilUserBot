@@ -7,6 +7,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
 import asyncio
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd(pattern=("sg ?(.*)")))
 async def _(event):
@@ -138,3 +139,14 @@ async def _(event):
              await event.edit("```can you kindly disable your forward privacy settings for good?```")
           else: 
              await event.edit(f"{response.message.message}")
+
+CMD_HELP.update(
+    {
+        "sangmata": "**Plugin : **`sangmata`\
+    \n\n**Syntax : **`.sg <username/userid/reply>`\
+    \n**Function : **__Shows you the previous name history of user.__\
+    \n\n**Syntax : **`.sgu <username/userid/reply>`\
+    \n**Function : **__Shows you the previous username history of user.__\
+    "
+    }
+)
