@@ -187,9 +187,9 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Broadcast": """**Plugin : ** `Broadcast`
+        "Broadcast":
 
-  ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sendto category_name`
+        """╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.sendto category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
 
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.fwdto category_name`
