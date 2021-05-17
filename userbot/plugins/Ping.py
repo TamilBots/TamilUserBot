@@ -23,3 +23,11 @@ async def _(event):
         f"__**🚴🏻‍♂️ Pong!__**\n➥__**Ping Speed**__ {ms}\n➥ __**Bot**__ __**of**__ [{DEFAULTUSER}](tg://user?id={IMSID})"
     )
 
+CMD_HELP.update(
+    {
+        "Ping": "**Plugin : **`Ping`\
+        \n\n**Syntax : **`.ping`\
+\n**Usage : **Check your bot status.\
+"
+    }
+)
