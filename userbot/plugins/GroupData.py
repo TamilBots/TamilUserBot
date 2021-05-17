@@ -403,7 +403,7 @@ async def fetch_info(chat, event):
 
 CMD_HELP.update(
     {
-        "groupdata": "**Plugin : **`groupdata`\
+        "GroupData": "**Plugin : **`GroupData`\
     \n\n•  **Syntax : **`.adminperm (username/reply)`\
     \n•  **Function : **__Shows you the admin permissions in the group.__\
     \n\n•  **Syntax : **`.get_admin or .admins <username of group >`\
