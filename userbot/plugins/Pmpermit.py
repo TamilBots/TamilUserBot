@@ -47,7 +47,7 @@ USER_BOT_WARN_ZERO = "`**இது உங்கள் கடைசி எச்�
 
 if Var.PRIVATE_GROUP_ID is not None:
 
-    @borg.on(admin_cmd(pattern="(a|approve) (?: |$)(.*)"))
+    @borg.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -108,7 +108,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @borg.on(admin_cmd(pattern="(da|disapprove) (?: |$)(.*)"))
+    @borg.on(admin_cmd(pattern="da ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
