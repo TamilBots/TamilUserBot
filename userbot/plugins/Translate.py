@@ -2,7 +2,7 @@ from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
-from userbot import BOTLOG, BOTLOG_CHATID, deEmojify
+from userbot import BOTLOG, BOTLOG_CHATID,
 from userbot.plugins.sql_helper.globals import addgvar, gvarstatus
 
 
@@ -36,7 +36,6 @@ async def _(event):
 
 
 @bot.on(admin_cmd(outgoing=True, pattern=r"trt(?: |$)([\s\S]*)"))
-@bot.on(sudo_cmd(allow_sudo=True, pattern=r"trt(?: |$)([\s\S]*)"))
 async def translateme(trans):
     if trans.fwd_from:
         return
