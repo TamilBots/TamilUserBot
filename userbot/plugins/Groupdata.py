@@ -11,7 +11,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest, GetParticipant
 from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import MessageActionChannelMigrateFrom
 from telethon.utils import get_input_location, pack_bot_file_id
-
+from userbot.managers.utils import edit_or_reply
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 from telethon.tl.types import (
@@ -76,7 +76,7 @@ async def _(event):
         await eor(event, mentions)
 
 
-@borg.on(admin_cmd("get_id"))
+@borg.on(admin_cmd(pattern="(get_id|id)( (.*)|$)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -101,7 +101,7 @@ async def _(event):
             )
         )
 
-@borg.on(admin_cmd("get_bot ?(.*)"))
+@borg.on(admin_cmd(pattern="(get_bot|bots)( (.*)|$)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -135,7 +135,7 @@ async def _(event):
 
 @borg.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
 async def info(event):
-    ok = await eor(event, "`Analysing the chat...`")
+    ok = await edit_or_reply(event, "`Analysing the chat...`")
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
