@@ -4,7 +4,7 @@ from telethon import functions
 from userbot.events import register
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd(pattern=r"add(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern=r"invite(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
