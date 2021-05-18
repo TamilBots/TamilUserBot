@@ -23,7 +23,7 @@ from telethon.tl.types import (
 
 
 
-@borg.on(admin_cmd(pattern="get_ad?(m)in ?(.*)"))
+@borg.on(admin_cmd(pattern="(get_admin|admins)( (.*)|$)"))
 async def _(event):
     if event.fwd_from:
         return
