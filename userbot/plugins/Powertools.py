@@ -42,6 +42,6 @@ CMD_HELP.update(
         """╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.restart`\
         \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Restarts the bot !!__\
         \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.shutdown`\
-        \n**╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use__ @hk_heroku_bot"""
+        \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use__ @hk_heroku_bot"""
     }
 )
