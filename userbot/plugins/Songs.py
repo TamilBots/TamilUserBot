@@ -66,8 +66,8 @@ CMD_HELP.update(
     {
         "Songs":
         "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.dzd`"
-        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get songs from @DeezLoadBot "
-        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.song`"
-        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get your favourite 😍 song from @SongPlayRoBot, "
+        "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get songs from @DeezLoadBot "
+        "\n\n  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.song`"
+        "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get your favourite 😍 song from @SongPlayRoBot, "
     }
 )
