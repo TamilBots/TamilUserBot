@@ -199,11 +199,11 @@ async def upstream(ups):
 CMD_HELP.update(
     {
         "Updater":
-        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.update`"
-        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Checks if the main userbot repository has any updates "
+        "\n\n  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.update`"
+        "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Checks if the main userbot repository has any updates "
         "and shows a changelog if so."
-        "\n\n•  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.update now`"
-        "\n•  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Update your userbot, "
+        "\n\n  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.update now`"
+        "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Update your userbot, "
         "if there are any updates in your userbot repository.if you restart these goes back to last time when you deployed"
     }
 )
