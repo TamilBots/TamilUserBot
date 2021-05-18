@@ -157,13 +157,6 @@ if Var.PRIVATE_GROUP_ID is not None:
         else:
             await event.edit(APPROVED_PMs)
 
-    @borg.on(admin_cmd(pattern="(disapprove all|da all)$"))
-    async def disapprove_p_m(event):
-        if event.fwd_from:
-            return
-        result = "`ok , everyone is disapproved now`"
-        pmpermit_sql.disapprove_all()
-        await edit_delete(event, result, parse_mode=parse_pre, time=10)
 
     @borg.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
