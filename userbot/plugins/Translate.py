@@ -1,8 +1,8 @@
 from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
-
-from userbot import BOTLOG, BOTLOG_CHATID, admin_cmd, CMD_HELP
+from userbot.utils import admin_cmd
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.plugins.sql_helper.globals import addgvar, gvarstatus
 
 
