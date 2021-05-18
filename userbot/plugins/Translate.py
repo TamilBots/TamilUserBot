@@ -2,7 +2,7 @@ from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
-from userbot import BOTLOG, BOTLOG_CHATID,
+from userbot import BOTLOG, BOTLOG_CHATID
 from userbot.plugins.sql_helper.globals import addgvar, gvarstatus
 
 
