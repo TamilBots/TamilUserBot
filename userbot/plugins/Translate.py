@@ -108,7 +108,7 @@ CMD_HELP.update(
          \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __It will translate your messege__\
          \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.lang trt LanguageCode`\
          \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __It will set default langaugeCode for __**trt**__ command__\
-         \n\n**•  Check here ** [Language codes](https://telegra.ph/Language-codes-11-01)\
+         \n\n**•  Check here ** [Language codes](https://telegra.ph/Language-codes-05-19)\
         "
     }
 )
