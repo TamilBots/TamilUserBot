@@ -361,7 +361,7 @@ async def kakashi(event):
     )
 
 
- CMD_HELP.update(
+CMD_HELP.update(
      {
          "ytdl"
          "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.yta link`\
