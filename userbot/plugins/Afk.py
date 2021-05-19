@@ -1,5 +1,7 @@
 # Afk plugin from TamilUserBot ported from uniborg
 import asyncio
+import time
+import html
 from datetime import datetime
 
 from telethon import events
@@ -9,6 +11,7 @@ from userbot.utils import admin_cmd
 from userbot import BOTLOG, BOTLOG_CHATID
 from userbot.manager.utils import edit_delete, edit_or_reply
 from userbot.manager.tools import media_type
+from telethon.tl.functions.users import GetFullUserRequest
 
 class AFK:
     def __init__(self):
@@ -144,8 +147,13 @@ async def on_afk(event):
             LOGS.info(str(e))
         messaget = media_type(event)
         resalt = f"#AFK_TAGS \n<b>Group : </b><code>{hmm.title}</code>"
+        target = await event.client(GetFullUserRequest(event.query.user_id))
+        first_name = html.escape(target.user.first_name)
+        him_id = event.query.user_id
+        if first_name is not None:
+            first_name = first_name.replace("\u2060", "")
         if full is not None:
-            resalt += f"\n<b>From : </b> 👤{_format.htmlmentionuser(full.first_name , full.id)}"
+            resalt += f"\n<b>From : </b> 👤 [{first_name}](tg://user?id={him_id})"
         if messaget is not None:
             resalt += f"\n<b>Message type : </b><code>{messaget}</code>"
         else:
@@ -217,7 +225,7 @@ async def _(event):
         )
     if not BOTLOG:
         return await edit_or_reply(
-            event, "`To use media afk you need to set PRIVATE_GROUP_BOT_API_ID config`"
+            event, "`To use media afk you need to set PRIVATE_GROUP_ID config`"
         )
     AFK_.USERAFK_ON = {}
     AFK_.afk_time = None
