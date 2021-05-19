@@ -10,6 +10,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 from userbot.utils import progress, admin_cmd
+from userbot.manager.utils import edit_delete, edit_or_reply
 from userbot import CMD_HELP, ALIVE_NAME
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeAudio
