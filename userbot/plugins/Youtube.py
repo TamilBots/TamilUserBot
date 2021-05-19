@@ -292,71 +292,85 @@ def file_size(file_path):
         file_info = os.stat(file_path)
         return convert_bytes(file_info.st_size)
 
-@borg.on(admin_cmd(pattern=r"youtubesearch ?(\d+)? ?(.*)?"))
-async def yt_search(video_q):
-    reply = await video_q.get_reply_message()
-    if video_q.pattern_match.group(2):
-        query = video_q.pattern_match.group(2)
-    elif reply:
-        query = reply.message
-    else:
-        return await video_q.edit("Invalid syntax")
-    resultamt = int(video_q.pattern_match.group(
-        1)) if video_q.pattern_match.group(1) is not None else 10
-    result = ''
-    if Config.YOUTUBE_API_KEY is None:
-        await video_q.edit("`Error: YouTube API key missing!\
-            Add it to environment vars or config.env.`")
+@borg.on(admin_cmd(pattern="yts(?: |$)(\d*)? ?(.*)", command="yts"))
+async def yt_search(event):
+    if event.fwd_from:
         return
-
-    await video_q.edit("```Processing...```")
-
-    full_response = youtube_search(query, resultamt=resultamt)
-    videos_json = full_response[1]
-
-    for i, video in enumerate(videos_json, start=1):
-        result += f"{i}. [{unescape(video['snippet']['title'])}]\
-(https://www.youtube.com/watch?v={video['id']['videoId']})\n\n"
-
-    reply_text = f"**Search Query:**\n`{query}`\n\n**Result:**\n{result}"
-
-    await video_q.edit(reply_text)
-
-
-def youtube_search(query,
-                   order="relevance",
-                   token=None,
-                   location=None,
-                   location_radius=None,
-                   resultamt=10):
-    """ Do a YouTube search. """
-    youtube = build('youtube',
-                    'v3',
-                    developerKey=Config.YOUTUBE_API_KEY,
-                    cache_discovery=False)
-    search_response = youtube.search().list(
-        q=query,
-        type="video",
-        pageToken=token,
-        order=order,
-        part="id,snippet",
-        maxResults=resultamt,
-        location=location,
-        locationRadius=location_radius).execute()
-
-    videos = [
-        search_result
-        for search_result in search_response.get("items", [])
-        if search_result["id"]["kind"] == "youtube#video"
-    ]
-
+    if event.is_reply and not event.pattern_match.group(2):
+        query = await event.get_reply_message()
+        query = str(query.message)
+    else:
+        query = str(event.pattern_match.group(2))
+    if not query:
+        return await edit_delete(
+            event, "`Reply to a message or pass a query to search!`"
+        )
+    video_q = await edit_or_reply(event, "`Searching...`")
+    if event.pattern_match.group(1) != "":
+        lim = int(event.pattern_match.group(1))
+        if lim <= 0:
+            lim = int(10)
+    else:
+        lim = int(10)
     try:
-        nexttok = search_response["nextPageToken"]
-        return (nexttok, videos)
-    except HttpError:
-        nexttok = "last_page"
-        return (nexttok, videos)
-    except KeyError:
-        nexttok = "KeyError, try again."
-        return (nexttok, videos)
+        full_response = await ytsearch(query, limit=lim)
+    except Exception as e:
+        return await edit_delete(video_q, str(e), time=10, parse_mode=parse_pre)
+    reply_text = f"**•  Search Query:**\n`{query}`\n\n**•  Results:**\n{full_response}"
+    await edit_or_reply(video_q, reply_text)
 
+
+@borg.on(admin_cmd(pattern="insta (.*)"))
+async def kakashi(event):
+    if event.fwd_from:
+        return
+    chat = "@instasavegrambot"
+    link = event.pattern_match.group(1)
+    if "www.instagram.com" not in link:
+        await edit_or_reply(
+            event, "` I need a Instagram link to download it's Video...`(*_*)"
+        )
+    else:
+        start = datetime.now()
+        catevent = await edit_or_reply(event, "**Downloading.....**")
+    async with event.client.conversation(chat) as conv:
+        try:
+            msg_start = await conv.send_message("/start")
+            response = await conv.get_response()
+            msg = await conv.send_message(link)
+            video = await conv.get_response()
+            details = await conv.get_response()
+            await event.client.send_read_acknowledge(conv.chat_id)
+        except YouBlockedUserError:
+            await catevent.edit("**Error:** `unblock` @instasavegrambot `and retry!`")
+            return
+        await catevent.delete()
+        cat = await event.client.send_file(
+            event.chat_id,
+            video,
+        )
+        end = datetime.now()
+        ms = (end - start).seconds
+        await cat.edit(
+            f"<b><i>➥ Video uploaded in {ms} seconds.</i></b>\n<b><i>➥ Uploaded by :- {hmention}</i></b>",
+            parse_mode="html",
+        )
+    await event.client.delete_messages(
+        conv.chat_id, [msg_start.id, response.id, msg.id, video.id, details.id]
+    )
+
+
+CMD_HELP.update(
+    {
+        "ytdl"
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.yta link`\
+    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
+    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.ytv link`\
+    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __downloads the video from the given link(Suports the all sites which support youtube-dl)__\
+    \n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.yts query`/`.yts count query`\
+    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Fetches youtube search results with views and duration with required no of count results by default it fetches 10 results__\
+    \n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.insta` <link>\
+    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Downloads the video from the given instagram link__\
+    "
+    }
+)
