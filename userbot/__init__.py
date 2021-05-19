@@ -4,7 +4,7 @@ from telethon.sessions import StringSession
 from telethon import TelegramClient
 
 from var import Var
-from userbot.uniborgConfig import config
+from userbot import config
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
