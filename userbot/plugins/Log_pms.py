@@ -7,7 +7,8 @@ from userbot import BOTLOG, BOTLOG_CHATID, LOGS
 from userbot.sql_helper import no_log_pms_sql
 from userbot.sql_helper.globals import addgvar, gvarstatus
 from userbot.utils import admin_cmd
-from userbot.manager.utils import edit_or_reply
+from userbot.manager.utils import edit_delete, edit_or_reply
+
 class LOG_CHATS:
     def __init__(self):
         self.RECENT_USER = None
