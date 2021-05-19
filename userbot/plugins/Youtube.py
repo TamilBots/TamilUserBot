@@ -10,7 +10,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 from userbot.utils import progress
-from userbot import CMD_HELP
+from userbot import CMD_HELP, ALIVE_NAME
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeAudio
 from youtube_dl import YoutubeDL
@@ -27,6 +27,7 @@ from youtube_dl.utils import (
 
 parse_pre="html"
 
+USERID = bot.uid
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilUserBot"
 
 hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
