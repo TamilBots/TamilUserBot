@@ -57,14 +57,12 @@ if bool(ENV):
         quit(1)
 
     # Logging channel/group configuration.
-    BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID", None)
-    try:
-        BOTLOG_CHATID = int(BOTLOG_CHATID)
-    except:
-        pass
-
-    # Userbot logging feature switch.
-    BOTLOG = sb(os.environ.get("BOTLOG", "False"))
+   if Config.PRIVATE_GROUP_BOT_API_ID == 0:
+      BOTLOG = False
+      BOTLOG_CHATID = "me"
+  else:
+      BOTLOG = True
+      BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 
     # Bleep Blop, this is a bot ;)
     PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
