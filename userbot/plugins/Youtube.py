@@ -1,160 +1,105 @@
 # Thanks to @AvinashReddy3108 for this plugin
+# Instadl by @Jisan7509
+# youtube plugin for catuserbot
+# yts from https://github.com/rojserbest/VoiceChatPyroBot/blob/main/handlers/inline.py
 
-"""
-Audio and video downloader using Youtube-dl
-.yta To Download in mp3 format
-.ytv To Download in mp4 format
-"""
 import asyncio
-import logging
-import math
 import os
-import shutil
+import re
 import time
+from datetime import datetime
+from pathlib import Path
 
-from googleapiclient.errors import HttpError
-from googleapiclient.discovery import build
-
-from userbot.manager.utils import edit_delete, edit_or_reply
+from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeAudio
 from youtube_dl import YoutubeDL
-from youtube_dl.utils import (ContentTooShortError, DownloadError,
-                              ExtractorError, GeoRestrictedError,
-                              MaxDownloadsReached, PostProcessingError,
-                              UnavailableVideoError, XAttrMetadataError)
+from youtube_dl.utils import (
+    ContentTooShortError,
+    DownloadError,
+    ExtractorError,
+    GeoRestrictedError,
+    MaxDownloadsReached,
+    PostProcessingError,
+    UnavailableVideoError,
+    XAttrMetadataError,
+)
 
-from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd
-from userbot import CMD_HELP
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
-logger = logging.getLogger(__name__)
-
-DELETE_TIMEOUT = 3
-
-
-async def progress(current, total, event, start, type_of_ps, file_name=None):
-    """Generic progress_callback for uploads and downloads."""
-    now = time.time()
-    diff = now - start
-    if round(diff % 10.00) == 0 or current == total:
-        percentage = current * 100 / total
-        speed = current / diff
-        elapsed_time = round(diff) * 1000
-        time_to_completion = round((total - current) / speed) * 1000
-        estimated_total_time = elapsed_time + time_to_completion
-        progress_str = "{0}{1} {2}%\n".format(
-            ''.join("█" for i in range(math.floor(percentage / 10))),
-            ''.join("░" for i in range(10 - math.floor(percentage / 10))),
-            round(percentage, 2))
-        tmp = progress_str + \
-            "{0} of {1}\nETA: {2}".format(
-                humanbytes(current),
-                humanbytes(total),
-                time_formatter(estimated_total_time)
-            )
-        if file_name:
-            await event.edit("{}\nFile Name: `{}`\n{}".format(
-                type_of_ps, file_name, tmp))
-        else:
-            await event.edit("{}\n{}".format(type_of_ps, tmp))
+from . import hmention, progress, ytsearch
 
 
-def humanbytes(size):
-    """Input size in bytes,
-    outputs in a human readable format"""
-    # https://stackoverflow.com/a/49361727/4723940
-    if not size:
-        return ""
-    # 2 ** 10 = 1024
-    power = 2**10
-    raised_to_pow = 0
-    dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
-    while size > power:
-        size /= power
-        raised_to_pow += 1
-    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
+async def ytsearch(query, limit):
+    result = ""
+    videolinks = VideosSearch(query.lower(), limit=limit)
+    for v in videolinks.result()["result"]:
+        textresult = f"[{v['title']}](https://www.youtube.com/watch?v={v['id']})\n"
+        try:
+            textresult += f"**Description : **`{v['descriptionSnippet'][-1]['text']}`\n"
+        except Exception:
+            textresult += "**Description : **`None`\n"
+        textresult += f"**Duration : **__{v['duration']}__  **Views : **__{v['viewCount']['short']}__\n"
+        result += f"☞ {textresult}\n"
+    return result
 
 
-def time_formatter(milliseconds: int) -> str:
-    """Inputs time in milliseconds, to get beautified time,
-    as string"""
-    seconds, milliseconds = divmod(int(milliseconds), 1000)
-    minutes, seconds = divmod(seconds, 60)
-    hours, minutes = divmod(minutes, 60)
-    days, hours = divmod(hours, 24)
-    tmp = ((str(days) + " day(s), ") if days else "") + \
-        ((str(hours) + " hour(s), ") if hours else "") + \
-        ((str(minutes) + " minute(s), ") if minutes else "") + \
-        ((str(seconds) + " second(s), ") if seconds else "") + \
-        ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
-    return tmp[:-2]
-
-
-@borg.on(admin_cmd(pattern="yt(a|v) (.*)"))
+@bot.on(admin_cmd(pattern="yt(a|v)(?: |$)(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="yt(a|v)(?: |$)(.*)", allow_sudo=True))
 async def download_video(v_url):
-    """ For .ytdl command, download media from YouTube and many other sites. """
+    """For .ytdl command, download media from YouTube and many other sites."""
     url = v_url.pattern_match.group(2)
-    type = v_url.pattern_match.group(1).lower()
-    out_folder = Config.TMP_DOWNLOAD_DIRECTORY + "youtubedl/"
-
-    if not os.path.isdir(out_folder):
-        os.makedirs(out_folder)
-
-    await v_url.edit("`Preparing to download...`")
-
-    if type == "a":
+    if not url:
+        rmsg = await v_url.get_reply_message()
+        myString = rmsg.text
+        url = re.search("(?P<url>https?://[^\s]+)", myString).group("url")
+    if not url:
+        await edit_or_reply(v_url, "What I am Supposed to find? Give link")
+        return
+    ytype = v_url.pattern_match.group(1).lower()
+    v_url = await edit_or_reply(v_url, "`Preparing to download...`")
+    reply_to_id = await reply_id(v_url)
+    if ytype == "a":
         opts = {
-            'format': 'bestaudio',
-            'addmetadata': True,
-            'key': 'FFmpegMetadata',
-            'writethumbnail': True,
-            'embedthumbnail': True,
-            'audioquality': 0,
-            'audioformat': 'mp3',
-            'prefer_ffmpeg': True,
-            'geo_bypass': True,
-            'nocheckcertificate': True,
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '320',
-            }],
-            'outtmpl': out_folder+'%(title)s.mp3',
-            'quiet': True,
-            'logtostderr': False
+            "format": "bestaudio",
+            "addmetadata": True,
+            "key": "FFmpegMetadata",
+            "writethumbnail": True,
+            "prefer_ffmpeg": True,
+            "geo_bypass": True,
+            "nocheckcertificate": True,
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "320",
+                }
+            ],
+            "outtmpl": "%(id)s.mp3",
+            "quiet": True,
+            "logtostderr": False,
         }
         video = False
         song = True
-
-    elif type == "v":
+    elif ytype == "v":
         opts = {
-            'format': 'best',
-            'addmetadata': True,
-            'key': 'FFmpegMetadata',
-            'writethumbnail': True,
-            'write_all_thumbnails': True,
-            'embedthumbnail': True,
-            'prefer_ffmpeg': True,
-            'hls_prefer_native': True,
-            'geo_bypass': True,
-            'nocheckcertificate': True,
-            'postprocessors': [{
-                'key': 'FFmpegVideoConvertor',
-                'preferedformat': 'mp4'
-            }],
-            'outtmpl': out_folder+'%(title)s.mp4',
-            'logtostderr': False,
-            'quiet': True
+            "format": "best",
+            "addmetadata": True,
+            "key": "FFmpegMetadata",
+            "writethumbnail": True,
+            "prefer_ffmpeg": True,
+            "geo_bypass": True,
+            "nocheckcertificate": True,
+            "postprocessors": [
+                {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}
+            ],
+            "outtmpl": "%(id)s.mp4",
+            "logtostderr": False,
+            "quiet": True,
         }
         song = False
         video = True
-
     try:
         await v_url.edit("`Fetching data, please wait..`")
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
-        filename = sorted(get_lst_of_files(out_folder, []))
     except DownloadError as DE:
         await v_url.edit(f"`{str(DE)}`")
         return
@@ -185,115 +130,63 @@ async def download_video(v_url):
         await v_url.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
-
-    # cover_url = f"https://img.youtube.com/vi/{ytdl_data['id']}/0.jpg"
-    # thumb_path = wget.download(cover_url, out_folder + "cover.jpg")
-
-    # relevant_path = "./DOWNLOADS/youtubedl"
-    # included_extensions = ["mp4","mp3"]
-    # file_names = [fn for fn in os.listdir(relevant_path)
-    #             if any(fn.endswith(ext) for ext in included_extensions)]
-
+    catthumb = Path(f"{ytdl_data['id']}.jpg")
+    if not os.path.exists(catthumb):
+        catthumb = Path(f"{ytdl_data['id']}.webp")
+    if not os.path.exists(catthumb):
+        catthumb = None
     if song:
-        relevant_path = "./DOWNLOADS/youtubedl"
-        included_extensions = ["mp3"]
-        file_names = [fn for fn in os.listdir(relevant_path)
-                      if any(fn.endswith(ext) for ext in included_extensions)]
-        img_extensions = ["webp", "jpg", "jpeg"]
-        img_filenames = [fn_img for fn_img in os.listdir(relevant_path) if any(
-            fn_img.endswith(ext_img) for ext_img in img_extensions)]
-        thumb_image = out_folder + img_filenames[0]
-
-        # thumb = out_folder + "cover.jpg"
-        file_path = out_folder + file_names[0]
-        song_size = file_size(file_path)
-        j = await v_url.edit(f"`Preparing to upload song:`\
+        await v_url.edit(
+            f"`Preparing to upload song:`\
         \n**{ytdl_data['title']}**\
-        \nby *{ytdl_data['uploader']}*")
+        \nby *{ytdl_data['uploader']}*"
+        )
         await v_url.client.send_file(
             v_url.chat_id,
-            file_path,
-            caption=ytdl_data['title'] + "\n" + f"`{song_size}`",
+            f"{ytdl_data['id']}.mp3",
             supports_streaming=True,
-            thumb=thumb_image,
+            thumb=catthumb,
+            reply_to=reply_to_id,
             attributes=[
-                DocumentAttributeAudio(duration=int(ytdl_data['duration']),
-                                       title=str(ytdl_data['title']),
-                                       performer=str(ytdl_data['uploader']))
+                DocumentAttributeAudio(
+                    duration=int(ytdl_data["duration"]),
+                    title=str(ytdl_data["title"]),
+                    performer=str(ytdl_data["uploader"]),
+                )
             ],
-            progress_callback=lambda d, t: asyncio.get_event_loop(
-            ).create_task(
-                progress(d, t, v_url, c_time, "Uploading..",
-                         f"{ytdl_data['title']}.mp3")))
-        # os.remove(file_path)
-        await asyncio.sleep(DELETE_TIMEOUT)
-        os.remove(thumb_image)
-        await j.delete()
-
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d, t, v_url, c_time, "Uploading..", f"{ytdl_data['title']}.mp3"
+                )
+            ),
+        )
+        os.remove(f"{ytdl_data['id']}.mp3")
     elif video:
-        relevant_path = "./DOWNLOADS/youtubedl/"
-        included_extensions = ["mp4"]
-        file_names = [fn for fn in os.listdir(relevant_path)
-                      if any(fn.endswith(ext) for ext in included_extensions)]
-        img_extensions = ["webp", "jpg", "jpeg"]
-        img_filenames = [fn_img for fn_img in os.listdir(relevant_path) if any(
-            fn_img.endswith(ext_img) for ext_img in img_extensions)]
-        thumb_image = out_folder + img_filenames[0]
-
-        file_path = out_folder + file_names[0]
-        video_size = file_size(file_path)
-        # thumb = out_folder + "cover.jpg"
-
-        j = await v_url.edit(f"`Preparing to upload video:`\
+        await v_url.edit(
+            f"`Preparing to upload video:`\
         \n**{ytdl_data['title']}**\
-        \nby *{ytdl_data['uploader']}*")
+        \nby *{ytdl_data['uploader']}*"
+        )
         await v_url.client.send_file(
             v_url.chat_id,
-            file_path,
+            f"{ytdl_data['id']}.mp4",
+            reply_to=reply_to_id,
             supports_streaming=True,
-            caption=ytdl_data['title'] + "\n" + f"`{video_size}`",
-            thumb=thumb_image,
-            progress_callback=lambda d, t: asyncio.get_event_loop(
-            ).create_task(
-                progress(d, t, v_url, c_time, "Uploading..",
-                         f"{ytdl_data['title']}.mp4")))
-        os.remove(file_path)
-        await asyncio.sleep(DELETE_TIMEOUT)
-        os.remove(thumb_image)
-        await v_url.delete()
-        await j.delete()
-    shutil.rmtree(out_folder)
+            caption=ytdl_data["title"],
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d, t, v_url, c_time, "Uploading..", f"{ytdl_data['title']}.mp4"
+                )
+            ),
+        )
+        os.remove(f"{ytdl_data['id']}.mp4")
+    if catthumb:
+        os.remove(catthumb)
+    await v_url.delete()
 
 
-def get_lst_of_files(input_directory, output_lst):
-    filesinfolder = os.listdir(input_directory)
-    for file_name in filesinfolder:
-        current_file_name = os.path.join(input_directory, file_name)
-        if os.path.isdir(current_file_name):
-            return get_lst_of_files(current_file_name, output_lst)
-        output_lst.append(current_file_name)
-    return output_lst
-
-
-def convert_bytes(num):
-    """
-    this function will convert bytes to MB.... GB... etc
-    """
-    for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
-        if num < 1024.0:
-            return "%3.1f %s" % (num, x)
-        num /= 1024.0
-
-
-def file_size(file_path):
-    """
-    this function will return the file size
-    """
-    if os.path.isfile(file_path):
-        file_info = os.stat(file_path)
-        return convert_bytes(file_info.st_size)
-
-@borg.on(admin_cmd(pattern="yts(?: |$)(\d*)? ?(.*)", command="yts"))
+@bot.on(admin_cmd(pattern="yts(?: |$)(\d*)? ?(.*)", command="yts"))
+@bot.on(sudo_cmd(pattern="yts(?: |$)(\d*)? ?(.*)", command="yts", allow_sudo=True))
 async def yt_search(event):
     if event.fwd_from:
         return
@@ -321,7 +214,8 @@ async def yt_search(event):
     await edit_or_reply(video_q, reply_text)
 
 
-@borg.on(admin_cmd(pattern="insta (.*)"))
+@bot.on(admin_cmd(pattern="insta (.*)"))
+@bot.on(sudo_cmd(pattern="insta (.*)", allow_sudo=True))
 async def kakashi(event):
     if event.fwd_from:
         return
@@ -359,3 +253,19 @@ async def kakashi(event):
     await event.client.delete_messages(
         conv.chat_id, [msg_start.id, response.id, msg.id, video.id, details.id]
     )
+
+
+CMD_HELP.update(
+    {
+        "ytdl": "**Plugin :** `ytdl`\
+    \n\n  •  **Syntax :** `.yta link`\
+    \n  •  **Function : **__downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
+    \n\n  •  **Syntax : **`.ytv link`\
+    \n  •  **Function : **__downloads the video from the given link(Suports the all sites which support youtube-dl)__\
+    \n\n  •  **Syntax : **`.yts query`/`.yts count query`\
+    \n  •  **Function : **__Fetches youtube search results with views and duration with required no of count results by default it fetches 10 results__\
+    \n\n  •  **Syntax : **`.insta` <link>\
+    \n  •  **Function : **__Downloads the video from the given instagram link__\
+    "
+    }
+)
