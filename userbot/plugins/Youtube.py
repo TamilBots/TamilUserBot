@@ -25,7 +25,7 @@ from youtube_dl.utils import (ContentTooShortError, DownloadError,
 
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
-
+from userbot import CMD_HELP
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
 logger = logging.getLogger(__name__)
