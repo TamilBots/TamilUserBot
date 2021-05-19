@@ -102,12 +102,12 @@ async def getTranslate(text, **kwargs):
 CMD_HELP.update(
     {
         "translate": "**Plugin :** `translate`\
-         \n\n**•  Syntax : **`.tl LanguageCode <text/reply>`\
-         \n**•  Function : **__Translates given language to destination language. For <text> use .tl LanguageCode ; <text>__\
-         \n\n**•  Syntax : **`.trt <Reply/text>`\
-         \n**•  Function : **__It will translate your messege__\
-         \n\n**•  Syntax : **`.lang trt LanguageCode`\
-         \n**•  Function : **__It will set default langaugeCode for __**trt**__ command__\
+         \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.tl LanguageCode <text/reply>`\
+         \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Translates given language to destination language. For <text> use .tl LanguageCode ; <text>__\
+         \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.trt <Reply/text>`\
+         \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __It will translate your messege__\
+         \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.lang trt LanguageCode`\
+         \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __It will set default langaugeCode for __**trt**__ command__\
          \n\n**•  Check here ** [Language codes](https://telegra.ph/Language-codes-11-01)\
         "
     }
