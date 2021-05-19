@@ -7,7 +7,7 @@ from telethon.tl import functions, types
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot import BOTLOG, BOTLOG_CHATID
-from userbot.manager.utils import edit_delete, edit_or_reply
+from userbot.manager.utils import edit_delete, edit_or_reply, media_type
 
 class AFK:
     def __init__(self):
