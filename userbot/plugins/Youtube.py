@@ -25,6 +25,7 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
+parse_pre="html"
 
 hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
 
