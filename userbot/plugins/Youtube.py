@@ -359,18 +359,3 @@ async def kakashi(event):
     await event.client.delete_messages(
         conv.chat_id, [msg_start.id, response.id, msg.id, video.id, details.id]
     )
-
- CMD_HELP.update(
-    {
-        "ytdl"
-        """╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.yta link`\
-    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
-    \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.ytv link`\
-    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __downloads the video from the given link(Suports the all sites which support youtube-dl)__\
-    \n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.yts query`/`.yts count query`\
-    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Fetches youtube search results with views and duration with required no of count results by default it fetches 10 results__\
-    \n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.insta` <link>\
-    \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : __Downloads the video from the given instagram link__\
-     """
-    }
- )
