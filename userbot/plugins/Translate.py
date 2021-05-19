@@ -4,7 +4,7 @@ from googletrans import LANGUAGES, Translator
 from userbot.utils import admin_cmd
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.plugins.sql_helper.globals import addgvar, gvarstatus
-
+from userbot.manager.utils import edit_delete, edit_or_reply
 
 @borg.on(admin_cmd(pattern="tl (.*)"))
 async def _(event):
