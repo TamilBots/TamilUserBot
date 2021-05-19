@@ -15,6 +15,7 @@ import time
 from googleapiclient.errors import HttpError
 from googleapiclient.discovery import build
 
+from userbot.manager.utils import edit_delete, edit_or_reply
 from telethon.tl.types import DocumentAttributeAudio
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (ContentTooShortError, DownloadError,
