@@ -20,11 +20,6 @@ class LOG_CHATS:
 
 LOG_CHATS_ = LOG_CHATS()
 
-  target = await event.client(GetFullUserRequest(event.query.user_id))
-  first_name = html.escape(target.user.first_name)
-   him_id = event.query.user_id
-   if first_name is not None:
-       first_name = first_name.replace("\u2060", "")
 
 
 @borg.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -53,6 +48,12 @@ async def monito_p_m_s(event):
                             )
                         )
                     LOG_CHATS_.COUNT = 0
+                    target = await event.client(GetFullUserRequest(event.query.user_id))
+                    first_name = html.escape(target.user.first_name)
+                     him_id = event.query.user_id
+                     if first_name is not None:
+                         first_name = first_name.replace("\u2060", "")
+
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PRIVATE_GROUP_ID,
                     f"👤 [{first_name}](tg://user?id={him_id}) has sent a new message \nId : `{chat.id}`",
@@ -88,6 +89,11 @@ async def log_tagged_messages(event):
         LOGS.info(str(e))
     messaget = media_type(event)
     resalt = f"#TAGS \n<b>Group : </b><code>{hmm.title}</code>"
+    target = await event.client(GetFullUserRequest(event.query.user_id))
+    first_name = html.escape(target.user.first_name)
+     him_id = event.query.user_id
+     if first_name is not None:
+         first_name = first_name.replace("\u2060", "")
     if full is not None:
         resalt += (
             f"\n<b>From : </b> 👤 [{first_name}](tg://user?id={him_id})"
