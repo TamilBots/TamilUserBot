@@ -19,6 +19,12 @@ class LOG_CHATS:
 
 LOG_CHATS_ = LOG_CHATS()
 
+       target = await event.client(GetFullUserRequest(event.query.user_id))
+       first_name = html.escape(target.user.first_name)
+        him_id = event.query.user_id
+        if first_name is not None:
+            first_name = first_name.replace("\u2060", "")
+
 
 @borg.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
@@ -48,7 +54,7 @@ async def monito_p_m_s(event):
                     LOG_CHATS_.COUNT = 0
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PRIVATE_GROUP_ID,
-                    f"👤{_format.mentionuser(sender.first_name , sender.id)} has sent a new message \nId : `{chat.id}`",
+                    f"👤 [{first_name}](tg://user?id={him_id}) has sent a new message \nId : `{chat.id}`",
                 )
             try:
                 if event.message:
@@ -83,7 +89,7 @@ async def log_tagged_messages(event):
     resalt = f"#TAGS \n<b>Group : </b><code>{hmm.title}</code>"
     if full is not None:
         resalt += (
-            f"\n<b>From : </b> 👤{_format.htmlmentionuser(full.first_name , full.id)}"
+            f"\n<b>From : </b> 👤 [{first_name}](tg://user?id={him_id})"
         )
     if messaget is not None:
         resalt += f"\n<b>Message type : </b><code>{messaget}</code>"
