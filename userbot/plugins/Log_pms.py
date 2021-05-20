@@ -53,7 +53,6 @@ async def monito_p_m_s(event):
                      him_id = event.query.user_id
                      if first_name is not None:
                          first_name = first_name.replace("\u2060", "")
-
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PRIVATE_GROUP_ID,
                     f"👤 [{first_name}](tg://user?id={him_id}) has sent a new message \nId : `{chat.id}`",
