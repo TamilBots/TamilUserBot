@@ -9,6 +9,7 @@ from userbot.plugins.sql_helper.globals import addgvar, gvarstatus
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_delete, edit_or_reply
 from userbot.manager.tools import media_type
+from telethon.tl.functions.users import GetFullUserRequest
 
 class LOG_CHATS:
     def __init__(self):
@@ -19,11 +20,11 @@ class LOG_CHATS:
 
 LOG_CHATS_ = LOG_CHATS()
 
-       target = await event.client(GetFullUserRequest(event.query.user_id))
-       first_name = html.escape(target.user.first_name)
-        him_id = event.query.user_id
-        if first_name is not None:
-            first_name = first_name.replace("\u2060", "")
+  target = await event.client(GetFullUserRequest(event.query.user_id))
+  first_name = html.escape(target.user.first_name)
+   him_id = event.query.user_id
+   if first_name is not None:
+       first_name = first_name.replace("\u2060", "")
 
 
 @borg.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
