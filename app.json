@@ -9,8 +9,8 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/TamilBots/TamilBot",
-  "website": "https://github.com/TamilBots/TamilBot",
+  "repository": "https://github.com/ivetri/TamilBot",
+  "website": "https://github.com/ivetri/TamilBot",
   "success_url": "#TODO",
   "env": {
     "ENV": {
