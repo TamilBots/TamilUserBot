@@ -38,7 +38,6 @@ async def _(event):
     )
     r = requests.get(url).json()
     result = ""
-    results = r["query"]["pages"]
     for key in results:
         current_value = results[key]
         pageid = current_value["pageid"]
