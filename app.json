@@ -102,15 +102,15 @@
     }
   }],
   "buildpacks": [{
-    "url": "https://github.com/IVETRI/heroku-buildpack-ffmpeg-latest"
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
   },{
-    "url":"https://github.com/IVETRI/aria2-heroku.git"
+    "url":"https://github.com/amivin/aria2-heroku.git"
   },{
-    "url":"https://github.com/IVETRI/heroku-buildpack-google-chrome"
+    "url":"https://github.com/heroku/heroku-buildpack-google-chrome"
   },{
-    "url":"https://github.com/IVETRI/heroku-buildpack-chromedriver"
+    "url":"https://github.com/heroku/heroku-buildpack-chromedriver"
   },{
-    "url": "https://github.com/IVETRI/heroku-buildpack-p7zip"
+    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
   },{
     "url": "heroku/python"
   }]
