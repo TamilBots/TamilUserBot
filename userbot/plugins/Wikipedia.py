@@ -20,7 +20,7 @@ async def _(event):
     await event.edit("WikiPedia **Search**: {} \n\n **Result**: \n\n{}".format(input_str, result))
     
     
-    @borg.on(admin_cmd(pattern="wikimedia (.*)"))
+@borg.on(admin_cmd(pattern="wikimedia (.*)"))
 async def _(event):
     if event.fwd_from:
         return
