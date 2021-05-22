@@ -1,10 +1,10 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """WikiPedia.ORG
 Syntax: .wikipedia Query"""
-"""WikiMedia.ORG
-Syntax: .wikimedia Query"""
 from telethon import events
 import wikipedia
-import requests
 from uniborg.util import admin_cmd
 
 
@@ -21,40 +21,3 @@ async def _(event):
         url = page.url
         result += f"> [{s}]({url}) \n"
     await event.edit("WikiPedia **Search**: {} \n\n **Result**: \n\n{}".format(input_str, result))
-    
-    
-@borg.on(admin_cmd(pattern="wikimedia (.*)"))
-async def _(event):
-    if event.fwd_from:
-        return
-    input_str = event.pattern_match.group(1)
-    url = "https://commons.wikimedia.org/w/api.php?action={}&generator={}&prop=imageinfo&gimlimit={}&redirects=1&titles={}&iiprop={}&format={}".format(
-        "query",
-        "images",
-        "5",
-        input_str,
-        "timestamp|user|url|mime|thumbmime|mediatype",
-        "json"
-    )
-    r = requests.get(url).json()
-    result = ""
-    results = f["query"]["pages"]
-    for key in results:
-        current_value = results[key]
-        pageid = current_value["pageid"]
-        title = current_value["title"]
-        imageinfo = current_value["imageinfo"][0]
-        timestamp = imageinfo["timestamp"]
-        user = imageinfo["user"]
-        descriptionurl = imageinfo["descriptionurl"]
-        mime = imageinfo["mime"]
-        mediatype = imageinfo["mediatype"]
-        result += """\n
-        pageid: {}
-        title: {}
-        timestamp: {}
-        user: [{}]({})
-        mime: {}
-        mediatype: {}
-        """.format(pageid, title, timestamp, user, descriptionurl, mime, mediatype)
-    await event.edit("**Search**: {} \n\n **Results**: {}".format(input_str, result))
