@@ -1,5 +1,7 @@
 """WikiPedia.ORG
 Syntax: .wikipedia Query"""
+"""WikiMedia.ORG
+Syntax: .wikimedia Query"""
 from telethon import events
 import wikipedia, requests
 from uniborg.util import admin_cmd
