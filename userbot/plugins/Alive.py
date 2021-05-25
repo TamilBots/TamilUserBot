@@ -40,7 +40,7 @@ async def amireallyalive(alive):
 async def repo(event):
     if event.fwd_from:
         return
-    tgbotname = Var.TG_BOT_USER_NAME_BF_HER
+    tgbotname = Var.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
     response = await bot.inline_query(tgbotname, "repo")
