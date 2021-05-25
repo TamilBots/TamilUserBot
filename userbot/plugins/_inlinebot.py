@@ -55,7 +55,7 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
                 buttons=[
                     [custom.Button.inline("Show Stats ?", data="terminator")],
                     [Button.url("Repo 🇮🇳", "https://github.com/TamilBots/TamilBot")],
-                    [Button.url("Join Channel ❤️", "t.me/TamilSupport")],
+                    [Button.url("Join Group ❤️", "t.me/TamilSupport")],
                 ],
             )
         elif event.query.user_id == bot.uid and query.startswith("**Hello"):
