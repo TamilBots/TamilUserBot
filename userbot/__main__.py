@@ -22,7 +22,7 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.tgbot = None
-    if Var.TG_BOT_USER_NAME_BF_HER is not None:
+    if Var.TG_BOT_USERNAME is not None:
         print("Initiating Inline Bot")
         # ForTheGreatrerGood of beautification
         bot.tgbot = TelegramClient(
@@ -32,7 +32,7 @@ else:
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         print("Initialisation finished with no errors")
         print("Starting Userbot")
-        bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
+        bot.loop.run_until_complete(add_bot(Var.TG_BOT_USERNAME))
         print("Startup Completed")
     else:
         bot.start()
