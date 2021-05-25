@@ -33,7 +33,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 # HLP_COLOUMNS = os.environ.get("HLP_COLOUMNS", "2")
 # CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", "✯")
 
-if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
+if Var.TG_BOT_USERNAME is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)
     async def inline_handler(event):
         builder = event.builder
