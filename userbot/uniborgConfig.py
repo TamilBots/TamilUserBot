@@ -14,6 +14,8 @@ if ENV:
         PRIVATE_GROUP_BOT_ID = int(os.environ.get("PRIVATE_GROUP_BOT_ID", -1001221744590))
         # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
         PRIVATE_CHANNEL_BOT_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_ID", -1001221744590))
+        # for Tag notifications 
+        TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         # This is required for the plugins involving the file system.
         TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads/")
         # This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html
