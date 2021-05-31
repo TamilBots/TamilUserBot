@@ -25,20 +25,18 @@ FAV_NAME = os.environ.get("FAV_NAME", None)
 if FAV_NAME is None:
     FAV_NAME = "Tamil UserBot"
 
-
-
-PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
-if PMPERMIT_TEXT is None:
-    USER_BOT_NO_WARN = (
-        f"**Hello! நான் `{DEFAULTUSER} `\n\n"
-        "நான் உங்களைப் போலல்லாமல் ஒரு Busy-யான மனிதர்!😁😅**\n\n"
+MESAG = (
+    str(PMPERMIT_TEXT)
+    if PMPERMIT_TEXT
+    else "நான் உங்களைப் போலல்லாமல் ஒரு Busy-யான மனிதர்!😁😅**""
+)
+USER_BOT_NO_WARN = (
+        f"**Hello! நான் `{DEFAULTUSER} `\n\n"      
         "⭕️ இது **[TamilBot](http://t.me/TamilSupport)** Security Service ⭕️\n\n"
         f"🛡 PM பாதுகாப்பு சேவை! 🛡 \n\n"
         "**Please select an option from the drop down why you’re here!**"
     )
 
-else:
-    USER_BOT_NO_WARN = PMPERMIT_TEXT
 
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -239,7 +237,10 @@ if Var.PRIVATE_GROUP_ID is not None:
             except:
                 return
         botusername = Var.TG_BOT_USERNAME
-        tap = await bot.inline_query(botusername, USER_BOT_NO_WARN)
+        EEEE = USER_BOT_NO_WARN.format(
+        DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.MAX_SPAM
+        )
+        tap = await bot.inline_query(botusername, EEEE)
         sed = await tap[0].click(event.chat_id)
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
