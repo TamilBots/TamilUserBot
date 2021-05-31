@@ -10,7 +10,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
-
+from userbot.uniborgConfig import Config
 DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
@@ -25,6 +25,10 @@ FAV_NAME = os.environ.get("FAV_NAME", None)
 if FAV_NAME is None:
     FAV_NAME = "Tamil UserBot"
 
+PM_WARNS = {}
+PREV_REPLY_MESSAGE = {}
+myid = bot.uid
+
 MESAG = (
     str(PMPERMIT_TEXT)
     if PMPERMIT_TEXT
@@ -36,10 +40,6 @@ USER_BOT_NO_WARN = (
         f"🛡 PM பாதுகாப்பு சேவை! 🛡 \n\n"
         "**Please select an option from the drop down why you’re here!**"
     )
-
-
-PM_WARNS = {}
-PREV_REPLY_MESSAGE = {}
 
 USER_BOT_WARN_ZERO = "`**இது உங்கள் கடைசி எச்சரிக்கை⚠. வேறொரு செய்தியை அனுப்ப வேண்டாம் நீங்கள் Block மற்றும் புகாரளிக்கப்படுவீர்கள்🛑. பொறுமை காத்துக்கொள்ளுங்கள்.நான் விரைவில் பதிலளிப்பேன்☺.**)`"
 
