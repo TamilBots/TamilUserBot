@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.utils import lightning_cmd
+from userbot.utils import admin_cmd
 
 THUMB_IMAGE_PATH = "./thumb_image.jpg"
 
