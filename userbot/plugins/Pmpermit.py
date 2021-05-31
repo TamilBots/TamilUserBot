@@ -8,7 +8,7 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP, PMPERMIT_TEXT
 from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
 
