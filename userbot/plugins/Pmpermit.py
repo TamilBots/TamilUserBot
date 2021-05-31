@@ -11,6 +11,9 @@ import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
+
+PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+
 DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
@@ -32,7 +35,7 @@ myid = bot.uid
 MESAG = (
     str(PMPERMIT_TEXT)
     if PMPERMIT_TEXT
-    else "`நான் உங்களைப் போலல்லாமல் ஒரு Busy-யான மனிதர்!😁😅`"
+    else "`நான் உங்களைப் போலல்லாமல் ஒரு Busy-யான மனிதர்!😁😅"
 )
 USER_BOT_NO_WARN = (
         f"**Hello! நான் `{DEFAULTUSER} `\n\n"      
