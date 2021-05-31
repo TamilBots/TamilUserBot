@@ -12,7 +12,7 @@ from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
 
-PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 
 DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
