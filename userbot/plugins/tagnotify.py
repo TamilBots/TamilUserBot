@@ -17,11 +17,12 @@ from telethon.tl.types import Chat
 from telethon.utils import get_display_name
 
 
+from userbot.uniborgConfig import Config
 
 @borg.on(
     events.NewMessage(
         incoming=True,
-        blacklist_chats=Var.UB_BLACK_LIST_CHAT,
+        blacklist_chats=Config.UB_BLACK_LIST_CHAT,
         func=lambda e: (e.mentioned),
     )
 )
