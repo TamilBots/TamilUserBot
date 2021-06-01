@@ -34,7 +34,7 @@ if Config.PRIVATE_GROUP_ID:
         where_ = await event.client.get_entity(event.chat_id)
 
         where_m = get_display_name(where_)
-        button_text = "📃 Go to Message  "
+        button_text = "📨 Go to Message  "
 
         if isinstance(where_, Channel):
             message_link = f"https://t.me/c/{where_.id}/{event.id}"
