@@ -17,10 +17,10 @@ if Var.PRIVATE_GROUP_ID is not none:
     )
     async def all_messages_catcher(e):
         await event.forward_to(Var.TG_BOT_USERNAME)
-        x = await ultroid_bot.get_entity(e.sender_id)
+        x = await borg.get_entity(e.sender_id)
         if x.bot or x.verified:
             return
-        y = await ultroid_bot.get_entity(e.chat_id)
+        y = await borg.get_entity(e.chat_id)
         if y.username:
             yy = f"[{get_display_name(y)}](https://t.me/{y.username})"
         else:
@@ -39,7 +39,7 @@ if Var.PRIVATE_GROUP_ID is not none:
                 cap = get_string("tagnot_1").format(xx, yy, e.text, msg)
             else:
                 cap = get_string("tagnot_2").format(xx, yy, msg)
-            await asst.send_message(
+            await borg.send_message(
                 NEEDTOLOG,
                 cap,
                 link_preview=False,
@@ -51,7 +51,7 @@ if Var.PRIVATE_GROUP_ID is not none:
             else:
                 cap = get_string("tagnot_2").format(xx, yy, msg)
             try:
-                await ultroid_bot.send_message(NEEDTOLOG, cap, link_preview=False)
+                await borg.send_message(NEEDTOLOG, cap, link_preview=False)
             except BaseException:
                 pass
        else: 
