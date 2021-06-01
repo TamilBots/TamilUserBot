@@ -7,7 +7,7 @@ from userbot.uniborgConfig import Config
 if Config.PRIVATE_GROUP_ID:
     NEEDTOLOG = int(Config.PRIVATE_GROUP_ID)
     
-if Var.PRIVATE_GROUP_ID is not none:
+if Var.PRIVATE_GROUP_ID is not None:
     @borg.on(
         events.NewMessage(
             incoming=True,
