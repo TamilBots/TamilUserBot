@@ -13,6 +13,7 @@ from userbot.utils import progress, admin_cmd
 from userbot.manager.utils import edit_delete, edit_or_reply
 from userbot import CMD_HELP, ALIVE_NAME
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import DocumentAttributeAudio
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (
