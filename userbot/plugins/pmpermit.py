@@ -11,7 +11,6 @@ import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
-import userbot.plugins import uid
 PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 
 DEFAULTUSER = (
