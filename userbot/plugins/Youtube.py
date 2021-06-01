@@ -31,7 +31,7 @@ parse_pre="html"
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilUserBot"
 
-hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
+hmention = f"<a href = tg://user?id={user.id}>{DEFAULTUSER}</a>"
 
 
 async def ytsearch(query, limit):
