@@ -59,9 +59,6 @@ if Config.SPAMWATCH_API:
 else:
     spamwatch = None
 
-cat_users = [bot.uid]
-        cat_users.append(user)
-
 
 # ================================================
 
