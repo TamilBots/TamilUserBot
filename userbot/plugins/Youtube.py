@@ -31,21 +31,35 @@ parse_pre="html"
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilUserBot"
 
-hmention = f"<a href = tg://user?id={user.id}>{DEFAULTUSER}</a>"
+from . import hmention, progress, ytsearch
 
 
-async def ytsearch(query, limit):
-    result = ""
-    videolinks = VideosSearch(query.lower(), limit=limit)
-    for v in videolinks.result()["result"]:
-        textresult = f"[{v['title']}](https://www.youtube.com/watch?v={v['id']})\n"
-        try:
-            textresult += f"**Description : **`{v['descriptionSnippet'][-1]['text']}`\n"
-        except Exception:
-            textresult += "**Description : **`None`\n"
-        textresult += f"**Duration : **__{v['duration']}__  **Views : **__{v['viewCount']['short']}__\n"
-        result += f"☞ {textresult}\n"
-    return result
+@bot.on(admin_cmd(pattern="yts(?: |$)(\d*)? ?(.*)", command="yts"))
+async def yt_search(event):
+    if event.fwd_from:
+        return
+    if event.is_reply and not event.pattern_match.group(2):
+        query = await event.get_reply_message()
+        query = str(query.message)
+    else:
+        query = str(event.pattern_match.group(2))
+    if not query:
+        return await edit_delete(
+            event, "`Reply to a message or pass a query to search!`"
+        )
+    video_q = await edit_or_reply(event, "`Searching...`")
+    if event.pattern_match.group(1) != "":
+        lim = int(event.pattern_match.group(1))
+        if lim <= 0:
+            lim = int(10)
+    else:
+        lim = int(10)
+    try:
+        full_response = await ytsearch(query, limit=lim)
+    except Exception as e:
+        return await edit_delete(video_q, str(e), time=10, parse_mode=parse_pre)
+    reply_text = f"**•  Search Query:**\n`{query}`\n\n**•  Results:**\n{full_response}"
+    await edit_or_reply(video_q, reply_text)
 
 
 @borg.on(admin_cmd(pattern="yt(a|v)(?: |$)(.*)", outgoing=True))
