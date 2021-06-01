@@ -31,8 +31,6 @@ parse_pre="html"
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilUserBot"
 
-from . import hmention, progress, ytsearch
-
 
 @bot.on(admin_cmd(pattern="yts(?: |$)(\d*)? ?(.*)", command="yts"))
 async def yt_search(event):
