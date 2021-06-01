@@ -7,7 +7,8 @@ from userbot.uniborgConfig import Config
 if Config.PRIVATE_GROUP_ID:
     NEEDTOLOG = int(Config.PRIVATE_GROUP_ID)
     
-if Var.PRIVATE_GROUP_ID is not None:
+if Config.PRIVATE_GROUP_ID:
+
     @borg.on(
         events.NewMessage(
             incoming=True,
@@ -15,44 +16,43 @@ if Var.PRIVATE_GROUP_ID is not None:
             func=lambda e: (e.mentioned),
         )
     )
-    async def all_messages_catcher(e):
-        await e.forward_to(Var.TG_BOT_USERNAME)
-        x = await borg.get_entity(e.sender_id)
-        if x.bot or x.verified:
+    async def all_messages_catcher(event):
+        # the bot might not have the required access_hash to mention the
+        # appropriate PM
+        await event.forward_to(Var.TG_BOT_USERNAME)
+
+        # construct message
+        # the message format is stolen from @MasterTagAlertBot
+        ammoca_message = ""
+
+        who_ = await event.client.get_entity(event.sender_id)
+        if who_.bot or who_.verified or who_.support:
             return
-        y = await borg.get_entity(e.chat_id)
-        if y.username:
-            yy = f"[{get_display_name(y)}](https://t.me/{y.username})"
-        else:
-            yy = f"[{get_display_name(y)}](https://t.me/c/{y.id}/{e.id})"
-        xx = f"[{get_display_name(x)}](tg://user?id={x.id})"
-        msg = f"https://t.me/c/{y.id}/{e.id}"
-        if e.text:
-            cap = f"{xx} tagged you in {yy}\n\n```{e.text}```\nㅤ"
-        else:
-            cap = f"{xx} tagged you in {yy}"
 
-        btx = "📨 View Message"
+        who_m = f"[{get_display_name(who_)}](tg://user?id={who_.id})"
 
-        try:
-            if e.text:
-                cap = get_string("tagnot_1").format(xx, yy, e.text, msg)
-            else:
-                cap = get_string("tagnot_2").format(xx, yy, msg)
-            await borg.send_message(
-                NEEDTOLOG,
-                cap,
+        where_ = await event.client.get_entity(event.chat_id)
+
+        where_m = get_display_name(where_)
+        button_text = "📃 Go to Message  "
+
+        if isinstance(where_, Channel):
+            message_link = f"https://t.me/c/{where_.id}/{event.id}"
+        else:
+            # not an official link,
+            # only works in DrKLO/Telegram,
+            # for some reason
+            message_link = f"tg://openmessage?chat_id={where_.id}&message_id={event.id}"
+            # Telegram is weird :\
+
+        ammoca_message += f"{who_m} tagged you in [{where_m}]({message_link})"
+        if NEEDTOLOG is not None:
+            await tgbot.send_message(
+                entity=NEEDTOLOG,
+                message=ammoca_message,
                 link_preview=False,
-                buttons=[[custom.Button.url(btx, msg)]],
+                buttons=[[custom.Button.url(button_text, message_link)]],
+                silent=True,
             )
-        except BaseException:
-            if e.text:
-                cap = get_string("tagnot_1").format(xx, yy, e.text, msg)
-            else:
-                cap = get_string("tagnot_2").format(xx, yy, msg)
-            try:
-                await borg.send_message(NEEDTOLOG, cap, link_preview=False)
-            except BaseException:
-                pass
-        else: 
+        else:
             return
