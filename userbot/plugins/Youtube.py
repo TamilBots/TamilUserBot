@@ -31,6 +31,8 @@ parse_pre="html"
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TamilUserBot"
 
+mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
 from . import hmention, progress, ytsearch
 
 
