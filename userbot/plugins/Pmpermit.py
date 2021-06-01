@@ -168,7 +168,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         
     @borg.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
-        if event.sender_id == bot.uid:
+        if event.sender_id == event.client.uid:
             return
 
         if Var.PRIVATE_GROUP_ID is None:
@@ -187,7 +187,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         sender = await bot.get_entity(chat_id)
 
-        if chat_id == bot.uid:
+        if chat_id == event.client.uid:
 
             # don't log Saved Messages
 
@@ -239,10 +239,11 @@ if Var.PRIVATE_GROUP_ID is not None:
             except:
                 return
         botusername = Var.TG_BOT_USERNAME
-        EEEE = USER_BOT_NO_WARN.format(
+        myid = event.client.uid
+        MSG = USER_BOT_NO_WARN.format(
         DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.MAX_SPAM
         )
-        tap = await bot.inline_query(botusername, EEEE)
+        tap = await bot.inline_query(botusername, MSG)
         sed = await tap[0].click(event.chat_id)
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
