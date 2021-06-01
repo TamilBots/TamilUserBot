@@ -17,14 +17,7 @@ if Config.PRIVATE_GROUP_ID:
         )
     )
     async def all_messages_catcher(e):
-        # the bot might not have the required access_hash to mention the
-        # appropriate PM
-        await e.forward_to(Var.TG_BOT_USERNAME)
-
-        # construct message
-        # the message format is stolen from @MasterTagAlertBot
-        ammoca_message = ""
-
+       if NEEDTOLOG is not None
         x = await borg.get_entity(e.sender_id)
         if x.bot or x.verified:
             return
