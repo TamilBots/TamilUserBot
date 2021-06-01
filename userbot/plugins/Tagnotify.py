@@ -16,7 +16,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         )
     )
     async def all_messages_catcher(e):
-        await event.forward_to(Var.TG_BOT_USERNAME)
+        await e.forward_to(Var.TG_BOT_USERNAME)
         x = await borg.get_entity(e.sender_id)
         if x.bot or x.verified:
             return
