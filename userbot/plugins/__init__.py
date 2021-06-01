@@ -10,7 +10,7 @@ import spamwatch as spam_watch
 from validators.url import url
 
 from .. import *
-from ..uniborgConfigimport Config
+from ..uniborgConfig import Config
 from ..helpers import *
 
 # =================== CONSTANT ===================
