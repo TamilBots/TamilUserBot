@@ -62,5 +62,5 @@ if Config.PRIVATE_GROUP_ID:
                 await borg.send_message(NEEDTOLOG, cap, link_preview=False)
             except BaseException:
                 pass
-     else:
-         return
+   else:
+       return
