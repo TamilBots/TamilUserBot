@@ -25,10 +25,10 @@ if Config.PRIVATE_GROUP_ID:
         # the message format is stolen from @MasterTagAlertBot
         ammoca_message = ""
 
-        x = await ultroid_bot.get_entity(e.sender_id)
+        x = await borg.get_entity(e.sender_id)
         if x.bot or x.verified:
             return
-        y = await ultroid_bot.get_entity(e.chat_id)
+        y = await borg.get_entity(e.chat_id)
         if y.username:
             yy = f"[{get_display_name(y)}](https://t.me/{y.username})"
         else:
@@ -47,7 +47,7 @@ if Config.PRIVATE_GROUP_ID:
                 cap = get_string("tagnot_1").format(xx, yy, e.text, msg)
             else:
                 cap = get_string("tagnot_2").format(xx, yy, msg)
-            await asst.send_message(
+            await borg.send_message(
                 NEEDTOLOG,
                 cap,
                 link_preview=False,
@@ -59,7 +59,7 @@ if Config.PRIVATE_GROUP_ID:
             else:
                 cap = get_string("tagnot_2").format(xx, yy, msg)
             try:
-                await ultroid_bot.send_message(NEEDTOLOG, cap, link_preview=False)
+                await borg.send_message(NEEDTOLOG, cap, link_preview=False)
             except BaseException:
                 pass
     else:
