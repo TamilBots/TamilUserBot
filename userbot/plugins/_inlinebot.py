@@ -23,7 +23,6 @@ LOG_CHAT = Config.PRIVATE_GROUP_ID
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
-borg = bot.uid
 
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 
