@@ -10,9 +10,8 @@ import spamwatch as spam_watch
 from validators.url import url
 
 from .. import *
-from ..Config import Config
+from ..uniborgConfigimport Config
 from ..helpers import *
-from ..helpers import _cattools, _catutils, _format
 
 # =================== CONSTANT ===================
 
@@ -44,13 +43,6 @@ if Config.PRIVATE_GROUP_BOT_API_ID == 0:
 else:
     BOTLOG = True
     BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_ID
-
-# Gdrive
-G_DRIVE_CLIENT_ID = Config.G_DRIVE_CLIENT_ID
-G_DRIVE_CLIENT_SECRET = Config.G_DRIVE_CLIENT_SECRET
-G_DRIVE_DATA = Config.G_DRIVE_DATA
-G_DRIVE_FOLDER_ID = Config.G_DRIVE_FOLDER_ID
-TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
 # spamwatch support
 if Config.SPAMWATCH_API:
