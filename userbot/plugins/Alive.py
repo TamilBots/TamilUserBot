@@ -19,9 +19,9 @@ pm_caption += "⨠ **Current Branch** : `master`\n"
 pm_caption += f"⨠ **Version** : `6.5`\n"
 pm_caption += f"⨠ **My Boss** : {DEFAULTUSER} \n"
 pm_caption += "⨠ **Heroku Database** : `AWS -\nWorking Properly`💥\n\n"
-pm_caption += "⫸ **License** : [MIT License](github.com/ivetri/tamilbot/blob/master/LICENSE) ✔\n"
-pm_caption += "⫸ **Copyrights** : © By [TAMIL🤖BOT](https://github.com/IVETRI/TamilBot) 👨🏻‍💻\n\n"
-pm_caption += "⭕️➖➖[🇮🇳 TamilBot 🇮🇳](https://t.me/TamilSupport)➖➖⭕️"
+# pm_caption += "⫸ **License** : [MIT License](github.com/ivetri/tamilbot/blob/master/LICENSE) ✔\n"
+# pm_caption += "⫸ **Copyrights** : © By [TAMIL🤖BOT](https://github.com/IVETRI/TamilBot) 👨🏻‍💻\n\n"
+pm_caption += "**•☆•»»[🇮🇳 TamilBot 🇮🇳](https://Github.com/TamilBots)| [👨🏻‍💻Tamil Support👨🏻‍💻](https://t.me/TamilSupport)««•☆•**"
 
 
 @borg.on(admin_cmd(pattern=r"alive"))
