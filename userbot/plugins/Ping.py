@@ -20,7 +20,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
-        f"__**🚴🏻‍♂️ Pong!__**\n➥__**Ping Speed**__ {ms}\n➥ __**Bot**__ __**of**__ [{DEFAULTUSER}](tg://user?id={IMSID})"
+        f"__**🚴🏻‍♂️ ᴘᴏɴɢ!__**\n➥__**ᴘɪɴɢ ꜱᴘᴇᴇᴅ**__ {ms}\n➥ __**ʙᴏᴛ**__ __**ᴏꜰ**__ [{DEFAULTUSER}](tg://user?id={IMSID})"
     )
 
 CMD_HELP.update(
