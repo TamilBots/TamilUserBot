@@ -117,18 +117,18 @@ async def fetch_info(replied_user, event):
     last_name = last_name.replace("\u2060", "") if last_name else (" ")
     username = "@{}".format(username) if username else ("This User has no Username")
     user_bio = "This User has no About" if not user_bio else user_bio
-    caption = "<b><i>USER INFO from Durov's Database :</i></b>\n\n"
-    caption += f"<b>👤 First Name:</b> {first_name} {last_name}\n"
-    caption += f"<b>🤵 Username:</b> {username}\n"
+    caption = "<b><i> 𝒰𝒮𝐸𝑅 𝐼𝒩𝐹𝒪 𝒻𝓇𝑜𝓂 𝒟𝓊𝓇𝑜𝓋'𝓈 𝒟𝒶𝓉𝒶𝒷𝒶𝓈𝑒 :</i></b>\n\n"
+    caption += f"<b>👤 ƒιяѕт ηαмє:</b> {first_name} {last_name}\n"
+    caption += f"<b>🤵 υѕєяηαмє:</b> {username}\n"
     caption += f"<b>🔖 ID:</b> <code>{user_id}</code>\n"
-    caption += f"<b>🌏 Data Centre ID:</b> {dc_id}\n"
-    caption += f"<b>🖼 Number of Profile Pics:</b> {replied_user_profile_photos_count}\n"
-    caption += f"<b>🤖 Is Bot:</b> {is_bot}\n"
-    caption += f"<b>🔏 Is Restricted:</b> {restricted}\n"
-    caption += f"<b>🌐 Is Verified by Telegram:</b> {verified}\n\n"
-    caption += f"<b>✍️ Bio:</b> \n<code>{user_bio}</code>\n\n"
-    caption += f"<b>👥 Common Chats with this user:</b> {common_chat}\n"
-    caption += f"<b>🔗 Permanent Link To Profile:</b> "
+    caption += f"<b>🌏 Dαƚα Cҽɳƚɾҽ ID:</b> {dc_id}\n"
+    caption += f"<b>🖼 ηυмвєя σƒ ρяσƒιℓє ρι¢ѕ:</b> {replied_user_profile_photos_count}\n"
+    caption += f"<b>🤖 ιѕ вσт:</b> {is_bot}\n"
+    caption += f"<b>🔏 ιѕ яєѕтяι¢тє∂:</b> {restricted}\n"
+    caption += f"<b>🌐 ιѕ νєяιƒιє∂ ву тєℓєgяαм:</b> {verified}\n\n"
+    caption += f"<b>✍️ вισ:</b> \n<code>{user_bio}</code>\n\n"
+    caption += f"<b>👥 ¢σммση ¢нαтѕ ωιтн тнιѕ υѕєя:</b> {common_chat}\n"
+    caption += f"<b>🔗 ρєямαηєηт ℓιηк тσ ρяσƒιℓє:</b> "
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
     return photo, caption
 
