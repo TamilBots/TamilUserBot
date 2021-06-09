@@ -8,10 +8,10 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT
 from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
-PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
+CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
 
 DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
@@ -31,8 +31,8 @@ PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
 MESAG = (
-    str(PMPERMIT_TEXT)
-    if PMPERMIT_TEXT
+    str(CUSTOM_PMPERMIT)
+    if CUSTOM_PMPERMIT
     else "நான் உங்களைப் போலல்லாமல் ஒரு Busy-யான மனிதர்!😁😅"
 )
 USER_BOT_NO_WARN = (
