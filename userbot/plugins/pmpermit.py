@@ -29,7 +29,7 @@ if FAV_NAME is None:
 
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
-
+myid = bot.uid
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
