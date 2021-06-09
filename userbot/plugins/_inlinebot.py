@@ -10,7 +10,7 @@ import urllib
 from re import findall
 import requests
 from telethon import Button, custom, events, functions
-from userbot import ALIVE_NAME, CMD_LIST, CMD_HELP
+from userbot import ALIVE_NAME, CMD_LIST, CMD_HELP, CUSTOM_PMPERMIT
 from telethon.tl.functions.users import GetFullUserRequest
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
@@ -22,8 +22,18 @@ LOG_CHAT = Config.PRIVATE_GROUP_ID
 
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
-
-
+myid = bot.uid
+mybot = Var.TG_BOT_USERNAME
+if mybot.startswith("@"):
+    botname = mybot
+else:
+    botname = f"@{mybot}"
+LOG_GP = Var.PRIVATE_GROUP_ID
+MESAG = (
+    str(CUSTOM_PMPERMIT)
+    if CUSTOM_PMPERMIT
+    else "`TamilBot PM security! Please wait for me to approve you. 😊"
+)
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
