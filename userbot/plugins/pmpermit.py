@@ -30,15 +30,15 @@ if FAV_NAME is None:
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-MESAG = (
+CUSTOM_MIDDLE_PMP = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
     else "நான் உங்களைப் போலல்லாமல் ஒரு Busy-யான மனிதர்!😁😅"
 )
 USER_BOT_NO_WARN = (
-        f"**Hello! நான் `{DEFAULTUSER} `\n\n"      
-        "⭕️ இது **[TamilBot](http://t.me/TamilSupport)** Security Service ⭕️\n\n"
-        f"🛡 PM பாதுகாப்பு சேவை! 🛡 \n\n"
+        f"**Hello! நான் `{DEFAULTUSER} `\n\n"
+        f"{CUSTOM_MIDDLE_PMP}\n\n"      
+        f"⭕️ இது **[TamilBot](http://t.me/TamilSupport)** 🛡PM பாதுகாப்பு சேவை!🛡 ⭕️\n\n"
         "**Please select an option from the drop down why you’re here!**"
     )
 
@@ -240,7 +240,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         botusername = Var.TG_BOT_USERNAME
         myid = event.client.uid
         MSG = USER_BOT_NO_WARN.format(
-        DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.MAX_SPAM
+        DEFAULTUSER, myid, PM_WARNS[chat_id] + 1, Config.MAX_SPAM
         )
         tap = await bot.inline_query(botusername, MSG)
         sed = await tap[0].click(event.chat_id)
