@@ -38,7 +38,7 @@ CUSTOM_MIDDLE_PMP = (
 USER_BOT_NO_WARN = (
         f"**Hello! நான் `{DEFAULTUSER} `\n\n"
         f"{CUSTOM_MIDDLE_PMP}\n\n"      
-        f"👮‍♂️ᴘʀᴏᴛᴇᴄᴛᴇᴅ ʙʏ **[ᴛᴀᴍɪʟʙᴏᴛꜱ]**(http://t.me/TamilSupport) 👮‍♂️⭕️\n\n"
+        f"👮‍♂️ᴘʀᴏᴛᴇᴄᴛᴇᴅ ʙʏ `**[ᴛᴀᴍɪʟʙᴏᴛꜱ]**(http://t.me/TamilSupport)`👮‍♂️\n\n"
         "**Please select an option from the drop down why you’re here!**"
     )
 
