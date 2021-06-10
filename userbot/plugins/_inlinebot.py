@@ -48,12 +48,12 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("Bot"):
+        if event.query.user_id == bot.uid and query.startswith("ʙᴏᴛ"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© TamilBot Help",
-                text="{}\n\n🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {}".format(query, len(CMD_LIST)),
+                text="{}\n\n🔘ʟᴏᴀᴅᴇᴅ ᴘʟᴜɢɪɴꜱ: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
@@ -84,12 +84,12 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
         elif event.query.user_id == bot.uid and query == "repo":
             result = builder.article(
                 title="Repository",
-                text="**TamilBot**\n\n`Telegram userbot`",
+                text="**ᴛᴀᴍɪʟʙᴏᴛ**\n\n`ᴛᴇʟᴇɢʀᴀᴍ ᴜꜱᴇʀʙᴏᴛ`",
                 buttons=[
                     [custom.Button.url("Repo📡", "https://github.com/TamilBots/TamilBot")],
                     [
                         custom.Button.url(
-                            "👨‍💻Tutorial🎥", "https://github.com/TamilBots/TamilBot"
+                            "👨‍💻Tutorial🎥", "http://www.youtube.com/watch?v=3PgBiFgfx34"
                         ),
                         custom.Button.url(
                             "🤾🏻Deploy🤾🏻",
@@ -214,11 +214,11 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_LIST, "helpme")
-        sed = f"""𝔹𝕆𝕋 𝕆𝔽 {DEFAULTUSER}
+        sed = f"""ʙᴏᴛ ᴏꜰ {DEFAULTUSER}
 
-               ⚙️•𝚃𝚊𝚖𝚒𝚕𝙱𝚘𝚝 𝙼𝚎𝚗𝚞•⚙️ 
+               ⚙️•ᴛᴀᴍɪʟʙᴏᴛ ᴍᴇɴᴜ•⚙️ 
 
-               🔘𝐋𝐨𝐚𝐝𝐞𝐝 𝐏𝐥𝐮𝐠𝐢𝐧𝐬: {len(CMD_LIST)} """
+               🔘ʟᴏᴀᴅᴇᴅ ᴘʟᴜɢɪɴꜱ: {len(CMD_LIST)} """
         await event.edit(message=sed, buttons=buttons)
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
     async def megic(event):
@@ -247,7 +247,7 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
                 await event.edit(
-                    f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [TamilBot](t.me/TamilBotSupport)"
+                    f"ᴛʜɪꜱ ɪꜱ ᴛʜᴇ ᴘᴍ ꜱᴇᴄᴜʀɪᴛʏ ꜰᴏʀ {DEFAULTUSER} ᴛᴏ ᴋᴇᴇᴘ ᴀᴡᴀʏ ꜱᴘᴀᴍᴍᴇʀꜱ ᴀɴᴅ ʀᴇᴛᴀʀᴅꜱ.\n\nᴘʀᴏᴛᴇᴄᴛᴇᴅ ʙʏ [TamilBot](t.me/TamilBotSupport)"
                 )
 
 
@@ -258,7 +258,7 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
             await event.answer(sedok, cache_time=0, alert=True)
             return
         await event.get_chat()
-        await event.edit("Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me.")
+        await event.edit("ᴏᴋ. ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ ᴜɴᴛɪʟ ᴍʏ ᴍᴀꜱᴛᴇʀ ᴀᴘᴘʀᴏᴠᴇꜱ. ᴅᴏɴ'ᴛ ꜱᴘᴀᴍ ᴏʀ ᴛʀʏ ᴀɴʏᴛʜɪɴɢ ꜱᴛᴜᴘɪᴅ. \nᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴄᴏɴᴛᴀᴄᴛɪɴɢ ᴍᴇ.")
         target = await event.client(GetFullUserRequest(event.query.user_id))
         first_name = html.escape(target.user.first_name)
         him_id = event.query.user_id
@@ -279,7 +279,7 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
             await event.answer(sedok, cache_time=0, alert=True)
             return
         await event.get_chat()
-        await event.edit("Ok, Wait. You can Ask After Master Approves You. Kindly, Wait.") 
+        await event.edit("ᴏᴋ, ᴡᴀɪᴛ. ʏᴏᴜ ᴄᴀɴ ᴀꜱᴋ ᴀꜰᴛᴇʀ ᴍᴀꜱᴛᴇʀ ᴀᴘᴘʀᴏᴠᴇꜱ ʏᴏᴜ. ᴋɪɴᴅʟʏ, ᴡᴀɪᴛ.") 
         target = await event.client(GetFullUserRequest(event.query.user_id))
         first_name = html.escape(target.user.first_name)
         him_id = event.query.user_id
