@@ -8,7 +8,10 @@ class Var(object):
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
         TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", None)
         TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
-
+        ASSISTANT_START_PIC = os.environ.get(
+            "ASSISTANT_START_PIC",
+            "https://telegra.ph/file/b233f8b6332fbeb3f61dc.mp4",
+        )        
 class Development(Var):
     LOGGER = True
     # Here for later purposes
