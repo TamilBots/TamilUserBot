@@ -22,7 +22,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import pack_bot_file_id
 
 from userbot import bot
-from userbot.uniborgConfigs import Config
+from userbot.uniborgConfig import Config
 from userbot.plugins.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
