@@ -154,7 +154,42 @@ async def dyno_usage(dyno):
                            f"**|**  [`{percentage}`**%**]"
                            )
 
+@borg.on(admin_cmd(pattern="herokulogs$", outgoing=True))
+async def _(dyno):
+    try:
+        Heroku = heroku3.from_key(HEROKU_API_KEY)
+        app = Heroku.app(HEROKU_APP_NAME)
+    except BaseException:
+        return await dyno.reply(
+            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
+        )
+    data = app.get_log()
+    key = (
+        requests.post("https://nekobin.com/api/documents", json={"content": data})
+        .json()
+        .get("result")
+        .get("key")
+    )
+    url = f"https://nekobin.com/{key}"
+    reply_text = f"Recent 100 lines of heroku logs: [here]({url})"
+    await edit_or_reply(dyno, reply_text)
 
+
+def prettyjson(obj, indent=2, maxlinelength=80):
+    """Renders JSON content with indentation and line splits/concatenations to fit maxlinelength.
+    Only dicts, lists and basic types are supported"""
+    items, _ = getsubitems(
+        obj,
+        itemkey="",
+        islast=True,
+        maxlinelength=maxlinelength - indent,
+        indent=indent,
+    )
+    return indentitems(items, indent, level=0)
+
+   
+   
+   
 @command(pattern="^.info heroku")
 async def info(event):
     await borg.send_message(event.chat_id, "**Info for Module to Manage Heroku:**\n\n`.usage`\nUsage:__Check your heroku dyno hours status.__\n\n`.set var <NEW VAR> <VALUE>`\nUsage: __add new variable or update existing value variable__\n**!!! WARNING !!!, after setting a variable the bot will restart.**\n\n`.get var or .get var <VAR>`\nUsage: __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**\n\n`.del var <VAR>`\nUsage: __delete existing variable__\n**!!! WARNING !!!, after deleting variable the bot will restarted**")
