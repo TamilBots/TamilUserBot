@@ -66,10 +66,11 @@ Https://www.GitHub.com/tamilbots/tamilbot
 
 ## நான் அதை எவ்வாறு பயன்படுத்துவது?
 
-தமிழ் பாட்-யை உள்ளமைக்க, எங்கள் <a href="https://t.me/TamilUserBot" alt="TamilBots"> <img src="https://img.shields.io/badge/TamilUserBot-800080?logo=telegrame" /></a>  ஐப் பார்க்கலாம்.
+தமிழ் பாட்-யை உள்ளமைக்க, எங்கள் <a href="https://t.me/TamilUserBot"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+  ஐப் பார்க்கலாம்.
 தயவுசெய்து, எங்கள் குழுக்களில் எங்களிடம் கேட்பதற்கு முன்,
 நீங்கள் சேனல் மற்றும் தேவையான அனைத்து படிகளையும் பின்பற்றியுள்ளீர்கள் என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள்.
-<a href="https://t.me/TamilSupport" alt="Telebot"> <img src="https://img.shields.io/badge/TamilSupport-800080?logo=telegrame" /></a>
+<a href="https://t.me/TamilSupport"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
 
 ###  Credits
     
