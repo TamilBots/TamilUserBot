@@ -15,7 +15,7 @@ if ENV:
         # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
         PRIVATE_CHANNEL_BOT_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_ID", -1001221744590))
         # for Tag notifications 
-        TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
+        TAG_ALERT = os.environ.get("TAG_ALERT", "DISABLE")
         # This is required for the plugins involving the file system.
         TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads/")
         # This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html
@@ -104,6 +104,8 @@ if ENV:
             t_file.close()
         YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
         GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
+        JTM_CHANNEL_ID = int(os.environ.get("JTM_CHANNEL_ID", False))
+        JTM_CHANNEL_USERNAME = os.environ.get("JTM_CHANNEL_USERNAME", None)
         #MongoDB
         MONGO_URI = os.environ.get("MONGO_URI", None)
         # PMPERMITMENU
@@ -113,6 +115,12 @@ if ENV:
         PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", False))
         ALIVE_IMAGE = os.environ.get("ALIVE_IMAGE", "https://telegra.ph/file/2efb41858c95ebd7231e8.jpg")
         # PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
+        SUB_TO_MSG_ASSISTANT = os.environ.get("SUB_TO_MSG_ASSISTANT", False)
+        ASSISTANT_START_PIC = os.environ.get(
+            "ASSISTANT_START_PIC",
+            "https://www.logolynx.com/images/logolynx/72/7257d2ac93b97c8a2c7308266052df13.png",
+        )
+        
 else:
     class Config(object):
         DB_URI = None
