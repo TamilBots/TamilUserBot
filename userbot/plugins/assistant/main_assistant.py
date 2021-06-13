@@ -73,7 +73,7 @@ async def start(event):
             link_preview=False,
             buttons=[
                 [custom.Button.inline("Deploy your TamilUserBot 🇮🇳", data="deploy")],
-                [Button.url("Help Me ❓", "t.me/TamiluserBots")],
+                [Button.url("Help Me ❓", "t.me/TamilUserBot")],
             ],
         )
         if os.path.exists(mypic):
