@@ -75,9 +75,9 @@ Https://www.GitHub.com/tamilbots/tamilbot
 
 ###  Credits
     
-#### • Sur-vivor   »»  <a href="https://github.com/telebot" alt="Sur-vivor"> <img src="https://img.shields.io/badge/Survivor-800080?logo=github" /></a> 
-#### • sandy1709  »»  <a href="https://github.com/sandy1709" alt="sandy1709"> <img src="https://img.shields.io/badge/sandy1709-800080?logo=github" /></a> 
-#### • FRIDAY  »»  <a href="https://github.com/devsexpo/fridayuserbot" alt="friday"> <img src="https://img.shields.io/badge/Friday-800080?logo=github" /></a> 
+#### • Sur-vivor   »»  <a href="https://github.com/telebot" alt="Sur-vivor"> <img src="https://img.shields.io/badge/Survivor-4B8BBE?logo=github" /></a> 
+#### • sandy1709  »»  <a href="https://github.com/sandy1709" alt="sandy1709"> <img src="https://img.shields.io/badge/sandy1709-4B8BBE?logo=github" /></a> 
+#### • FRIDAY  »»  <a href="https://github.com/devsexpo/fridayuserbot" alt="friday"> <img src="https://img.shields.io/badge/Friday-4B8BBE?logo=github" /></a> 
 
     
 # FORK AT YOUR OWN RISK
