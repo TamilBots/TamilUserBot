@@ -73,9 +73,9 @@ Https://www.GitHub.com/tamilbots/tamilbot
 
 ###  Credits
     
-#### • Sur-vivor   »»  <a href="https://github.com/telebot" alt="Sur-vivor"> <img src="https://img.shields.io/badge/Survivor-800080?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
-#### • sandy1709  »»  <a href="https://github.com/sandy1709" alt="sandy1709"> <img src="https://img.shields.io/badge/sandy1709-000000?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
-#### • FRIDAY  »»  <a href="https://github.com/devsexpo/fridayuserbot" alt="friday"> <img src="https://img.shields.io/badge/Friday-000000?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+#### • Sur-vivor   »»  <a href="https://github.com/telebot" alt="Sur-vivor"> <img src="https://img.shields.io/badge/Survivor-800080?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
+#### • sandy1709  »»  <a href="https://github.com/sandy1709" alt="sandy1709"> <img src="https://img.shields.io/badge/sandy1709-000000?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
+#### • FRIDAY  »»  <a href="https://github.com/devsexpo/fridayuserbot" alt="friday"> <img src="https://img.shields.io/badge/Friday-000000?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
 
     
 # FORK AT YOUR OWN RISK
