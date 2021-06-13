@@ -3,6 +3,8 @@ from telethon.tl.types import ChatBannedRights
 ENV = bool(os.environ.get("ENV", False))
 
 class Var(object):
+        APP_ID = int(os.environ.get("APP_ID", 6))
+        API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
         TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", None)
         TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
