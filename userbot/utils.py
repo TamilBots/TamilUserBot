@@ -389,3 +389,66 @@ class Loader():
     def __init__(self, func=None, **args):
         self.Var = Var
         bot.add_event_handler(func, events.NewMessage(**args))
+
+        
+        
+# tg bot
+
+def start_assistant(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("Initialising TGBot.")
+        print("Thunder - Imported " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins.assistant" + shortname] = mod
+        print("TGBot Has imported " + shortname)
+
+
+def load_assistant(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("Initialising .")
+        print("Thunder  - Imported " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins.assistant." + shortname] = mod
+        print("Thunder and Lightning  Has imported " + shortname)
