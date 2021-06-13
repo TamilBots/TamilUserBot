@@ -88,13 +88,11 @@ async def log_tagged_messages(event):
     messaget = media_type(event)
     resalt = f"#TAGS \n<b>Group : </b><code>{hmm.title}</code>"
     target = await event.client(GetFullUserRequest(event.query.user_id))
-    first_name = html.escape(target.user.first_name)
-    him_id = event.query.user_id
-    if first_name is not None:
-        first_name = first_name.replace("\u2060", "")
+    who_ = await event.client.get_entity(event.sender_id)
+    who_m = f"[{get_display_name(who_)}](tg://user?id={who_.id})"
     if full is not None:
         resalt += (
-            f"\n<b>From : </b> 👤 [{first_name}](tg://user?id={him_id})"
+            f"\n<b>From : </b> 👤 [{who_m}](tg://user?id={him_id})"
         )
     if messaget is not None:
         resalt += f"\n<b>Message type : </b><code>{messaget}</code>"
