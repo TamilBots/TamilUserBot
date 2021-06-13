@@ -103,6 +103,7 @@ if ENV:
             t_file.write(AUTH_TOKEN_DATA)
             t_file.close()
         YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
+        ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
         GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
         JTM_CHANNEL_ID = int(os.environ.get("JTM_CHANNEL_ID", False))
         JTM_CHANNEL_USERNAME = os.environ.get("JTM_CHANNEL_USERNAME", None)
