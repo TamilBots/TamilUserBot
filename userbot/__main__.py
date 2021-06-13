@@ -5,11 +5,14 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 import os
 from telethon import TelegramClient
 from var import Var
-from userbot.utils import load_module
+from userbot.utils import load_module, start_assistant
 from userbot import LOAD_PLUG, BOTLOG_CHATID, LOGS
 from pathlib import Path
 import asyncio
 import telethon.utils
+
+sed = logging.getLogger("TamilUserBot")
+
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -47,8 +50,18 @@ for name in files:
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
 
-
-print("ஆம்! உங்கள் பயனர் போட் அதிகாரப்பூர்வமாக செயல்படுகிறது 🥳.")
+if Var.ENABLE_ASSISTANTBOT == "ENABLE":
+    path = "userbot/plugins/assistant/*.py"
+    files = glob.glob(path)
+    for name in files:
+        with open(name) as f:
+            path1 = Path(f.name)
+            shortname = path1.stem
+            start_assistant(shortname.replace(".py", ""))
+    sed.info("ஆம்! உங்கள் பயனர் போட் அதிகாரப்பூர்வமாக செயல்படுகிறது 🥳!")
+else:
+    sed.info("TamilUserBot Been Installed Sucessfully !")
+    sed.info("You Can Visit TamilBots For Any Support Or Doubts")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
