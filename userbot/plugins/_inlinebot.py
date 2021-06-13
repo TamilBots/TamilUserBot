@@ -148,14 +148,14 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
     )
     async def on_plug_in_callback_query_handler(event):
         if not event.query.user_id == bot.uid:
-            sedok = "Don’t use mine 😒 get your own @tamiluserbot"
+            sedok = "Thampi unakku venum na own ah @tamiluserbot paathu create panniko"
             await event.answer(sedok, cache_time=0, alert=True)
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
-        if plugin_name in CMD_HELP:
-            help_string = f"** 🌟 PLUGIN NAME 🌟 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
+        if plugin_name in CMD_LIST:
+            help_string = f"** 🌟 PLUGIN NAME 🌟 :** `{plugin_name}` \n{CMD_LIST[plugin_name]}"
         reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n\n**(C) @TamilSupport** ".format(plugin_name)
+        reply_pop_up_alert += "\n\nuse .info <plugin name> to get more details\n\n**(C) @TamilSupport** ".format(plugin_name)
         if len(reply_pop_up_alert) >= 4096:
             crackexy = "`Pasting Your Help Menu.`"
             await event.answer(crackexy, cache_time=0, alert=True)
@@ -208,7 +208,7 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
     async def sed(event):
         if event.query.user_id != bot.uid:
-            sedok = "Don’t use mine 😒 get your own @tamiluserbot"
+            sedok = "Thampi unakku venum na own ah @tamiluserbot paathu create panniko"
             await event.answer(sedok, cache_time=0, alert=True)
             return
         await event.answer("Back", cache_time=0, alert=False)
