@@ -35,7 +35,7 @@ from userbot.plugins.sql_helper.idadder_sql import (
     get_all_users,
 )
 
-@assistant_cmd("start", is_args=False)
+@tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
     starkbot = await tgbot.get_me()
     bot_id = starkbot.first_name
