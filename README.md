@@ -71,8 +71,13 @@ Https://www.GitHub.com/tamilbots/tamilbot
 நீங்கள் சேனல் மற்றும் தேவையான அனைத்து படிகளையும் பின்பற்றியுள்ளீர்கள் என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள்.
 [Support group](https://t.me/Tamilsupport)
 
-### Speacial Thanks To paperplane and Uniborg For Their Assistant Modules Bases,
+###  Credits
+    
+#### • Sur-vivor   »»  <a href="https://github.com/telebot" alt="Sur-vivor"> <img src="https://img.shields.io/badge/Sur-vivor-800080?logo=github" /></a> 
+#### • sandy1709  »»  <a href="https://github.com/sandy1709" alt="sandy1709"> <img src="https://img.shields.io/badge/sandy1709-000000?logo=github" /></a> 
+#### • FRIDAY  »»  <a href="https://github.com/devsexpo/fridayuserbot" alt="friday"> <img src="https://img.shields.io/badge/Friday-000000?logo=github" /></a> 
 
+    
 # FORK AT YOUR OWN RISK
 
 <details>
