@@ -4,7 +4,9 @@ ENV = bool(os.environ.get("ENV", False))
 
 class Var(object):
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
-        
+        TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", None)
+        TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
+
 class Development(Var):
     LOGGER = True
     # Here for later purposes
