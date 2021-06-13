@@ -130,7 +130,7 @@ if ENV:
         SUB_TO_MSG_ASSISTANT = os.environ.get("SUB_TO_MSG_ASSISTANT", False)
         ASSISTANT_START_PIC = os.environ.get(
             "ASSISTANT_START_PIC",
-            "https://www.logolynx.com/images/logolynx/72/7257d2ac93b97c8a2c7308266052df13.png",
+            "https://telegra.ph/file/f54d9520f43a9c051c8da.jpg",
         )
         
 else:
