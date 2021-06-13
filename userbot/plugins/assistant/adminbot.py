@@ -12,7 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #ported to tamilbots by @saravanakrish
-
+from telethon import events
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditAdminRequest, EditBannedRequest
 from telethon.tl.functions.messages import UpdatePinnedMessageRequest
