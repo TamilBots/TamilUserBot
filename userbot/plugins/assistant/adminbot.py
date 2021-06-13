@@ -11,6 +11,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#ported to tamilbots by @saravanakrish
 
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditAdminRequest, EditBannedRequest
@@ -66,10 +67,7 @@ serena = tgbot
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
-@assistant_cmd("ban", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+@tgbot.on(events.NewMessage(pattern="^/bun(?: |$)(.*)"))
 async def ban(event):
     chat = await event.get_chat()
     chat.admin_rights
@@ -96,10 +94,7 @@ async def ban(event):
         await event.reply(f"Banned {momoz} !")
 
 
-@assistant_cmd("unban", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+@tgbot.on(events.NewMessage(pattern="^/unbun(?: |$)(.*)"))
 async def nothanos(event):
     chat = await event.get_chat()
     chat.admin_rights
@@ -118,10 +113,7 @@ async def nothanos(event):
         return
 
 
-@assistant_cmd("promote", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+@tgbot.on(events.NewMessage(pattern="^/prumote(?: |$)(.*)"))
 async def promote(event):
     chat = await event.get_chat()
     chat.admin_rights
@@ -155,10 +147,8 @@ async def promote(event):
         return
 
 
-@assistant_cmd("demote", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+
+@tgbot.on(events.NewMessage(pattern="^/demute(?: |$)(.*)"))
 async def demote(event):
     chat = await event.get_chat()
     chat.admin_rights
@@ -189,10 +179,7 @@ async def demote(event):
     await event.reply("Demoted This User Sucessfully.")
 
 
-@assistant_cmd("pin", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+@tgbot.on(events.NewMessage(pattern="^/pin(?: |$)(.*)"))
 async def pin(event):
     await event.get_chat()
     to_pin = event.reply_to_msg_id
@@ -214,10 +201,8 @@ async def pin(event):
     await get_user_sender_id(event.sender_id, event)
 
 
-@assistant_cmd("kick", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+
+@tgbot.on(events.NewMessage(pattern="^/kick(?: |$)(.*)"))
 async def kick(event):
     chat = await event.get_chat()
     chat.admin_rights
@@ -245,10 +230,7 @@ async def kick(event):
         await event.reply(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
 
 
-@assistant_cmd("mute", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+@tgbot.on(events.NewMessage(pattern="^/mute(?: |$)(.*)"))
 async def mute(event):
     chat = await event.get_chat()
     chat.admin_rights
@@ -276,10 +258,8 @@ async def mute(event):
         await event.reply(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
 
 
-@assistant_cmd("unmute", is_args=True)
-@only_groups
-@is_bot_admin
-@is_admin
+
+@tgbot.on(events.NewMessage(pattern="^/unmute(?: |$)(.*)"))
 async def mute(event):
     chat = await event.get_chat()
     chat.admin_rights
