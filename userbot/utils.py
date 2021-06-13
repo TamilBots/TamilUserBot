@@ -408,7 +408,7 @@ def start_assistant(shortname):
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Initialising TGBot.")
-        print("Thunder - Imported " + shortname)
+        print("Tamilbot - Imported " + shortname)
     else:
         import importlib
         import sys
@@ -438,7 +438,7 @@ def load_assistant(shortname):
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Initialising .")
-        print("Thunder  - Imported " + shortname)
+        print("Tamilbot  - Imported " + shortname)
     else:
         import importlib
         import sys
@@ -451,4 +451,4 @@ def load_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.assistant." + shortname] = mod
-        print("Thunder and Lightning  Has imported " + shortname)
+        print("Tamiluserbot Has imported " + shortname)
