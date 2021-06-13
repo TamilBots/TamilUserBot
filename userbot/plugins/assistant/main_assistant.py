@@ -179,8 +179,7 @@ async def sed(event):
         )
 
 
-@assistant_cmd("broadcast", is_args='heck')
-@god_only
+@tgbot.on(events.NewMessage(pattern="^/broadcast(?: |$)(.*)"))
 async def sedlyfsir(event):
     msgtobroadcast = event.text.split(" ", maxsplit=1)[1]
     userstobc = get_all_users()
@@ -206,8 +205,9 @@ async def sedlyfsir(event):
     )
 
 
-@assistant_cmd("stats", is_args=False)
-@peru_only
+@tgbot.on(
+    events.NewMessage(pattern="^/stats ?(.*)", func=lambda e: e.sender_id == bot.uid)
+)
 async def starkisnoob(event):
     starkisnoob = get_all_users()
     await event.reply(
@@ -215,15 +215,15 @@ async def starkisnoob(event):
     )
 
 
-@assistant_cmd("help", is_args=False)
-@peru_only
+@tgbot.on(events.NewMessage(pattern="^/help", func=lambda e: e.sender_id == bot.uid))
 async def starkislub(event):
     grabonx = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot"
     await event.reply(grabonx)
 
 
-@assistant_cmd("block", is_args=False)
-@god_only
+@tgbot.on(
+    events.NewMessage(pattern="^/block ?(.*)", func=lambda e: e.sender_id == bot.uid)
+)
 async def starkisnoob(event):
     if event.sender_id == bot.uid:
         msg = await event.get_reply_message()
@@ -238,8 +238,9 @@ async def starkisnoob(event):
         )
 
 
-@assistant_cmd("unblock", is_args=False)
-@god_only
+@tgbot.on(
+    events.NewMessage(pattern="^/unblock ?(.*)", func=lambda e: e.sender_id == bot.uid)
+)
 async def starkisnoob(event):
     if event.sender_id == bot.uid:
         msg = await event.get_reply_message()
