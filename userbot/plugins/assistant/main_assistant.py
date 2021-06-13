@@ -21,15 +21,15 @@ import telethon
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import pack_bot_file_id
 
-from fridaybot import bot
-from fridaybot.Configs import Config
-from fridaybot.modules.sql_helper.blacklist_assistant import (
+from userbot import bot
+from userbot.uniborgConfigs import Config
+from userbot.plugins.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
     removenibba,
 )
-from fridaybot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
-from fridaybot.modules.sql_helper.idadder_sql import (
+from userbot.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
+from userbot.plugins.sql_helper.idadder_sql import (
     add_usersid_in_db,
     already_added,
     get_all_users,
