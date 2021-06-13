@@ -1,6 +1,13 @@
 import os
 from telethon.tl.types import ChatBannedRights
 ENV = bool(os.environ.get("ENV", False))
+
+class Var(object):
+        ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
+        
+class Development(Var):
+    LOGGER = True
+    # Here for later purposes
 if ENV:
     import os
     class Config(object):
