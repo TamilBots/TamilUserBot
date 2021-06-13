@@ -10,6 +10,7 @@ from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_delete, edit_or_reply
 from userbot.manager.tools import media_type
 from telethon.tl.functions.users import GetFullUserRequest
+from telethon.utils import get_display_name
 
 class LOG_CHATS:
     def __init__(self):
@@ -48,14 +49,12 @@ async def monito_p_m_s(event):
                             )
                         )
                     LOG_CHATS_.COUNT = 0
-                    target = await event.client(GetFullUserRequest(event.query.user_id))
-                    first_name = html.escape(target.user.first_name)
+                    who_ = await event.client.get_entity(event.sender_id)
+                    who_m = f"[{get_display_name(who_)}](tg://user?id={who_.id})"
                     him_id = event.query.user_id
-                    if first_name is not None:
-                        first_name = first_name.replace("\u2060", "")
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PRIVATE_GROUP_ID,
-                    f"👤 [{first_name}](tg://user?id={him_id}) has sent a new message \nId : `{chat.id}`",
+                    f"👤 [{who_m}](tg://user?id={him_id}) has sent a new message \nId : `{chat.id}`",
                 )
             try:
                 if event.message:
