@@ -91,7 +91,7 @@ async def help(event):
             event.chat_id,
             message="You Can Deploy TamilBot In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
             buttons=[
-                [Button.url("Deploy Tutorial 📺", "https://youtu.be/xfHcm_e92eQ")],
+                [Button.url("Deploy Tutorial 📺", "https://youtu.be/3PgBiFgfx34")],
                 [Button.url("Need Help ❓", "t.me/TamilSupport")],
             ],
         )
