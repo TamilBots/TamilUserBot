@@ -42,7 +42,7 @@ async def WooMai(rose):
         return
     song = rose.pattern_match.group(1)
     chat = "@SongPlayRoBot"
-    link = f"/a {song}"
+    link = f"/s {song}"
     await rose.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
         await asyncio.sleep(2)
