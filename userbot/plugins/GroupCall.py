@@ -14,7 +14,7 @@ def user_list(l, n):
     for i in range(0, len(l), n):
         yield l[i : i + n]
 
-@register(pattern="^.startvc$", groups_only=True)
+@register(outgoing=True, pattern="^.startvc$")
 async def start_voice(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
@@ -30,7 +30,7 @@ async def start_voice(event):
     except Exception as ex:
         await event.edit(f"Error : `{ex}`")
 
-@register(outgoing=True, pattern="^.stopvc", groups_only=True)
+@register(outgoing=True, pattern="^.stopvc$")
 async def stop_voice(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
@@ -48,7 +48,7 @@ async def stop_voice(event):
 
 
 
-@register(outgoing=True, pattern="^.vctag", groups_only=True,)
+@register(outgoing=True, pattern="^.vcinvite$")
 async def invite_voice(event):
     await event.edit("`Users are called by voice call ...` 😉")
     users = []
@@ -65,6 +65,5 @@ async def invite_voice(event):
             pass
     await event.edit(f"`{z} The User Was Called`")
 
-CmdHelp('groupcall').add_command('startvc' , None, 'Starts a voice conversation').add_command('stopvc', None, 'Stops voice conversation').add_command('vctag', None, 'Invites people to a voice conversation').add()
 
 
