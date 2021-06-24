@@ -7,7 +7,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from userbot.events import register
 from userbot import bot, get_call
-from userbot.cmdhelp import CMD_HELP
+from userbot import CMD_HELP
 
 
 def user_list(l, n):
