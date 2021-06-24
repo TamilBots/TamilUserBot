@@ -53,7 +53,7 @@ async def invite_voice(event):
     await event.edit("`Users are called by voice call ...` 😉")
     users = []
     z = 0
-    async for x in event.client.iter_participants(e.chat_id):
+    async for x in event.client.iter_participants(event.chat_id):
         if not x.bot:
             users.append(x.id)
     hmm = list(user_list(users, 6))
