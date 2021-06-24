@@ -15,7 +15,7 @@ def user_list(l, n):
         yield l[i : i + n]
 
 @register(pattern="^.startvc$", groups_only=True)
-async def _(e):
+async def apk(e):
     chat = await e.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
@@ -31,7 +31,7 @@ async def _(e):
         await e.edit(f"Error : `{ex}`")
 
 @register(outgoing=True, pattern="^.stopvc", groups_only=True)
-async def _(e):
+async def apk(e):
     chat = await e.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
@@ -49,7 +49,7 @@ async def _(e):
 
 
 @register(outgoing=True, pattern="^.vctag", groups_only=True,)
-async def _(e):
+async def apk(e):
     await e.edit("`Users are called by voice call ...` 😉")
     users = []
     z = 0
