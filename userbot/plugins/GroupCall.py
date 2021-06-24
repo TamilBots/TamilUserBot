@@ -15,7 +15,7 @@ def user_list(l, n):
         yield l[i : i + n]
 
 @register(pattern="^.startvc$", groups_only=True)
-async def start_voice (event):
+async def start_voice(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
@@ -31,7 +31,7 @@ async def start_voice (event):
         await event.edit(f"Error : `{ex}`")
 
 @register(outgoing=True, pattern="^.stopvc", groups_only=True)
-async def stop_voice (event):
+async def stop_voice(event):
     chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
@@ -49,7 +49,7 @@ async def stop_voice (event):
 
 
 @register(outgoing=True, pattern="^.vctag", groups_only=True,)
-async def invite_voice (event):
+async def invite_voice(event):
     await event.edit("`Users are called by voice call ...` 😉")
     users = []
     z = 0
