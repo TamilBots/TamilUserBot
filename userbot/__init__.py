@@ -137,6 +137,12 @@ else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
 
+async def get_call(event):
+    mm = await event.client(getchat(event.chat_id))
+    xx = await event.client(getvc(mm.full_chat.call))
+    return xx.call
+
+    
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
 if not os.path.exists('bin'):
