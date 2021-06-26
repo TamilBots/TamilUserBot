@@ -8,9 +8,10 @@ import aiohttp
 import regex
 from aiohttp import ClientSession
 from pyrogram import Client, filters
+from userbot.uniborgConfig import Config
 from pyrogram.types import Message
 
-
+TOKEN = Config.TG_BOT_TOKEN
 
 
 @borg.on_message(filters.command("fuck") &
