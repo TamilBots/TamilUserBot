@@ -19,6 +19,7 @@ class Var(object):
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", None)
     TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
     DOWNLOAD_PFP_URL_CLOCK = os.environ.get("DOWNLOAD_PFP_URL_CLOCK", None)
+    REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", "root")
