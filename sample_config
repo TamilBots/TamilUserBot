@@ -47,6 +47,8 @@ class Config(object):
     OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
     # Maximum no of pms should be sent before he get block will work only if you set PRIVATE_GROUP_ID
     MAX_FLOOD_IN_PMS = int(os.environ.get("MAX_FLOOD_IN_PMS", 5))
+    # remove background api get it from revome.bg 
+    REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     # set this with group id so it keeps notifying about your tagged messages or pms
     PM_LOGGER_GROUP_ID = int(
         os.environ.get("PM_LOGGER_GROUP_ID")
