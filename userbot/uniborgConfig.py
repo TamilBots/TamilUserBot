@@ -21,6 +21,8 @@ if ENV:
         OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
         # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture
         SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
+        # Get your own API KEY from remove.bg
+        REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
         # Send .get_id in any group to fill this value.
         PRIVATE_GROUP_BOT_ID = int(os.environ.get("PRIVATE_GROUP_BOT_ID", -1001221744590))
         # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
