@@ -6,14 +6,7 @@ from userbot import fonts as emojify
 plugin_category = "fun"
 
 
-@borg.on(admin_cmd(pattern="emoji(?: |$)(.*))",
-    command=("emoji", plugin_category),
-    info={
-        "header": "Converts your text to big emoji text, with some default emojis.",
-        "usage": "{tr}emoji <text>",
-        "examples": ["{tr}emoji catuserbot"],
-    },
-)
+@borg.on(admin_cmd(pattern="emoji(?: |$)(.*)"))
 async def _(event):
     "To get emoji art text."
     args = event.pattern_match.group(1)
@@ -36,14 +29,7 @@ async def _(event):
     await edit_or_reply(event, result)
 
 
-@borg.on(admin_cmd(pattern="cmoji(?: |$)(.*))",
-    command=("cmoji", plugin_category),
-    info={
-        "header": "Converts your text to big emoji text, with your custom emoji.",
-        "usage": "{tr}cmoji <emoji> <text>",
-        "examples": ["{tr}cmoji 😺 catuserbot"],
-    },
-)
+@borg.on(admin_cmd(pattern="cmoji(?: |$)(.*)"))
 async def _(event):
     "To get custom emoji art text."
     args = event.pattern_match.group(1)
