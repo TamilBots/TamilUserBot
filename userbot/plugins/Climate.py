@@ -20,7 +20,7 @@ logging.basicConfig(
 # ===== CONSTANT =====
 DEFCITY = "Tamil Nadu"
 # ====================
-OWM_API = Config.OPEN_WEATHER_API
+OWM_API = Config.OPEN_WEATHER_MAP_APPID
 
 
 async def get_tz(con):
