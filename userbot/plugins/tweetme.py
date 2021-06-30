@@ -181,7 +181,7 @@ async def sunny(event):
 
 
 # @register(outgoing=True, pattern=r"^\.joker(?: |$)(.*)")
-@borg.on(lightning_cmd(outgoing=True, pattern="joker ?(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="joker ?(.*)"))
 async def j(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -203,7 +203,7 @@ async def j(event):
 
 
 # @register(outgoing=True, pattern=r"^\.modi(?: |$)(.*)")
-@borg.on(lightning_cmd(outgoing=True, pattern="modi ?(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="modi ?(.*)"))
 async def modi(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
