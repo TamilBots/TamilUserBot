@@ -11,7 +11,7 @@ newslog = Config.NEWS_CHANNEL_ID
 async def _(event):
     if event.fwd_from:
         return
-    if Var.NEWS_CHANNEL_ID is None:
+    if config.NEWS_CHANNEL_ID is None:
         await edit_or_reply(
             event, "`Please ADD NEWS_CHANNEL_ID For This Module To Work`"
         )
