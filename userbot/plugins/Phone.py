@@ -10,7 +10,7 @@ from userbot.manager.utils import edit_or_reply
 
 
 
-@borg.on(admin_cmd(pattern=r'^/phone (.*)'))
+@borg.on(admin_cmd(pattern="phone (.*)"))
 async def phone(event): 
     if event.fwd_from:
         return
