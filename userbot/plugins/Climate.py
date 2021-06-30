@@ -10,7 +10,7 @@ from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd, errors_handler, sudo_cmd
+from userbot.utils import admin_cmd, errors_handler
 from userbot.manager.utils import edit_or_reply
 
 logging.basicConfig(
@@ -36,7 +36,6 @@ async def get_tz(con):
 
 
 @borg.on(admin_cmd(outgoing=True, pattern="climate( (.*)|$)"))
-@bot.on(sudo_cmd(pattern="climate( (.*)|$)", allow_sudo=True))
 @errors_handler
 async def get_weather(weather):
     """ For .weather command, gets the current weather of a city. """
@@ -135,7 +134,6 @@ async def get_weather(weather):
 
 
 @borg.on(admin_cmd(outgoing=True, pattern="setcity(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="setcity(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def set_default_city(city):
     """ For .ctime command, change the default userbot country for date and time commands. """
@@ -184,7 +182,6 @@ async def set_default_city(city):
 
 
 @borg.on(admin_cmd(pattern="wttr ?(.*)"))
-@bot.on(sudo_cmd(pattern="wttr ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
