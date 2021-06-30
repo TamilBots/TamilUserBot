@@ -68,3 +68,4 @@ async def _(event):
         else:
             result += a
     await edit_or_reply(event, result)
+ 
