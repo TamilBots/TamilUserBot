@@ -25,6 +25,8 @@ if ENV:
         REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
         # Send .get_id in any group to fill this value.
         PRIVATE_GROUP_BOT_ID = int(os.environ.get("PRIVATE_GROUP_BOT_ID", -1001221744590))
+        # To get the new in your channel or group
+        NEWS_CHANNEL_ID = os.environ.get("NEWS_CHANNEL_ID", None)
         # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
         PRIVATE_CHANNEL_BOT_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_ID", -1001221744590))
         # for Tag notifications 
