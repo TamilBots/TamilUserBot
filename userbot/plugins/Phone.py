@@ -6,15 +6,14 @@ import urllib
 import os
 
 from userbot.utils import admin_cmd
+from userbot.manager.utils import edit_or_reply
 
 
 
 @borg.on(admin_cmd(pattern=r'^/phone (.*)'))
 async def phone(event): 
-    if event.is_group:
-     if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-          await event.reply("☎️ You are not admin 🚶‍♀️")
-          return
+    if event.fwd_from:
+        return
     information = event.pattern_match.group(1)
     number = information
     key = "fe65b94e78fc2e3234c1c6ed1b771abd" 
