@@ -2,9 +2,9 @@ import requests
 
 from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_or_reply
-from var import Var
 
-newslog = Var.NEWS_CHANNEL_ID
+
+newslog = Config.NEWS_CHANNEL_ID
 
 
 @borg.on(admin_cmd("news (.*)"))
