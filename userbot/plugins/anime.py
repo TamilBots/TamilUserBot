@@ -71,7 +71,7 @@ async def formatJSON(outData):
         return msg
 
 
-@borg.on(admin_cmd(pattern="anilist ?(.*)"))
+@borg.on(admin_cmd(pattern="anime ?(.*)"))
 async def anilist(event):
     if event.fwd_from:
         return
@@ -83,7 +83,7 @@ async def anilist(event):
 
 CMD_HELP.update(
     {
-        "anilist": ".anilist <anime name >\
+        "anime": ".anilist <anime name >\
      \nUSAGE: Shows you the details of the anime."
     }
 )
