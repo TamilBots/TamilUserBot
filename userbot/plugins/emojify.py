@@ -14,7 +14,7 @@ plugin_category = "fun"
         "examples": ["{tr}emoji catuserbot"],
     },
 )
-async def itachi(event):
+async def _(event):
     "To get emoji art text."
     args = event.pattern_match.group(1)
     get = await event.get_reply_message()
@@ -44,7 +44,7 @@ async def itachi(event):
         "examples": ["{tr}cmoji 😺 catuserbot"],
     },
 )
-async def itachi(event):
+async def _(event):
     "To get custom emoji art text."
     args = event.pattern_match.group(1)
     get = await event.get_reply_message()
