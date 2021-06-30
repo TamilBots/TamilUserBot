@@ -3,7 +3,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="type (.*)"))
+@borg.on(admin_cmd(pattern="types (.*)"))
 async def _(event):
     if event.fwd_from:
         return
