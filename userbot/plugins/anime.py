@@ -83,7 +83,8 @@ async def anilist(event):
 
 CMD_HELP.update(
     {
-        "anime": ".anilist <anime name >\
-     \nUSAGE: Shows you the details of the anime."
+        "anime":
+      "╼•∘ 🅲🅼🅽🅳 ∘•╾ :.anime <anime name >\
+     \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾: Shows you the details of the anime."
     }
 )
