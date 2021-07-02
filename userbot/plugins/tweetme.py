@@ -174,7 +174,7 @@ async def sunny(event):
             return
     await event.edit("`Requesting Sundar Pichai to tweet...`")
     text = deEmojify(text)
-    img = await sunnytweet(text)
+    img = await sundartweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
     await event.delete()
     await purge()
@@ -240,7 +240,7 @@ async def mia(event):
             return
     await event.edit("`Requesting Dr.A.P.J.Abdul Kalam to tweet...`")
     text = deEmojify(text)
-    img = await miatweet(text)
+    img = await apjtweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
     await event.delete()
     await purge()
