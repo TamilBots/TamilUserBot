@@ -64,6 +64,7 @@ CMD_HELP.update(
     {
      "| | barcode | |": "`.barcode`\
 \n\nBarCode Generator\
-\n\n**Command** -  `.barcode` `(your text)``"
+\n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ :  `.barcode` `(your text)``\
+\n\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : To get the barcode of your text.
     }
 )
