@@ -3,7 +3,6 @@ from userbot.utils import admin_cmd
 from userbot.manager.utils import edit_or_reply
 from userbot import fonts as emojify
 
-plugin_category = "fun"
 
 
 @borg.on(admin_cmd(pattern="emoji(?: |$)(.*)"))
@@ -54,10 +53,4 @@ async def _(event):
         else:
             result += a
     await edit_or_reply(event, result)
- CMD_HELP.update({
-       "Emojify"
-       "╼•∘ 🅲🅼🅽🅳 ∘•╾ : .emoji<text>\
-       \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : To make the text with emoji\
-       \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : .cmoji<text>\
-       \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :To make the text with cat emoji"
- })
+ 
