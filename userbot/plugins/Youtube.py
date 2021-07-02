@@ -274,14 +274,14 @@ async def kakashi(event):
 CMD_HELP.update(
     {
         "ytdl": "**Plugin :** `ytdl`\
-    \n\n  •  **Syntax :** `.yta link`\
-    \n  •  **Function : **__downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
-    \n\n  •  **Syntax : **`.ytv link`\
-    \n  •  **Function : **__downloads the video from the given link(Suports the all sites which support youtube-dl)__\
-    \n\n  •  **Syntax : **`.yts query`/`.yts count query`\
-    \n  •  **Function : **__Fetches youtube search results with views and duration with required no of count results by default it fetches 10 results__\
-    \n\n  •  **Syntax : **`.insta` <link>\
-    \n  •  **Function : **__Downloads the video from the given instagram link__\
+    \n\n  • ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.yta link`\
+    \n  • ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
+    \n\n  • ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.ytv link`\
+    \n  • ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__downloads the video from the given link(Suports the all sites which support youtube-dl)__\
+    \n\n  • ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.yts query`/`.yts count query`\
+    \n  • ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__Fetches youtube search results with views and duration with required no of count results by default it fetches 10 results__\
+    \n\n  • ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.insta` <link>\
+    \n  • ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__Downloads the video from the given instagram link__\
     "
     }
 )
