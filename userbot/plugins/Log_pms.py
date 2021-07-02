@@ -207,15 +207,15 @@ async def set_grplog(event):
 CMD_HELP.update(
     {
         "logchats": "**Plugin : **`logchats`\
-        \n\n•  **Syntax : **`.save`\
-        \n•  **Function : **__Saves tagged message in private group .__\
-        \n\n•  **Syntax : **`.log`\
-        \n•  **Function : **__By default will log all private chat messages if you use .nolog and want to log again then you need to use this__\
-        \n\n•  **Syntax : **`.nolog`\
-        \n•  **Function : **__Stops logging from a private chat or group where you used__\
-        \n\n•  **Syntax : **`.pmlog on/off`\
-        \n•  **Function : **__To turn on and turn off personal messages logging__\
-        \n\n•  **Syntax : **`.nolog`\
-        \n•  **Function : **__To turn on and turn off Group messages(tagged) logging__"
+        \n\n• ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.save`\
+        \n• ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__Saves tagged message in private group .__\
+        \n\n• ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.log`\
+        \n• ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__By default will log all private chat messages if you use .nolog and want to log again then you need to use this__\
+        \n\n• ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.nolog`\
+        \n• ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__Stops logging from a private chat or group where you used__\
+        \n\n• ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.pmlog on/off`\
+        \n• ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__To turn on and turn off personal messages logging__\
+        \n\n• ╼•∘ 🅲🅼🅽🅳 ∘•╾ :`.nolog`\
+        \n• ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :__To turn on and turn off Group messages(tagged) logging__"
     }
 )
