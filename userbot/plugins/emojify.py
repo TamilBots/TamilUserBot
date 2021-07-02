@@ -54,4 +54,10 @@ async def _(event):
         else:
             result += a
     await edit_or_reply(event, result)
- 
+ CMD_HELP.update({
+       "Emojify"
+       "╼•∘ 🅲🅼🅽🅳 ∘•╾ : .emoji<text>\
+       \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : To make the text with emoji\
+       \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾ : .cmoji<text>\
+       \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ :To make the text with cat emoji"
+ })
