@@ -308,6 +308,8 @@ async def draw_meme(image_path, text):
 
 CMD_HELP.update(
     {
-        "memeify": ".mmf <text on top> ; <text on bottom> (reply to pic/sticker)\nUse - Memeify the pic/sticker."
+        "memeify": 
+        "╼•∘ 🅲🅼🅽🅳 ∘•╾ :.mmf <text on top> ; <text on bottom> (reply to pic/sticker)\
+        \n╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Memeify the pic/sticker."
     }
 )
