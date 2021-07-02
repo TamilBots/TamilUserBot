@@ -9,6 +9,7 @@ bs4
 bwb==3.0.0
 cfscrape
 coffeehouse
+colour
 cowpy
 cryptg
 dnspython
