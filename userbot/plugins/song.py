@@ -6,7 +6,7 @@ from pyrogram.types import (
 import youtube_dl
 from youtube_search import YoutubeSearch
 import requests
-from userbot import admin_cmd
+from userbot.utils import admin_cmd
 import os
 
 ## Extra Fns -------------------------------
