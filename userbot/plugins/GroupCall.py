@@ -48,7 +48,7 @@ async def stop_voice(event):
 
 
 
-@register(outgoing=True, pattern="^.vcinvite$")
+@register(outgoing=True, pattern="^.invitevc$")
 async def invite_voice(event):
     await event.edit("`Users are called by voice call ...` 😉")
     users = []
