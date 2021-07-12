@@ -57,3 +57,4 @@ wikipedia>=1.4.0
 youtube-dl
 validators
 youtube_search
+Pyrogram
