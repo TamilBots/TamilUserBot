@@ -653,7 +653,7 @@ async def get_user_from_id(user, event):
 
 
 CMD_HELP.update({
-    "Admin":
+    "admin":
     "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.promote` <username/reply> <custom rank (optional)>\
 \n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : Provides admin rights to the person in the chat.\
 \n\n ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.demote` <username/reply>\
