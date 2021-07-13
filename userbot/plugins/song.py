@@ -30,7 +30,7 @@ async def _(event):
         force_document=False,
         allow_cache=False,
         supports_streaming=True,
-        caption= f'🥰 𝐮𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲\n🎬 𝐒𝐨𝐮𝐫𝐜𝐞 : [Youtube](https://youtu.be/3pN0W4KzzNY)\n\n💌 𝐁𝐲 : @TamilUserBot'
+        caption= f'🥰 𝐮𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲\n🎬 𝐒𝐨𝐮𝐫𝐜𝐞 : [Youtube](https://youtu.be/3pN0W4KzzNY)\n\n💌 𝐁𝐲 : @TamilUserBot',
         reply_to=reply_to_id,
     )
     subprocess.run("rm -rf *.mp3", shell=True)
