@@ -49,7 +49,7 @@ async def repo(event):
 
 CMD_HELP.update(
     {
-        "Alive":
+        "alive":
         """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.alive`\
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Check your bot is alive or not.\
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.repo`\
