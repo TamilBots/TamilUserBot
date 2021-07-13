@@ -248,7 +248,7 @@ async def _(event):
                 
 CMD_HELP.update(
     {
-        "Botfun":
+        "botfun":
 
         """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.purl <reply to file>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get a direct download link of that file/doc/pic/vid\__
