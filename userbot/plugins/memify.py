@@ -17,43 +17,66 @@ from userbot.utils import admin_cmd
 
 THUMB_IMAGE_PATH = "./thumb_image.jpg"
 
-
-@borg.on(admin_cmd(pattern="mmf ?(.*)"))
-async def handler(event):
-    if event.fwd_from:
-        return
+@borg.on(admin_cmd(outgoing=True, pattern=r"mmf(?: |$)(.*)"))
+async def mim(event):
     if not event.reply_to_msg_id:
-        await event.reply("Usage:- memify upper text ; lower text")
+        await eor(
+            event,
+            "`Syntax: reply to an image with .mmf` 'text on top' ; 'text on bottom' ",
+        )
         return
+
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await eor(event, "Reply to a image/sticker.")
+        await eor(event, "```reply to a image/sticker/gif```")
         return
-    file = await borg.download_media(reply_message, Var.TEMP_DOWNLOAD_DIRECTORY)
-    a = await event.reply("Memifying this image! (」ﾟﾛﾟ)｣ ")
-    text = str(event.pattern_match.group(1)).strip()
-    if len(text) < 1:
-        return await a.edit("Usage:- memify upper text ; lower text")
-    meme = await drawText(file, text)
-    await event.client.send_file(event.chat_id, file=meme, force_document=False)
-    os.remove(meme)
+    await eor(event, "`Downloading Media..`")
+    if reply_message.photo:
+        dls_loc = await borg.download_media(
+            reply_message,
+            "meme.png",
+        )
+    elif (
+        DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
+        in reply_message.media.document.attributes
+    ):
+        await borg.download_media(
+            reply_message,
+            "meme.tgs",
+        )
+        os.system("lottie_convert.py --frame 0 -if lottie -of png meme.tgs meme.png")
+        dls_loc = "meme.png"
+    elif reply_message.video:
+        video = await bot.download_media(
+            reply_message,
+            "meme.mp4",
+        )
+        extractMetadata(createParser(video))
+        os.system("ffmpeg -i meme.mp4 -vframes 1 -an -s 480x360 -ss 1 meme.png")
+        dls_loc = "meme.png"
+    else:
+        downloaded_file_name = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "meme.png")
+        dls_loc = await bot.download_media(
+            reply_message,
+            downloaded_file_name,
+        )
+    await event.edit("```Memefying ð¸ð¸ð¸```")
+    await asyncio.sleep(5)
+    text = event.pattern_match.group(1)
+    webp_file = await draw_meme_text(dls_loc, text)
+    await event.client.send_file(
+        event.chat_id, webp_file, reply_to=event.reply_to_msg_id
+    )
     await event.delete()
-    await a.delete()
+    os.system("rm *.tgs *.mp4 *.png")
+    os.remove(webp_file)
 
 
-# Taken from https://github.com/UsergeTeam/Userge-Plugins/blob/master/plugins/memify.py#L64
-# Maybe edited to suit the needs of this module
-
-
-async def drawText(image_path, text):
+async def draw_meme_text(image_path, text):
     img = Image.open(image_path)
     os.remove(image_path)
     i_width, i_height = img.size
-    if os.name == "nt":
-        fnt = "arial.ttf"
-    else:
-        fnt = "resources/fonts/DejaVuSans.ttf"
-    m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
+    m_font = ImageFont.truetype("fonts/impact.ttf", int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
     else:
@@ -64,26 +87,27 @@ async def drawText(image_path, text):
     if upper_text:
         for u_text in textwrap.wrap(upper_text, width=15):
             u_width, u_height = draw.textsize(u_text, font=m_font)
+
             draw.text(
-                xy=(((i_width - u_width) / 2) - 2, int((current_h / 640) * i_width)),
+                xy=(((i_width - u_width) / 2) - 1, int((current_h / 640) * i_width)),
                 text=u_text,
                 font=m_font,
                 fill=(0, 0, 0),
             )
             draw.text(
-                xy=(((i_width - u_width) / 2) + 2, int((current_h / 640) * i_width)),
+                xy=(((i_width - u_width) / 2) + 1, int((current_h / 640) * i_width)),
                 text=u_text,
                 font=m_font,
                 fill=(0, 0, 0),
             )
             draw.text(
-                xy=((i_width - u_width) / 2, int(((current_h / 640) * i_width)) - 2),
+                xy=((i_width - u_width) / 2, int(((current_h / 640) * i_width)) - 1),
                 text=u_text,
                 font=m_font,
                 fill=(0, 0, 0),
             )
             draw.text(
-                xy=(((i_width - u_width) / 2), int(((current_h / 640) * i_width)) + 2),
+                xy=(((i_width - u_width) / 2), int(((current_h / 640) * i_width)) + 1),
                 text=u_text,
                 font=m_font,
                 fill=(0, 0, 0),
@@ -99,10 +123,11 @@ async def drawText(image_path, text):
     if lower_text:
         for l_text in textwrap.wrap(lower_text, width=15):
             u_width, u_height = draw.textsize(l_text, font=m_font)
+
             draw.text(
                 xy=(
-                    ((i_width - u_width) / 2) - 2,
-                    i_height - u_height - int((20 / 640) * i_width),
+                    ((i_width - u_width) / 2) - 1,
+                    i_height - u_height - int((80 / 640) * i_width),
                 ),
                 text=l_text,
                 font=m_font,
@@ -110,17 +135,8 @@ async def drawText(image_path, text):
             )
             draw.text(
                 xy=(
-                    ((i_width - u_width) / 2) + 2,
-                    i_height - u_height - int((20 / 640) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((20 / 640) * i_width)) - 2,
+                    ((i_width - u_width) / 2) + 1,
+                    i_height - u_height - int((80 / 640) * i_width),
                 ),
                 text=l_text,
                 font=m_font,
@@ -129,7 +145,16 @@ async def drawText(image_path, text):
             draw.text(
                 xy=(
                     (i_width - u_width) / 2,
-                    (i_height - u_height - int((20 / 640) * i_width)) + 2,
+                    (i_height - u_height - int((80 / 640) * i_width)) - 1,
+                ),
+                text=l_text,
+                font=m_font,
+                fill=(0, 0, 0),
+            )
+            draw.text(
+                xy=(
+                    (i_width - u_width) / 2,
+                    (i_height - u_height - int((80 / 640) * i_width)) + 1,
                 ),
                 text=l_text,
                 font=m_font,
@@ -139,31 +164,33 @@ async def drawText(image_path, text):
             draw.text(
                 xy=(
                     (i_width - u_width) / 2,
-                    i_height - u_height - int((20 / 640) * i_width),
+                    i_height - u_height - int((80 / 640) * i_width),
                 ),
                 text=l_text,
                 font=m_font,
                 fill=(255, 255, 255),
             )
             current_h += u_height + pad
+
     image_name = "memify.webp"
-    webp_file = os.path.join(Var.TEMP_DOWNLOAD_DIRECTORY, image_name)
-    img.save(webp_file, "webp")
+    webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
+    img.save(webp_file, "WebP")
     return webp_file
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="mms ?(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern=r"mms(?: |$)(.*)"))
 async def mim(event):
     if not event.reply_to_msg_id:
-        await event.edit(
-            "`Syntax: reply to an image with .mmf` 'text on top' ; 'text on bottom' "
+        await eor(
+            event,
+            "`Syntax: reply to an image with .mmf` 'text on top' ; 'text on bottom' ",
         )
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await event.edit("```reply to a image/sticker/gif```")
+        await eor(event, "```reply to a image/sticker/gif```")
         return
-    await event.edit("`Downloading Media..`")
+    await eor(event, "`Downloading Media..`")
     if reply_message.photo:
         dls_loc = await bot.download_media(
             reply_message,
@@ -192,8 +219,8 @@ async def mim(event):
             reply_message,
             "meme.png",
         )
-    await event.edit("```Memifying 🔸🔸🔸 ```")
-    await asyncio.sleep(0.1)
+    await event.edit("```Memifying ð¸ð¸ð¸ ```")
+    await asyncio.sleep(5)
     text = event.pattern_match.group(1)
     photo = await draw_meme(dls_loc, text)
     await event.client.send_file(event.chat_id, photo, reply_to=event.reply_to_msg_id)
@@ -206,9 +233,7 @@ async def draw_meme(image_path, text):
     img = Image.open(image_path)
     os.remove(image_path)
     i_width, i_height = img.size
-    m_font = ImageFont.truetype(
-        "userbot/helpers/styles/impact.ttf", int((70 / 640) * i_width)
-    )
+    m_font = ImageFont.truetype("fonts/impact.ttf", int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
     else:
@@ -304,7 +329,6 @@ async def draw_meme(image_path, text):
     photo = os.path.join(TEMP_DOWNLOAD_DIRECTORY, photu)
     img.save(photo, "png")
     return photo
-
 
 CMD_HELP.update(
     {
