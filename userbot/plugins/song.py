@@ -5,7 +5,7 @@ import subprocess
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="s ?(.*)"))
+@borg.on(admin_cmd(pattern="sng ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
