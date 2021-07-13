@@ -67,7 +67,7 @@ async def monito_p_m_s(event):
 @borg.on(events.NewMessage(incoming=True, func=lambda e: e.mentioned))
 async def log_tagged_messages(event):
     hmm = await event.get_chat()
-    from .Afk import AFK_
+    from .afk import AFK_
 
     if gvarstatus("GRPLOG") and gvarstatus("GRPLOG") == "false":
         return
