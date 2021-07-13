@@ -8,6 +8,7 @@ from userbot import CMD_HELP
 from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 from userbot.utils import admin_cmd
 
+from userbot.events import register
 
 async def get_full_user(event):
     args = event.pattern_match.group(1).split(":", 1)
@@ -278,6 +279,49 @@ async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
 
+@register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
+async def gcast(event):
+    xx = event.pattern_match.group(1)
+    if not xx:
+        return await event.edit("`Berikan aku teks`")
+    tt = event.text
+    msg = tt[6:]
+    kk = await event.edit("`Proses Mengirim Pesan Broadcast...`")
+    er = 0
+    done = 0
+    async for x in bot.iter_dialogs():
+        if x.is_group:
+            chat = x.id
+            try:
+                done += 1
+                await bot.send_message(chat, msg)
+            except BaseException:
+                er += 1
+    await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
+
+
+@register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")
+async def gucast(event):
+    xx = event.pattern_match.group(1)
+    if not xx:
+        return await event.edit("`Berikan aku teks`")
+    tt = event.text
+    msg = tt[7:]
+    kk = await event.edit("`Proses Mengirim Pesan Broadcast...`")
+    er = 0
+    done = 0
+    async for x in bot.iter_dialogs():
+        if x.is_user and not x.entity.bot:
+            chat = x.id
+            try:
+                done += 1
+                await bot.send_message(chat, msg)
+            except BaseException:
+                er += 1
+    await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
+
+#XBot-Remix    
+
 
 CMD_HELP.update(
     {
@@ -289,6 +333,11 @@ CMD_HELP.update(
 \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.gban <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Gban User And Blow Him From Your Groups\
 \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.ungban <replying to user message>`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ Ugban User.
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.gban <replying to user message>`\
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Gban User And Blow Him From Your Groups\
+\n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.ungban <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ Ugban User."
+
     }
 )
