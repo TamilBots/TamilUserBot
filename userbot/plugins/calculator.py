@@ -54,7 +54,7 @@ async def aexec(code, event):
 
 CMD_HELP.update(
     {
-        "calc": 
+        "calculator": 
         "╼•∘ 🅲🅼🅽🅳 ∘•╾ : .calc <your equation>\
         \n\n ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : solves the given maths equation by bodmass rule."
          
