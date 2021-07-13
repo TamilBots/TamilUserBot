@@ -138,7 +138,7 @@ async def apkr(e):
         
 CMD_HELP.update(
     {
-        "App": """**Plugin : ** `App`
+        "app": """**Plugin : ** `App`
         
   ╼•∘ 🅲🅼🅽🅳 ∘•╾  :`.app <App Name>`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __Get A Direct Download Link Of That App From Google Play Store__
