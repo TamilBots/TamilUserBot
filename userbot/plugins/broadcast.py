@@ -343,7 +343,7 @@ async def userbroadcast_delete(event):
 
 CMD_HELP.update(
     {
-        "Broadcast":
+        "broadcast":
 
         """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.sendto category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
