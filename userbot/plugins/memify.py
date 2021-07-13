@@ -12,11 +12,13 @@ from hachoir.parser import createParser
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
+from userbot.manager.utils import edit_or_reply
+
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.utils import admin_cmd
 
 THUMB_IMAGE_PATH = "./thumb_image.jpg"
-
+eor = edit_or_reply
 @borg.on(admin_cmd(outgoing=True, pattern=r"mmf(?: |$)(.*)"))
 async def mim(event):
     if not event.reply_to_msg_id:
