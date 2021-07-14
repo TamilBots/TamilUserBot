@@ -333,7 +333,7 @@ CMD_HELP.update(
 \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.gban <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Gban User And Blow Him From Your Groups\
 \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.ungban <replying to user message>`\
-\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ Ugban User.
+\n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾ Ugban User.\
 \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.gban <replying to user message>`\
 \n╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  Gban User And Blow Him From Your Groups\
 \n\n╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.ungban <replying to user message>`\
