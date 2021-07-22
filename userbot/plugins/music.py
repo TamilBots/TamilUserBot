@@ -34,7 +34,7 @@ async def _(event):
     await event.edit("ok finding the song")    
     bruh(str(cmd))
     l = glob.glob("*.mp3")
-    loa = l[0]
+     loa = l[0]
     await event.edit("sending song")
     await borg.send_file(
                 event.chat_id,
