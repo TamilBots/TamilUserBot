@@ -6,12 +6,12 @@ import youtube_dl
 from pyrogram import filters, Client
 from youtube_search import YoutubeSearch
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputTextMessageContent
-
+from userbot.utils import admin_cmd
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@borg.on_message(filters.command("song") & ~filters.edited)
+@borg.on(admin_cmd(outgoing=True, pattern="sng(?: |$)(.*)"))
 async def song(client, message):
 
     query = ''
