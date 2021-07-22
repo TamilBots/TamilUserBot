@@ -1,24 +1,25 @@
-
+ 
 import os
 import requests
 import aiohttp
 import youtube_dl
+from telethon import events
 from pyrogram import filters, Client
 from youtube_search import YoutubeSearch
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputTextMessageContent
-from userbot.utils import admin_cmd
+
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@borg.on(admin_cmd(outgoing=True, pattern="sng(?: |$)(.*)"))
-async def song(client, message):
+@borg.on_message(filters.command("song") & ~filters.edited)
+async def song(event):
 
     query = ''
-    for i in message.command[1:]:
+    for i in event.command[1:]:
         query += ' ' + str(i)
     print(query)
-    shed = message.reply("🔎 Finding the song...")
+    shed = event.reply("🔎 Finding the song...")
     ydl_opts = {
        "format": "bestaudio[ext=m4a]",
        "geo-bypass": True,
@@ -57,7 +58,7 @@ async def song(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
         shed.edit("📤 Uploading...")
-        s = message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur, performer=channel)
+        s = event.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur, performer=channel)
         shed.delete()
     except Exception as e:
         shed.edit("❌ Error")
