@@ -9,7 +9,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
-from userbot.util import progress, humanbytes, time_formatter, admin_cmd
+from userbot.utils import progress, humanbytes, time_formatter, admin_cmd
 import datetime
 from collections import defaultdict
 import math
