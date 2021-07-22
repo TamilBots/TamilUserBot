@@ -23,16 +23,16 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 
 # ====================== CONSTANT ===============================
-INVALID_MEDIA = "```Maaf Tuan Media Tidak Valid.```"
-PP_CHANGED = "```Tuan, Foto Profil Anda Telah Berhasil Diubah.```"
-PP_TOO_SMOL = "```Gambar Terlalu Kecil Tuan, Mohon Gunakan Yang Lebih Besar.```"
-PP_ERROR = "```Kegagalan Terjadi Saat Proses Gambar, Foto Profil Gagal Diubah.```"
+INVALID_MEDIA = "```Sorry Sir Invalid Media.```"
+PP_CHANGED = "```Sir, Your Profile Photo Has Been Successfully Changed.```"
+PP_TOO_SMOL = "```Image is too small sir, please use a bigger one.```"
+PP_ERROR = "```Failure Occurs During Image Process, Profile Photo Fails to Change.```"
 
-BIO_SUCCESS = "```Tuan, Bio Anda Telah Berhasil Diubah.```"
+BIO_SUCCESS = "```Sir, Your Bio Has Been Changed Successfully.```"
 
-NAME_OK = "```Tuan, Nama Anda Telah Berhasil Diubah.```"
-USERNAME_SUCCESS = "```Username Anda Sudah Diubah.```"
-USERNAME_TAKEN = "```Mohon Maaf Tuan, Username Itu Sudah Ada Yang Menggunakannya.```"
+NAME_OK = "```Sir, Your Name Has Been Successfully Changed.```"
+USERNAME_SUCCESS = "```Your Username Has Been Changed Successfully.```"
+USERNAME_TAKEN = "```Sorry sir, that username is already using it.```"
 # ===============================================================
 
 
@@ -119,7 +119,7 @@ async def count(event):
     bc = 0
     b = 0
     result = ""
-    await event.edit("`Sedang Dalam Proses....`")
+    await event.edit("`Processing....`")
     dialogs = await bot.get_dialogs(limit=None, ignore_migrated=True)
     for d in dialogs:
         currrent_entity = d.entity
@@ -138,11 +138,11 @@ async def count(event):
         else:
             print(d)
 
-    result += f"`Pengguna:`\t**{u}**\n"
-    result += f"`Grup:`\t**{g}**\n"
-    result += f"`Super Grup:`\t**{c}**\n"
-    result += f"`Channel:`\t**{bc}**\n"
-    result += f"`Bot:`\t**{b}**"
+    result += f"`Private Chats:`\t**{u}**\n"
+    result += f"`Groups:`\t**{g}**\n"
+    result += f"`Super Groups:`\t**{c}**\n"
+    result += f"`Channels:`\t**{bc}**\n"
+    result += f"`Bots:`\t**{b}**"
 
     await event.edit(result)
 
@@ -171,4 +171,4 @@ async def remove_profilepic(delpfp):
                        file_reference=sep.file_reference))
     await delpfp.client(DeletePhotosRequest(id=input_photos))
     await delpfp.edit(
-        f"`Berhasil Menghapus {len(input_photos)} Foto Profil.`")
+        f"`Successfully Deleting {len(input_photos)} Profile Photo.`")
