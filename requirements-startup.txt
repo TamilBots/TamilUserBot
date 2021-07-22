@@ -58,3 +58,4 @@ youtube-dl
 validators
 youtube_search
 Pyrogram
+instantmusic
