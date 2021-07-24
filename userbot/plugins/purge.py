@@ -3,7 +3,7 @@ from asyncio import sleep
 from telethon.errors import rpcbaseerrors
 
 from ..utils import errors_handler, admin_cmd
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, CMD_HELP
 
 purgelist = {}
 
