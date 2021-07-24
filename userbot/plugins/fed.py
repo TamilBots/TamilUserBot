@@ -187,7 +187,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Broadcast":
+        "fed":
 
         """╼•∘ 🅲🅼🅽🅳 ∘•╾  : `.sendto category_name`
   ╼•∘ 🆄🆂🅰️🅶🅴 ∘•╾  __will send the replied message to all the chats in give category__
