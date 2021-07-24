@@ -16,6 +16,7 @@ from telethon.tl.types import (
 )
 
 from userbot import BOTLOG, BOTLOG_CHATID
+from userbot.utils import admin_cmd
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
