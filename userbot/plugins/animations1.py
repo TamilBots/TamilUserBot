@@ -187,9 +187,53 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 24])
 
-
-
-
+@borg.on(admin_cmd(pattern=r"loveu$", outgoing=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 0.5
+    animation_ttl = range(70)
+    event = await edit_or_reply(event, "loveu")
+    animation_chars = [
+        "😀",
+        "👩‍🎨",
+        "😁",
+        "😂",
+        "🤣",
+        "😃",
+        "😄",
+        "😅",
+        "😊",
+        "☺",
+        "🙂",
+        "🤔",
+        "🤨",
+        "😐",
+        "😑",
+        "😶",
+        "😣",
+        "😥",
+        "😮",
+        "🤐",
+        "😯",
+        "😴",
+        "😔",
+        "😕",
+        "☹",
+        "🙁",
+        "😖",
+        "😞",
+        "😟",
+        "😢",
+        "😭",
+        "🤯",
+        "💔",
+        "❤",
+        "I Love You❤",
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 35])
 
 @borg.on(admin_cmd(pattern=f"charging$"))
 async def timer_blankx(e):
