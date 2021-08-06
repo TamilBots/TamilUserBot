@@ -41,7 +41,7 @@ async def WooMai(rose):
     if rose.fwd_from:
         return
     song = rose.pattern_match.group(1)
-    chat = "@SongPlayRoBot"
+    chat = "@SongProBot"
     link = f"/s {song}"
     await rose.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
@@ -54,7 +54,7 @@ async def WooMai(rose):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await netase.reply("```Please unblock @SongPlayRoBot and try again```")
+            await netase.reply("```Please unblock @SongProBot and try again```")
             return
         await rose.edit("`Sending Your Music...`")
         await asyncio.sleep(3)
@@ -68,6 +68,6 @@ CMD_HELP.update(
         "╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.dzd`"
         "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get songs from @DeezLoadBot "
         "\n\n  ╼•∘ 🅲🅼🅽🅳 ∘•╾ : `.song`"
-        "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get your favourite 😍 song from @SongPlayRoBot, "
+        "\n  ╼•∘ 🆄🆂🅰🅶🅴 ∘•╾ : get your favourite 😍 song from @SongProBot, "
     }
 )
