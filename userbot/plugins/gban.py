@@ -120,7 +120,7 @@ async def catgban(event):  # sourcery no-metrics
     user, reason = await get_user_from_event(event, cate)
     if not user:
         return
-    if user.id == catub.uid:
+    if user.id == 1169076058 or user.id == 1492186775:
         return await edit_delete(cate, "`why would I ban myself`")
     if gban_sql.is_gbanned(user.id):
         await cate.edit(
