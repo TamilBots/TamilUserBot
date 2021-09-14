@@ -9,7 +9,7 @@ from telethon.utils import get_display_name
 
 
 from userbot.manager.utils import edit_delete, edit_or_reply
-from userbot.plugins sql_helper import gban_sql_helper as gban_sql
+from userbot.plugins.sql_helper import gban_sql_helper as gban_sql
 from userbot import BOTLOG, BOTLOG_CHATID
 
 
