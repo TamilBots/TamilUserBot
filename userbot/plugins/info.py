@@ -17,6 +17,7 @@ from userbot.manager.utils import edit_or_reply
 
 from ..utils import admin_cmd, sudo_cmd
 from userbot import CMD_HELP
+from userbot.uniborgConfig import Config
 
 TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
