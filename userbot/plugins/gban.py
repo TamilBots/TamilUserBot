@@ -2,13 +2,12 @@ import asyncio
 from datetime import datetime
 import logging
 
-from telethon.tl.types import MessageEntityMentionName
+from telethon.tl.types import MessageEntityMentionName, Channel
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChatBannedRights
 from telethon.utils import get_display_name
-
 
 from userbot.manager.utils import edit_delete, edit_or_reply
 from userbot.plugins.sql_helper import gban_sql_helper as gban_sql
