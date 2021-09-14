@@ -12,7 +12,7 @@ from userbot.manager.utils import edit_delete, edit_or_reply
 from userbot.plugins.sql_helper import gban_sql_helper as gban_sql
 from userbot import BOTLOG, BOTLOG_CHATID
 from userbot.utils import admin_cmd
-from userbot.plugins import get_user_from_event
+from userbot.plugins.info.py import get_user_from_event
 async def admin_groups(catub):
     catgroups = []
     async for dialog in catub.iter_dialogs():
