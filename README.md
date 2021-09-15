@@ -32,12 +32,13 @@ Before clicking on deploy to heroku just click on fork and star just below
   </a>
 </p>
 
-[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/tamilbots/tamilbot)
+[![tamilbot logo](https://telegra.ph/file/2790938cacb9aa80d478c.jpg)](https://heroku.com/deploy?template=https://github.com/tamilbots/ub)
 
 ## Give your 💙 and support 
 
 
-
+## Deploy
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Ftamilbots%2Fub&template=https%3A%2F%2Fgithub.com%2Ftamilbots%2Fub)
 
 ### Video Tutorial
 
