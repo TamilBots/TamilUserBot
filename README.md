@@ -55,15 +55,16 @@ Click the below button to watch the video tutorial on deploying
 
  [![Run on Repl.it](https://camo.githubusercontent.com/05149b448485553c6f14f6430a45c12dcc79ed3c/68747470733a2f2f7265706c2e69742f62616467652f6769746875622f6a61727669733231303930342f4a6172766973)](https://repl.it/@ImSaravanakrish/Tamilbot#main.py)
 
-###
+###👨🏻‍💻 குழுக்கள் மற்றும் ஆதரவு👨🏻‍💻 :
 
-<details>
-<summary> 👨🏻‍💻 குழுக்கள் மற்றும் ஆதரவு👨🏻‍💻 : </summary>
-<br>
 
 <a href="https://t.me/TamilSupport"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/TamilBots"><img src="https://img.shields.io/badge/Join-Updates%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
 
-### நான் அதை எவ்வாறு பயன்படுத்துவது?
+#### நான் அதை எவ்வாறு பயன்படுத்துவது?
+
+<details>
+<summary> Check here : </summary>
+<br>
 
 தமிழ் பாட்-யை உள்ளமைக்க, எங்கள் <a href="https://t.me/TamilUserBot"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
   ஐப் பார்க்கலாம்.
