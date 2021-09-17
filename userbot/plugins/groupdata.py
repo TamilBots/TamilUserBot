@@ -121,19 +121,26 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
+
 async def info(event):
-    ok = await edit_or_reply(event, "`Analysing the chat...`")
-    chat = await get_chatinfo(event)
+    "To get group information"
+    catevent = await edit_or_reply(event, "`Analysing the chat...`")
+    chat = await get_chatinfo(event, catevent)
+    if chat is None:
+        return
     caption = await fetch_info(chat, event)
     try:
-        await ok.edit(caption, parse_mode="html")
+        await catevent.edit(caption, parse_mode="html")
     except Exception as e:
-        print("Exception:", e)
-        await ok.edit(f"`An unexpected error has occurred. {e}`")
-    return
+        if BOTLOG:
+            await event.client.send_message(
+                BOTLOG_CHATID, f"**Error in chatinfo : **\n`{e}`"
+            )
+
+        await catevent.edit("`An unexpected error has occurred.`")
 
 
-async def get_chatinfo(event):
+async def get_chatinfo(event, catevent):
     chat = event.pattern_match.group(1)
     chat_info = None
     if chat:
@@ -154,21 +161,24 @@ async def get_chatinfo(event):
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
-            await ok.edit("`Invalid channel/group`")
+            await catevent.edit("`Invalid channel/group`")
             return None
         except ChannelPrivateError:
-            await ok.edit("`This is a private channel/group or I am banned from there`")
+            await catevent.edit(
+                "`This is a private channel/group or I am banned from there`"
+            )
             return None
         except ChannelPublicGroupNaError:
-            await ok.edit("`Channel or supergroup doesn't exist`")
+            await catevent.edit("`Channel or supergroup doesn't exist`")
             return None
         except (TypeError, ValueError) as err:
-            await ok.edit(str(err))
+            LOGS.info(err)
+            await edit_delete(catevent, "**Error:**\n__Can't fetch the chat__")
             return None
     return chat_info
 
 
-async def fetch_info(chat, event):
+async def fetch_info(chat, event):  # sourcery no-metrics
     # chat.chats is a list so we use get_entity() to avoid IndexError
     chat_obj_info = await event.client.get_entity(chat.full_chat.id)
     broadcast = (
@@ -192,15 +202,14 @@ async def fetch_info(chat, event):
         )
     except Exception as e:
         msg_info = None
-        print("Exception:", e)
+        LOGS.error(f"Exception: {e}")
     # No chance for IndexError as it checks for msg_info.messages first
-    first_msg_valid = (
-        True
-        if msg_info and msg_info.messages and msg_info.messages[0].id == 1
-        else False
+    first_msg_valid = bool(
+        msg_info and msg_info.messages and msg_info.messages[0].id == 1
     )
+
     # Same for msg_info.users
-    creator_valid = True if first_msg_valid and msg_info.users else False
+    creator_valid = bool(first_msg_valid and msg_info.users)
     creator_id = msg_info.users[0].id if creator_valid else None
     creator_firstname = (
         msg_info.users[0].first_name
@@ -222,9 +231,8 @@ async def fetch_info(chat, event):
     )
     try:
         dc_id, location = get_input_location(chat.full_chat.chat_photo)
-    except Exception as e:
+    except Exception:
         dc_id = "Unknown"
-        str(e)
 
     # this is some spaghetti I need to change
     description = chat.full_chat.about
@@ -309,9 +317,9 @@ async def fetch_info(chat, event):
             )
             admins = participants_admins.count if participants_admins else None
         except Exception as e:
-            print("Exception:", e)
+            LOGS.error(f"Exception:{e}")
     if bots_list:
-        for bot in bots_list:
+        for _ in bots_list:
             bots += 1
 
     caption = "<b> ✯ CHAT INFO ✯ </b>\n"
