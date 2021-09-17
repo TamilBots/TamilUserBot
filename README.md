@@ -75,6 +75,8 @@ Click the below button to watch the video tutorial on deploying
 ## License
  TamilUserBot is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
 
+[![License](https://www.gnu.org/graphics/agplv3-155x51.png)](LICENSE)
+
 # FORK AT YOUR OWN RISK
 
 <details>
