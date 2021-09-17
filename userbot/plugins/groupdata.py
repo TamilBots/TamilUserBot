@@ -21,6 +21,7 @@ from telethon.tl.types import (
     ChannelParticipantsBots,
 )
 
+from userbot.plugins import BOTLOG, BOTLOG_CHATID
 
 
 @borg.on(admin_cmd(pattern="(get_admin|admins)( (.*)|$)"))
