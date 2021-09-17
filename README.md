@@ -10,7 +10,9 @@
 /**
 ```
 
-Before clicking on deploy to heroku just click on fork and star just below
+## Do this first 🤨😤
+
+Before clicking on deploy to heroku just click on fork and star button just below
 
 <p align="center">
   <a href="https://github.com/tamilbots/tamiluserbot/fork">
