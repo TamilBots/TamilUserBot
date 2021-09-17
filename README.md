@@ -75,8 +75,8 @@ Click the below button to watch the video tutorial on deploying
 ## License
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-9	
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
 # FORK AT YOUR OWN RISK
 
