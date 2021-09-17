@@ -1,6 +1,6 @@
-## Tamil UserBot 🤖
+## 🌟 Tamil UserBot 😍
 
-# DISCLAIMER :
+## DISCLAIMER :
 ```
 /**
  1) இந்த போட்டின் எந்தவொரு முறையற்ற பயன்பாட்டிற்கும் நான் பொறுப்பல்ல...
@@ -27,7 +27,7 @@ Before clicking on deploy to heroku just click on fork and star just below
 ## Give your 💙 and support 
 
 
-## Deploy
+## Deploy 🍻
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Ftamilbots%2Fub&template=https%3A%2F%2Fgithub.com%2Ftamilbots%2Fub)
 
