@@ -73,9 +73,10 @@ Click the below button to watch the video tutorial on deploying
     
 
 ## License
- TamilUserBot is licensed under [MIT License](https://www.gnu.org/licenses/MIT License.en.html) .
 
-[![License](https://www.MIT.org/graphics/MIT License-155x51.png)](LICENSE)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+9	
 
 # FORK AT YOUR OWN RISK
 
