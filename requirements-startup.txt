@@ -59,5 +59,3 @@ validators
 youtube_search
 Pyrogram
 instantmusic
-sqlalchemy
-google_images_download
