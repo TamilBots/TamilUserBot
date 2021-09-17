@@ -54,11 +54,7 @@ Click the below button to watch the video tutorial on deploying
 
 ### 👨🏻‍💻 குழுக்கள் மற்றும் ஆதரவு👨🏻‍💻 :
 
-[![](https://camo.githubusercontent.com/e531cdc1dbdcb78f8ffe767875a6b6d33c43e2e0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2d54656c656772616d2532304368616e6e656c2d7265642e7376673f6c6f676f3d54656c656772616d)](https://t.me/tamiluserbot)
-
-[![](https://camo.githubusercontent.com/7b0a8bb8af0b2466dd1c38a6c1367ddee45ba266/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2d54656c656772616d25323047726f75702d626c75652e7376673f6c6f676f3d74656c656772616d)](https://t.me/tamilsupport)
-
-<a href="https://t.me/TamilSupport"><img src="https://img.shields.io/badge/Join-Group%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/TamilBots"><img src="https://img.shields.io/badge/Join-Updates%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/TamilSupport"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/TamilBots"><img src="https://img.shields.io/badge/Join-Updates%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
 
 ### நான் அதை எவ்வாறு பயன்படுத்துவது?
 
