@@ -44,10 +44,18 @@ Click the below button to watch the video tutorial on deploying
 <a href="https://youtu.be/3PgBiFgfx34"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
 <a href="https://youtu.be/3PgBiFgfx34"><img src="https://img.shields.io/youtube/views/3PgBiFgfx34?style=social">
     
+
+
 ### Old 
 
 <a href="https://youtu.be/fqhCz-eRkgA"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
 <a href="https://youtu.be/fqhCz-eRkgA"><img src="https://img.shields.io/youtube/views/fqhCz-eRkgA?style=social">
+
+<a href="https://youtu.be/3PgBiFgfx34"><img src="https://img.shields.io/badge/How%20To%20Deploy-LATEST-blue.svg?logo=Youtube"></a>
+<a href="https://youtu.be/3PgBiFgfx34"><img src="https://img.shields.io/youtube/views/3PgBiFgfx34?style=social">
+    
+<a href="https://youtu.be/fqhCz-eRkgA"><img src="https://img.shields.io/badge/How%20To%20Deploy-OLD-blue.svg?logo=Youtube"></a>
+<a href="https://youtu.be/fqhCz-eRkgA"><img src="https://img.shields.io/youtube/views/fqhCz-eRkgA?style=social"></a>
 
 ###  GET STRING SESSION FROM REPL RUN
 
