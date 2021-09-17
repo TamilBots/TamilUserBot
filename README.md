@@ -71,6 +71,10 @@ Click the below button to watch the video tutorial on deploying
 #### • FRIDAY  »»  <a href="https://github.com/devsexpo/fridayuserbot" alt="friday"> <img src="https://img.shields.io/badge/Friday-4B8BBE?logo=github" /></a> 
 
     
+
+## License
+ TamilUserBot is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
+
 # FORK AT YOUR OWN RISK
 
 <details>
