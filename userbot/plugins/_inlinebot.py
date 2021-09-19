@@ -63,7 +63,7 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
                 text=f"**Showing Stats For {DEFAULTUSER}'s TamilBot** \nNote --> Only Owner Can Check This \n(C) @tamilsupport",
                 buttons=[
                     [custom.Button.inline("Show Stats ?", data="terminator")],
-                    [Button.url("Repo 🇮🇳", "https://github.com/TamilBots/TamilBot")],
+                    [Button.url("Repo 🇮🇳", "https://github.com/TamilBots/TamilUserBot")],
                     [Button.url("Join Group ❤️", "t.me/TamilSupport")],
                 ],
             )
@@ -93,7 +93,7 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
                         ),
                         custom.Button.url(
                             "🤾🏻Deploy🤾🏻",
-                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Ftamilbots%2FTamilBot&template=https%3A%2F%2Fgithub.com%2Ftamilbots%2FTamilBot",
+                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fimsaravanakrish%2FHeroku&template=https%3A%2F%2Fgithub.com%2Fimsaravanakrish%2FHeroku",
                         ),
                     ],
                     [
