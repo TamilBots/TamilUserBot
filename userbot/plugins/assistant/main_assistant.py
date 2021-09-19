@@ -85,8 +85,8 @@ async def start(event):
 # Data's
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
-async def backme(event):
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ebackme")))
+async def ebackme(event):
     await event.delete()
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
@@ -106,7 +106,7 @@ async def backme(event):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy"))
           )  # pylint: disable=oof
 async def settings(event):
-    await event.edit("Browse through the available options:",
+    await event.edit("𝐜𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐠𝐞𝐭 𝐭𝐮𝐭𝐨𝐫𝐢𝐚𝐥 𝐟𝐨𝐫 𝐡𝐞𝐫𝐨𝐤𝐮 𝐚𝐧𝐝 𝐫𝐚𝐢𝐥𝐰𝐚𝐲:",
                      buttons=[
                          [(Button.url("ᴅᴇᴘʟᴏʏ ᴛᴏ ʀᴀɪʟᴡᴀʏ", "https://www.youtube.com/watch?v=3PgBiFgfx34")),
                           (Button.url("ᴅᴇᴘʟᴏʏ ᴛᴏ ʀᴀɪʟᴡᴀʏ", "https://github.com/TamilBots"))],
