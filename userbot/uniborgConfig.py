@@ -134,7 +134,7 @@ if ENV:
         SUB_TO_MSG_ASSISTANT = os.environ.get("SUB_TO_MSG_ASSISTANT", False)
         ASSISTANT_START_PIC = os.environ.get(
             "ASSISTANT_START_PIC",
-            "https://telegra.ph/file/84d536b464a2ca6962416.mp4",
+            "https://telegra.ph/file/2790938cacb9aa80d478c.jpg",
         )
         
 else:
