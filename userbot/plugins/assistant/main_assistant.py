@@ -103,7 +103,7 @@ async def ebackme(event):
 async def settings(event):
     await event.edit("𝐜𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐠𝐞𝐭 𝐭𝐮𝐭𝐨𝐫𝐢𝐚𝐥 𝐟𝐨𝐫 𝐡𝐞𝐫𝐨𝐤𝐮 𝐚𝐧𝐝 𝐫𝐚𝐢𝐥𝐰𝐚𝐲:",
                      buttons=[
-                         [(Button.url("ʀᴀɪʟᴡᴀʏ", "https://www.youtube.com/watch?v=3PgBiFgfx34")),
+                         [(Button.url("ʜᴇʀᴏᴋᴜ", "https://www.youtube.com/watch?v=3PgBiFgfx34")),
                           (Button.url("ʀᴀɪʟᴡᴀʏ", "https://github.com/TamilBots"))],
                          [custom.Button.inline("ʜᴏᴍᴇ",
                                      data="ebackme")]
