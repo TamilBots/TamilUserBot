@@ -81,6 +81,20 @@ async def start(event):
 
 
 # Data's
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
+async def backme(event):
+    await event.delete()
+    if event.query.user_id is not bot.uid:
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Tamil Userbot](t.me/TamilUserBot) " 
+          buttons=[
+                [custom.Button.inline("ᴅᴇᴘʟᴏʏ ʏᴏᴜʀ ᴛᴀᴍɪʟᴜꜱᴇʀʙᴏᴛ", data="deploy")],
+                [Button.url("ᴜᴘᴅᴀᴛᴇꜱ", "t.me/TamilUserBot")],
+                [Button.url("ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", "t.me/TamilSupport")],
+
+            ],
+        )
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
@@ -89,14 +103,28 @@ async def help(event):
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
             event.chat_id,
-            message="You Can Deploy TamilBot In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
+            message="𝗖𝗹𝗶𝗰𝗸 𝗯𝗲𝗹𝗼𝘄 𝗯𝘂𝘁𝘁𝗼𝗻 𝘁𝗼 𝗴𝗲𝘁 𝘁𝘂𝘁𝗼𝗿𝗶𝗮𝗹",
             buttons=[
-                [Button.url("Deploy Tutorial 📺", "https://youtu.be/3PgBiFgfx34")],
-                [Button.url("Need Help ❓", "t.me/TamilSupport")],
+                [custom.Button.inline("ᴅᴇᴘʟᴏʏ ᴍᴇᴛʜᴏᴅꜱ 📺", data="ddeploy")],
+                [custom.Button.inline("ʜᴏᴍᴇ", data="gibcmd")],
             ],
         )
 
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ddeploy")))
+async def ddeploy(event):
+    await event.delete()
+    if event.query.user_id is not bot.uid:
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"𝐡𝐞𝐲 {firstname} ! 𝐜𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐠𝐞𝐭 𝐭𝐮𝐭𝐨𝐫𝐢𝐚𝐥 𝐯𝐢𝐝𝐞𝐨𝐬. \n\n𝐈𝐟 𝐲𝐨𝐮 𝐰𝐚𝐧𝐭 𝐦𝐨𝐫𝐞 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐜𝐞 𝐣𝐮𝐬𝐭 𝐚𝐬𝐤 𝐡𝐞𝐫𝐞 @TamilSupport \n\n𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 [Tamil Userbot](t.me/TamilBots) " 
+          buttons=[
+                [Button.url("ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ", "https://youtu.be/3PgBiFgfx34")],
+                [Button.url("ᴅᴇᴘʟᴏʏ ᴛᴏ ʀᴀɪʟᴡᴀʏ", "https://github.com/TamilBotst")],
+                [custom.Button.inline("ʜᴏᴍᴇ", data="backme")],
 
+            ],
+        ) 
+        
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
 async def users(event):
     if event.query.user_id == bot.uid:
