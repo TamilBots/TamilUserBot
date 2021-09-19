@@ -87,8 +87,8 @@ async def backme(event):
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
             event.chat_id,
-            message=f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Tamil Userbot](t.me/TamilUserBot) " 
-          buttons=[
+            message=f"𝐇𝐞𝐥𝐥𝐨, {firstname} ! 𝐍𝐢𝐜𝐞 𝐓𝐨 𝐌𝐞𝐞𝐭 𝐘𝐨𝐮, /n/n𝐜𝐡𝐞𝐜𝐤 𝐡𝐞𝐫𝐞 𝐡𝐨𝐰 𝐭𝐨 𝐠𝐞𝐭 𝐲𝐨𝐮𝐫 𝐨𝐰𝐧 𝐓𝐚𝐦𝐢𝐥𝐔𝐬𝐞𝐫𝐁𝐨𝐭" 
+            buttons=[
                 [custom.Button.inline("ᴅᴇᴘʟᴏʏ ʏᴏᴜʀ ᴛᴀᴍɪʟᴜꜱᴇʀʙᴏᴛ", data="deploy")],
                 [Button.url("ᴜᴘᴅᴀᴛᴇꜱ", "t.me/TamilUserBot")],
                 [Button.url("ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", "t.me/TamilSupport")],
@@ -103,10 +103,10 @@ async def help(event):
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
             event.chat_id,
-            message="𝗖𝗹𝗶𝗰𝗸 𝗯𝗲𝗹𝗼𝘄 𝗯𝘂𝘁𝘁𝗼𝗻 𝘁𝗼 𝗴𝗲𝘁 𝘁𝘂𝘁𝗼𝗿𝗶𝗮𝗹",
+            message=f"𝐇𝐞𝐥𝐥𝐨, {firstname} !𝗖𝗹𝗶𝗰𝗸 𝗯𝗲𝗹𝗼𝘄 𝗯𝘂𝘁𝘁𝗼𝗻 𝘁𝗼 𝗴𝗲𝘁 𝘁𝘂𝘁𝗼𝗿𝗶𝗮𝗹",
             buttons=[
                 [custom.Button.inline("ᴅᴇᴘʟᴏʏ ᴍᴇᴛʜᴏᴅꜱ 📺", data="ddeploy")],
-                [custom.Button.inline("ʜᴏᴍᴇ", data="gibcmd")],
+                [custom.Button.inline("ʜᴏᴍᴇ", data="backme")],
             ],
         )
 
