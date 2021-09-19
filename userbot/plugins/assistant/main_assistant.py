@@ -73,8 +73,8 @@ async def start(event):
             link_preview=False,
             buttons=[
                 [custom.Button.inline("ᴅᴇᴘʟᴏʏ ʏᴏᴜʀ ᴛᴀᴍɪʟᴜꜱᴇʀʙᴏᴛ", data="deploy")],
-                [Button.url("ᴜᴘᴅᴀᴛᴇꜱ", "t.me/TamilUserBot")],
-                [Button.url("ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", "t.me/TamilSupport")],
+                [Button.url("ᴜᴘᴅᴀᴛᴇꜱ", url="https://t.me/TamilUserBot")],
+                [Button.url("ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", url="https://t.me/TamilSupport")],
 
             ],
         )
@@ -91,9 +91,9 @@ async def ebackme(event):
     await event.edit(f"𝐇𝐞𝐥𝐥𝐨,𝐚𝐢𝐲𝐲𝐚 𝐍𝐢𝐜𝐞 𝐓𝐨 𝐌𝐞𝐞𝐭 𝐘𝐨𝐮, /n/n𝐜𝐡𝐞𝐜𝐤 𝐡𝐞𝐫𝐞 𝐡𝐨𝐰 𝐭𝐨 𝐠𝐞𝐭 𝐲𝐨𝐮𝐫 𝐨𝐰𝐧 𝐓𝐚𝐦𝐢𝐥𝐔𝐬𝐞𝐫𝐁𝐨𝐭:",
                      buttons=[
                          [(custom.Button.inline("ᴅᴇᴘʟᴏʏ ʏᴏᴜʀ ᴛᴀᴍɪʟᴜꜱᴇʀʙᴏᴛ", data="deploy")),
-                          (Button.url("ᴜᴘᴅᴀᴛᴇꜱ", "t.me/TamilUserBot"))],
+                          (Button.url("ᴜᴘᴅᴀᴛᴇꜱ", url="https://t.me/TamilUserBot"))],
                          [Button.url("ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ",
-                                     data="TamilSupport")]
+                                     url="https://t.me/TamilSupport")]
                      ])
 
 
