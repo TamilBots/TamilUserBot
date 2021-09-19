@@ -108,14 +108,19 @@ async def deploy(event):
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
             event.chat_id,
-            message=f"𝐡𝐞𝐲 {firstname} ! 𝐜𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐠𝐞𝐭 𝐭𝐮𝐭𝐨𝐫𝐢𝐚𝐥 𝐯𝐢𝐝𝐞𝐨𝐬. \n\n𝐈𝐟 𝐲𝐨𝐮 𝐰𝐚𝐧𝐭 𝐦𝐨𝐫𝐞 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐜𝐞 𝐣𝐮𝐬𝐭 𝐚𝐬𝐤 𝐡𝐞𝐫𝐞 @TamilSupport \n\n𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 [Tamil Userbot](t.me/TamilBots) " 
+            message=f"𝐡𝐞𝐲 {firstname} ! 𝐜𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐠𝐞𝐭 𝐭𝐮𝐭𝐨𝐫𝐢𝐚𝐥 𝐯𝐢𝐝𝐞𝐨𝐬. \n\n𝐈𝐟 𝐲𝐨𝐮 𝐰𝐚𝐧𝐭 𝐦𝐨𝐫𝐞 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐜𝐞 𝐣𝐮𝐬𝐭 𝐚𝐬𝐤 𝐡𝐞𝐫𝐞 @TamilSupport \n\n𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 [Tamil Userbot](t.me/TamilBots) "
             buttons=[
-                [Button.url("ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ", "https://youtu.be/3PgBiFgfx34")],
-                [Button.url("ᴅᴇᴘʟᴏʏ ᴛᴏ ʀᴀɪʟᴡᴀʏ", "https://github.com/TamilBotst")],
+                [
+                    Button.url(
+                        "ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ",
+                        "https://www.youtube.com/watch?v=3PgBiFgfx34",
+                    )
+                ],
+                [Button.url("ᴅᴇᴘʟᴏʏ ᴛᴏ ʀᴀɪʟᴡᴀʏ", "https://github.com/TamilBots")],
                 [custom.Button.inline("ʜᴏᴍᴇ", data="backme")],
-
             ],
-        ) 
+        )
+        
         
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
 async def users(event):
