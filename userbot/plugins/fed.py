@@ -250,7 +250,7 @@ async def _(event):
 
     await event.edit(f"UnFbaning in {len(fedList)} feds.")
     try:
-        await event.client.send_message(chat, f"/start")
+        await event.client.send_message(chat, f"/feddemoteme {fed}")
     except:
         await event.edit("PRIVATE_GROUP_ID is incorrect.")
         return
