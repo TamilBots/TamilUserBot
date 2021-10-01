@@ -31,6 +31,10 @@ G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", None)
 if G_BAN_LOGGER_GROUP:
     G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
 
+PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
+if FBAN_GROUP_ID:
+    PRIVATE_GROUP_ID = int(PRIVATE_GROUP_ID)
+
 @borg.on(admin_cmd(pattern="fstat ?(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -186,39 +190,7 @@ async def _(event):
     await event.delete()
 
 
-import os
-
-from telethon.errors import ChatAdminRequiredError
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.users import GetFullUserRequest
-
-from ..utils import admin_cmd
-from . import ALIVE_NAME
-
-naam = str(ALIVE_NAME)
-
-bots = "@MissRose_bot"
-
-BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
-
-G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", None)
-if G_BAN_LOGGER_GROUP:
-    G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
-
-
-import asyncio
-
-#  (c)2020 Telebot
-#
-# You may not use this plugin without proper authorship and consent from @TelebotSupport
-#
-import os
-
-PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
-if FBAN_GROUP_ID:
-    PRIVATE_GROUP_ID = int(PRIVATE_GROUP_ID)
-
-@bot.on(admin_cmd("superunfban ?(.*)"))
+@bot.on(admin_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
