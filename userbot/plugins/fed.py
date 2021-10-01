@@ -202,7 +202,7 @@ async def _(event):
         FBAN = event.pattern_match.group(1)
 
     if PRIVATE_GROUP_ID:
-       chat = PRIVATE_GROUP_ID D
+        chat = PRIVATE_GROUP_ID 
     else:
         chat = await event.get_chat()
     fedList = []
