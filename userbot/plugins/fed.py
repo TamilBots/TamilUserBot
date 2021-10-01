@@ -32,7 +32,7 @@ if G_BAN_LOGGER_GROUP:
     G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
 
 PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
-if FBAN_GROUP_ID:
+if PRIVATE_GROUP_ID:
     PRIVATE_GROUP_ID = int(PRIVATE_GROUP_ID)
 
 @borg.on(admin_cmd(pattern="fstat ?(.*)"))
@@ -258,7 +258,7 @@ async def _(event):
     for fed in fedList:
         await event.client.send_message(chat, f"/joinfed {fed}")
         await asyncio.sleep(3)
-        await event.client.send_message(chat, f"/unfban {FBAN}")
+        await event.client.send_message(chat, f"/feddemoteme {FBAN}")
         await asyncio.sleep(3)
     await event.edit(f"SuperUnFBan Completed. Affected {len(fedList)} feds.")
 
