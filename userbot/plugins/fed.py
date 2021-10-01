@@ -256,7 +256,7 @@ async def _(event):
         return
     await asyncio.sleep(3)
     for fed in fedList:
-        await event.client.send_message(chat, f"/feddemoteme {fed}")
+        await event.client.send_message(chat, f"/start")
         await asyncio.sleep(3)
         await event.client.send_message(chat, f"/feddemoteme {FBAN}")
         await asyncio.sleep(3)
