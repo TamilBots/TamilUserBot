@@ -190,7 +190,7 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(admin_cmd("superfban ?(.*)"))
+@borg.on(admin_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -256,7 +256,7 @@ async def _(event):
         return
     await asyncio.sleep(3)
     for fed in fedList:
-        await event.client.send_message(chat, f"/joinfed {fed}")
+        await event.client.send_message(chat, f"/feddemoteme {fed}")
         await asyncio.sleep(3)
         await event.client.send_message(chat, f"/feddemoteme {FBAN}")
         await asyncio.sleep(3)
