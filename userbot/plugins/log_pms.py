@@ -52,7 +52,7 @@ async def monito_p_m_s(event):
                     snd_id = event.query.user_id
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PRIVATE_GROUP_ID,
-                    f"👤 [New Pm](tg://user?id={snd_id}) has sent a new message \nId : `{chat.id}`",
+                    f"👤 [New Pm](tg://user?id={user.id}) has sent a new message \nId : `{chat.id}`",
                 )
             try:
                 if event.message:
@@ -89,7 +89,7 @@ async def log_tagged_messages(event):
     him_id = event.query.user_id
     if full is not None:
         resalt += (
-            f"\n<b>From : </b> 👤 [New MSG📨](tg://user?id={him_id})"
+            f"\n<b>From : </b> 👤 [New MSG📨](tg://user?id={user.id})"
         )
     if messaget is not None:
         resalt += f"\n<b>Message type : </b><code>{messaget}</code>"
