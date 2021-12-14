@@ -49,10 +49,10 @@ async def monito_p_m_s(event):
                             )
                         )
                     LOG_CHATS_.COUNT = 0
-                    him_id = event.query.user_id
+                    snd_id = event.query.user_id
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PRIVATE_GROUP_ID,
-                    f"👤 [New Pm](tg://user?id={him_id}) has sent a new message \nId : `{chat.id}`",
+                    f"👤 [New Pm](tg://user?id={snd_id}) has sent a new message \nId : `{chat.id}`",
                 )
             try:
                 if event.message:
