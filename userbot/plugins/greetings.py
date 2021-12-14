@@ -342,7 +342,7 @@ async def abuse(ennappa):
     
 @borg.on(admin_cmd(pattern=f"sing$", outgoing=True))
 async def sing(ethuku):
-    await ehuku.edit(choice(SONG))
+    await ethuku.edit(choice(SONG))
 
 @borg.on(admin_cmd(pattern=f"dhoka$", outgoing=True))
 async def katgya(chutiya):
