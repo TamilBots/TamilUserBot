@@ -141,10 +141,9 @@ async def catgban(event):  # sourcery no-metrics
             await asyncio.sleep(0.5)
             count += 1
         except BadRequestError:
-            achat = await event.client.get_entity(san[i])
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"`You don't have required permission in :`\n**Chat :** {get_display_name(achat)}(`{achat.id}`)\n`For banning here`",
+                f"`You don't have required permission in :`\n**Chat :** {event.chat.title}(`{event.chat_id}`)\n`For banning here`",
             )
     end = datetime.now()
     cattaken = (end - start).seconds
@@ -215,10 +214,9 @@ async def catgban(event):
             await asyncio.sleep(0.5)
             count += 1
         except BadRequestError:
-            achat = await event.client.get_entity(san[i])
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"`You don't have required permission in :`\n**Chat :** {get_display_name(achat)}(`{achat.id}`)\n`For Unbanning here`",
+                f"`You don't have required permission in :`\n**Chat :** {event.chat.title}(`{event.chat_id}`)\n`For unbanning here`",
             )
     end = datetime.now()
     cattaken = (end - start).seconds
