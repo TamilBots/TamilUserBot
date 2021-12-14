@@ -86,14 +86,14 @@ if Var.TG_BOT_USERNAME is not None and tgbot is not None:
                 title="Repository",
                 text="**ᴛᴀᴍɪʟʙᴏᴛ**\n\n`ᴛᴇʟᴇɢʀᴀᴍ ᴜꜱᴇʀʙᴏᴛ`",
                 buttons=[
-                    [custom.Button.url("Repo📡", "https://github.com/TamilBots/TamilBot")],
+                    [custom.Button.url("Repo📡", "https://github.com/TamilBots/TamiluserBot")],
                     [
                         custom.Button.url(
                             "👨‍💻Tutorial🎥", "http://www.youtube.com/watch?v=3PgBiFgfx34"
                         ),
                         custom.Button.url(
                             "🤾🏻Deploy🤾🏻",
-                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fimsaravanakrish%2FHeroku&template=https%3A%2F%2Fgithub.com%2Fimsaravanakrish%2FHeroku",
+                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fimsaravanakrish%2Fnekopack&template=https%3A%2F%2Fgithub.com%2Fimsaravanakrish%2Fnekopack",
                         ),
                     ],
                     [
